@@ -6,6 +6,7 @@
     function activate() {
         logger.log(title + ' View Activated', null, title, true);
 
+
         datacontext.offlinedb.onReady(listLocalTodoItems);
         datacontext.onlinedb.onReady(listRemoteTodoItems);
 
@@ -58,22 +59,40 @@
 
 
     function synchronizeData() {
-        datacontext.offlinedb
-            .TodoItem
-            .filter("it.InSync == false")
-            .toArray(function (todoItems) {
-                datacontext.onlinedb.addMany(todoItems);
-                datacontext.onlinedb.saveChanges(function () {
-                    todoItems.forEach(function (todoItem) {
-                        datacontext.offlinedb.attach(todoItem);
-                        todoItem.InSync = true;
-                    });
-                    datacontext.offlinedb.saveChanges(function () {
-                        listLocalTodoItems();
-                        listRemoteTodoItems();
-                    });
-                });
-            })
+
+
+        var dirtyPromise = datacontext.offlinedb
+                        .TodoItem
+                        .filter("it.InSync == false").toArray();
+         
+       
+        dirtyPromise.done(function (dirtyItems) {
+
+            
+            console.log("dirty");
+            console.log(dirtyItems);
+
+
+            //add the dirty item to the online db
+            datacontext.onlinedb.addMany(dirtyItems);
+
+            // save dirty items to server
+            var dirtySavePromise = datacontext.onlinedb.saveChanges();
+
+            // set them as InSync on offline db
+            dirtyItems.forEach(function (todoItem) {
+                datacontext.offlinedb.attach(todoItem);
+                todoItem.InSync = true;
+            });
+            // save and reload
+            datacontext.offlinedb.saveChanges().then(function () {
+                console.log('saved offline synd data');
+                listLocalTodoItems();
+                listRemoteTodoItems();
+            });
+
+        })
+
     }
 
     //#endregion

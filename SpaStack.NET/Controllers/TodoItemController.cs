@@ -83,7 +83,7 @@ namespace SpaStack.NET.Controllers
                 return BadRequest(ModelState);
             }
 
-            //todoitem.InSync = true;
+            todoitem.InSync = true;
 
             db.TodoItems.Add(todoitem);
 
