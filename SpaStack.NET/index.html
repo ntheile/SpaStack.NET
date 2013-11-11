@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SpaStack.NET</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--In production use cdns for these libs-->
+        <link href="Content/ie10mobile.css" rel="stylesheet">
+        <link href="Content/bootstrap.css" rel="stylesheet">
+        <link href="Content/bootstrap-responsive.css" rel="stylesheet">
+        <link href="Content/durandal.css" rel="stylesheet">
+        <link href="Content/toastr.css" rel="stylesheet">
+    <!--In production use cdns for these libs-->
+
+
+    <link href="Content/chosen/chosen.min.css" rel="stylesheet">
+    <link href="Content/mmenu/mmenu-layout.css" rel="stylesheet" />
+    <link href="Content/mmenu/mmenu.css" rel="stylesheet">
+    <link href="Content/mmenu/mmenu-widescreen.css" media="all and (min-width: 900px)" rel="stylesheet" />
+    <link href="Content/mmenu/mmenu-iconbar.css" rel="stylesheet" media="all and (min-width: 500px) and (max-width: 899px)" />
+
+
+    <script type="text/javascript">
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            var mq = "@-ms-viewport{width:auto!important}";
+            msViewportStyle.appendChild(document.createTextNode(mq));
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+        }
+    </script>
+    
+   
+</head>
+<body>
+   
+    <div id="applicationHost">
+        <center>
+            <h2>Loading...</h2>
+            <div class="progress progress-striped active page-progress-bar">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </center>
+    </div>
+
+    <!--In production use cdns for these libs-->
+        <script src="Scripts/jquery-1.9.1.js"></script>
+        <script src="Scripts/knockout-2.3.0.debug.js"></script>
+        <script src="Scripts/toastr.js"></script>
+        <script src="Scripts/Q.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Scripts/moment.js"></script>
+        <script src="Scripts/jquery.mmenu.min.js"></script>
+    <!--In production use cdns for these libs-->
+    <script>
+        var TogetherJSConfig_includeHashInUrl = true;
+        var TogetherJSConfig_dontShowClicks = true;
+    </script>
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="Scripts/datajs-1.0.3.js"></script>
+    <script src="Scripts/jaydata.js"></script>
+    <script src="Scripts/jaydataproviders/oDataProvider.js"></script>
+    <script src="Scripts/jaydataproviders/WebApiProvider.js"></script>
+
+    <script src="Scripts/require.js" data-main="App/main"></script>
+    <!--<script type="text/javascript" src="App/main-built.js"></script>-->
+    
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<nav id="menu" data-bind="mmenu: {}">
+	<ul>
+		<li>
+            <a id="open-icon-menu" href="#">
+				<i class="icon icon-white icon-list"></i>
+            </a>
+		</li>
+        <!-- ko foreach: router.routes -->
+        <!-- ko if: visible -->
+        <li>
+            
+            <a data-bind="attr: { 'href': ('#' + route) }" >
+				<i data-bind="attr: { 'class': icon }"></i>
+				<span data-bind="text: title"></span>
+            </a>
+            
+		</li>
+        <!-- /ko -->
+        <!-- /ko -->
+	</ul>
+</nav>

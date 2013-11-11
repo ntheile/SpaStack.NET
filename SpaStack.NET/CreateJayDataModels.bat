@@ -1,0 +1,1 @@
+﻿JaySvcUtil.exe -m http://localhost:65310/odata/$metadata -o App\services\db.js

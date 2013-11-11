@@ -1,0 +1,78 @@
+﻿<section>
+    <h2 class="page-title" data-bind="text: title"></h2>
+
+    <h3 id="features">Features</h3>
+
+    <p>
+        <a class="btn btn-large btn-primary" type="button" href="https://github.com/ntheile/Hot-Towel-Mobile" target="_blank">Github</a>
+        <button onclick="TogetherJS(this); return false;" class="btn btn-large btn-success"  target="_blank">Collaborate</button>
+    </p>
+    <br />
+    <ul>
+        <li>Adds Phonegap to Hot Towel for native deployments to Android / iPhone / Blackberry / Windows Phone / etc... so 
+        you can use native features such as the Camera and deploy your application to the app stores.</li>
+        <li>Removes the cshtml dependency and adds a plain index.html page</li>
+        <li>Adds a build script in conjuction with Durandal Weyland to output files in a PhoneGap Build format</li>
+        <li>The PhoneGapBuild.ps1 script will output the html/css/js in a folder titled 
+        <code>~\Desktop\PhoneGapBuildAppYYYY-MM-DD_HH-MM-SS</code></li>
+    </ul>
+
+    <pre>
+        src
+        www
+            |_App
+                |_main-built.js
+            |_Content
+                |_images
+                |_*
+            |_Scripts   
+                |_Durandal
+                |_*
+            |_config.xml
+            |_index.html
+    </pre>
+
+    <ul>
+        <li>Shows an example of pulling in a third party plugin and how to create a custom binding in the 
+            <code>services\binding-handlers.js</code> file. </li>
+        <li>Uses the <code>jquery.mmenu</code> plugin for navigation </li>
+    </ul>
+
+    <h3 id="tocreateaphonegapbuildapp">To Create a PhoneGap Build App</h3>
+
+    <ul>
+        <li>Review the docs here, https://build.phonegap.com/docs </li>
+        <li>To get up and running quickly...simply build the app in release mode then
+            run the <code>PhoneGapBuild.ps1</code> and it will output a folder on the desktop.</li>
+        <li>Zip the folder up and upload it to https://build.phonegap.com . 
+            An app will be built and available for download from the site.</li>
+    </ul>
+
+    <h3 id="tocreateappicons">To Create App Icons</h3>
+
+    <p>
+        You can generate Android icons using this <a href="http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html#foreground.type=image&amp;foreground.space.trim=0&amp;foreground.space.pad=0&amp;foreColor=fff%2C0&amp;crop=1&amp;backgroundShape=none&amp;backColor=fff%2C100" target="_blank">site</a>
+        
+        Then configure the <code>config.xml</code> to use them in the build
+    </p>
+
+    <h3 id="mmenuplugincustombindinghandler">mmenu plugin - custom binding handler</h3>
+
+    <p>To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in <br />
+    <code>services/binding-handlers.js</code>. This file is loaded at app start in main.js.</p>
+
+    <pre>
+    composition.addBindingHandler('mmenu', {
+        init: function (element, valueAccessor, 
+                    allBindingsAccessor, viewModel) {
+            $('a#open-icon-menu').click(function (e) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                $(element).trigger('toggle.mm');
+            });
+            $(element).mmenu();
+        }
+    });
+    </pre>
+
+</section>

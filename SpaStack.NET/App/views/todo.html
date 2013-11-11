@@ -1,0 +1,21 @@
+﻿<section>
+    <h2 class="page-title" data-bind="text: title"></h2>
+
+    <form class="column" id="addTaskForm" data-bind="submit: submitForm ">
+        <fieldset>
+            <legend>Add Todo</legend>
+            <input id="taskInput" />
+            <input type="submit" value="Add item" />
+        </fieldset>
+    </form>
+    <div class="column">
+        <h3>Task List, <a id="sync" data-bind="click: synchronizeData">Synchronize</a></h3>
+        <ul id="TaskList"></ul>
+    </div>
+    <div class="column">
+        <h3>Remote Task List</h3>
+        <ul id="RemoteTaskList"></ul>
+    </div>
+   
+
+</section>

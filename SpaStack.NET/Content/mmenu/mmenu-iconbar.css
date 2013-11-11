@@ -1,0 +1,30 @@
+﻿html, body
+{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+.mm-page
+{
+	background: inherit;
+	min-height: 100%;
+	position: relative;
+	margin-left: 60px;
+}
+.mm-menu
+{
+	position: fixed;
+}
+html.mm-opened .mm-page
+{
+	margin-left: 60px;
+}
+html.mm-opening .mm-page
+{
+	margin-left: -65px;
+}
+.mm-menu.mm-horizontal
+{
+	display: block;
+}

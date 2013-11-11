@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.hottowel.mobile"
+        version   = "1.0.0">
+
+      
+  <name>Hot Towel Mobile</name>
+
+  <description>
+    Hot Towel Mobile App
+  </description>
+  
+  <!--
+        Enable individual API permissions here.
+        The "device" permission is required for the 'deviceready' event.
+    -->
+  <feature name="http://api.phonegap.com/1.0/device" />
+  <feature name="http://api.phonegap.com/1.0/camera"/>
+  <feature name="http://api.phonegap.com/1.0/file"/>
+  <feature name="http://api.phonegap.com/1.0/geolocation"/>
+  <feature name="http://api.phonegap.com/1.0/network"/>
+  <feature name="http://api.phonegap.com/1.0/notification"/>
+
+  <!-- Plugins can also be added here. -->
+    <!--
+        <gap:plugin name="Example" />
+        A list of available plugins are available at https://build.phonegap.com/docs/plugins
+    -->
+    <!--<gap:plugin name="com.phonegap.plugins.facebookconnect">
+      <param name="APP_ID" value="" />
+      <param name="APP_NAME" value="Hot Towel Mobile" />
+    </gap:plugin>-->
+
+  <!--
+        Define access to external domains.
+
+        <access />            - a blank access tag denies access to all external resources.
+        <access origin="*" /> - a wildcard access tag allows access to all external resource.
+
+        Otherwise, you can specify specific domains:
+    -->
+  <access origin="*" />
+
+  <icon gap:platform="android" gap:density="mdpi" src="Content/images/ic_laucher_sm.png"  />
+  <icon gap:platform="android" gap:density="hdpi" src="Content/images/ic_laucher_m.png"  />
+  <icon gap:platform="android" gap:density="xhdpi" src="Content/images/ic_laucher_lg.png"  />
+  <icon gap:platform="blackberry" src="Content/images/ic_laucher_m.png" />
+  <icon gap:platform="blackberry" gap:state="hover" src="Content/images/ic_laucher_m.png" />
+  <icon gap:platform="ios" height="57" src="Content/images/ic_laucher_sm.png" width="57" />
+  <icon gap:platform="ios" height="72" src="Content/images/ic_laucher_m.png" width="72" />
+  <icon gap:platform="ios" height="114" src="Content/images/ic_laucher_lg.png" width="114" />
+  <icon gap:platform="ios" height="144" src="Content/images/ic_laucher_xl.png" width="144" />
+  <icon gap:platform="webos" src="Content/images/ic_laucher_m.png" />
+  <icon gap:platform="winphone" src="Content/images/ic_laucher_m.png" />
+  <icon gap:platform="winphone" gap:role="background" src="Content/images/ic_laucher_m.png" />
+
+</widget>
+
