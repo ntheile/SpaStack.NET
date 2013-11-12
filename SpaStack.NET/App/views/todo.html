@@ -4,19 +4,49 @@
     <form class="column" id="addTaskForm" data-bind="submit: submitForm ">
         <fieldset>
             <legend>Add Todo</legend>
-            <input id="taskInput" />
+            <input data-bind="value: taskInput" id="taskInput" />
             <input type="submit" value="Add item" />
         </fieldset>
     </form>
     <div class="column">
-        <h3>Task List, <a id="sync" data-bind="click: synchronizeData">Synchronize</a></h3>
-        <ul id="TaskList"></ul>
+        <h3>Local Task List, <a id="sync" data-bind="click: synchronizeData">Synchronize</a></h3>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Is Synchronized</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: localTodos">
+                <tr data-bind="click: $root.selectedTodo ">
+                    <td contenteditable="true" data-bind="text: Task"></td>
+                    <td data-bind="text: InSync"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
     </div>
     <div class="column">
         <h3>Remote Task List</h3>
-        <ul id="RemoteTaskList">
-            <li>loading...</li>
-        </ul>
+      
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Is Synchronized</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: remoteTodos">
+                <tr>
+                    <td contenteditable="true" data-bind="text: Task"></td>
+                    <td data-bind="text: InSync"></td>
+                </tr>
+            </tbody>
+        </table>
+
     </div>
    
 
