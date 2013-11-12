@@ -3,21 +3,33 @@
     //#region Internal Methods
     var title = 'Todo List';
     
+    // this code runs each time the page is visited
     function activate() {
         logger.log(title + ' View Activated', null, title, true);
 
+        var promise,
+            promise1,
+            promise2;
 
-        datacontext.offlinedb.onReady(listLocalTodoItems);
-        datacontext.onlinedb.onReady(listRemoteTodoItems);
 
-        return false;
+        promise1 = datacontext.ready().then(function () {
+            listLocalTodoItems();
+            promise2 = listRemoteTodoItems();
+        });
+
+        promise = $.when(['promise1', 'promise2']);
+        
+        // show the page when the promise is returned
+        // promise1 = when the datacontext is ready
+        // promise 2 = when the remote todos items are returned
+        return promise;
+       
     }
 
     function deactivate() {
         app.lastPage = title;
         toastr.info("lastPage:" + app.lastPage);
     }
-
 
     function showTodoItem(todoItem, list) {
         var li = $('<li>').text(todoItem.Task);
@@ -34,11 +46,20 @@
     }
 
     function listRemoteTodoItems() {
+
         $('#RemoteTaskList').empty();
-       
-        datacontext.onlinedb.TodoItem.forEach(function (todoItem) {
+
+        var promise = datacontext.onlinedb.TodoItem.forEach(function (todoItem) {
             showTodoItem(todoItem, $('#RemoteTaskList'));
         });
+       
+        //var promise = datacontext.onlinedb.TodoItem().then(function (todo) {
+        //    todo.forEach(function (todoItem) {
+        //        showTodoItem(todoItem, $('#RemoteTaskList'));
+        //    })
+        //});
+
+        return promise;
     }
 
     function submitForm(evt) {
@@ -60,18 +81,14 @@
 
     function synchronizeData() {
 
-
         var dirtyPromise = datacontext.offlinedb
                         .TodoItem
                         .filter("it.InSync == false").toArray();
          
-       
         dirtyPromise.done(function (dirtyItems) {
 
-            
             console.log("dirty");
             console.log(dirtyItems);
-
 
             //add the dirty item to the online db
             datacontext.onlinedb.addMany(dirtyItems);
@@ -91,13 +108,14 @@
                 listRemoteTodoItems();
             });
 
-        })
+        });
 
     }
 
     //#endregion
 
 
+    // public code that is exposed to the view model
     var vm = {
         activate: activate,
         deactivate: deactivate,

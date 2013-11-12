@@ -15,7 +15,12 @@
             databaseName: 'MyDb'
         });
 
-        
+        // return a promise when all the database instances are ready
+        var ready = function () {
+            return $.when(offlinedb.onReady(), onlinedb.onReady()).then(function () {
+                toastr.info('database instances ready');
+            });
+        };
 
         //function synchronizeData() {
         //    offlinedb.onReady(function () {
@@ -86,11 +91,14 @@
         var datacontext = {
             primeData: primeData,
             onlinedb: onlinedb,
-            offlinedb: offlinedb//,
+            offlinedb: offlinedb,
+            ready: ready//,
             //synchronizeData: synchronizeData
         };
 
+        
         return datacontext;
+
 
         //#region Internal methods        
 
