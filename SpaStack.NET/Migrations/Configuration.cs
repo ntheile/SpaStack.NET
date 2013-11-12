@@ -1,12 +1,12 @@
 // Run these commands to update the database schemas when you modify a model
-// Add-Migration 201302041652147_AddUserRole
+// Add-Migration FirstComment
 // Update-Database
 
 // to get the sql script to push to prod db's
 // Update-Database -Script -SourceMigration $InitialDatabase
 
 // to get script after model changes have been made
-// Update-Database -Script -SourceMigration:InitialCreate -TargetMigration:"AddUserRoles"
+// Update-Database -Script -SourceMigration:InitialCreate -TargetMigration:"FirstComment"
 namespace SpaStack.NET.Migrations
 {
     using SpaStack.NET.Models;
@@ -41,8 +41,8 @@ namespace SpaStack.NET.Migrations
 
             context.TodoItems.AddOrUpdate(
               p => p.Task,
-              new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = false, Task = "Wash the car" },
-              new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = false, Task = "Walk the dog" }
+              new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = true, Task = "Wash the car" },
+              new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = true, Task = "Walk the dog" }
             );
             
 

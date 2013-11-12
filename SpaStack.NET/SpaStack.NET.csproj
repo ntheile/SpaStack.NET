@@ -199,33 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311102135260_Init.cs" />
-    <Compile Include="Migrations\201311102135260_Init.Designer.cs">
-      <DependentUpon>201311102135260_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311102145268_AddedKey.cs" />
-    <Compile Include="Migrations\201311102145268_AddedKey.Designer.cs">
-      <DependentUpon>201311102145268_AddedKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311102148450_AddedKey2.cs" />
-    <Compile Include="Migrations\201311102148450_AddedKey2.Designer.cs">
-      <DependentUpon>201311102148450_AddedKey2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311110049123_AddedNewGuid.cs" />
-    <Compile Include="Migrations\201311110049123_AddedNewGuid.Designer.cs">
-      <DependentUpon>201311110049123_AddedNewGuid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311110053382_RemoveGuidAnnontaion.cs" />
-    <Compile Include="Migrations\201311110053382_RemoveGuidAnnontaion.Designer.cs">
-      <DependentUpon>201311110053382_RemoveGuidAnnontaion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311110058197_AddedGuidAnnontaionIdentity.cs" />
-    <Compile Include="Migrations\201311110058197_AddedGuidAnnontaionIdentity.Designer.cs">
-      <DependentUpon>201311110058197_AddedGuidAnnontaionIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311110429147_RemovedAnnotation.cs" />
-    <Compile Include="Migrations\201311110429147_RemovedAnnotation.Designer.cs">
-      <DependentUpon>201311110429147_RemovedAnnotation.cs</DependentUpon>
+    <Compile Include="Migrations\201311121931252_FirstComment.cs" />
+    <Compile Include="Migrations\201311121931252_FirstComment.Designer.cs">
+      <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -434,26 +410,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311102135260_Init.resx">
-      <DependentUpon>201311102135260_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311102145268_AddedKey.resx">
-      <DependentUpon>201311102145268_AddedKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311102148450_AddedKey2.resx">
-      <DependentUpon>201311102148450_AddedKey2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311110049123_AddedNewGuid.resx">
-      <DependentUpon>201311110049123_AddedNewGuid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311110053382_RemoveGuidAnnontaion.resx">
-      <DependentUpon>201311110053382_RemoveGuidAnnontaion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311110058197_AddedGuidAnnontaionIdentity.resx">
-      <DependentUpon>201311110058197_AddedGuidAnnontaionIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311110429147_RemovedAnnotation.resx">
-      <DependentUpon>201311110429147_RemovedAnnotation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311121931252_FirstComment.resx">
+      <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

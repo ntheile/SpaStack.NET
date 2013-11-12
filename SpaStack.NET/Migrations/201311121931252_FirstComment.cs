@@ -3,7 +3,7 @@ namespace SpaStack.NET.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Init : DbMigration
+    public partial class FirstComment : DbMigration
     {
         public override void Up()
         {

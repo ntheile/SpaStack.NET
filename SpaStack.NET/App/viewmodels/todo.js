@@ -16,11 +16,12 @@
 
 
         promise1 = datacontext.ready().then(function () {
-            listLocalTodoItems();
-            promise2 = listRemoteTodoItems();
+            listLocalTodoItems();   
         });
 
-        promise = $.when(['promise1', 'promise2']);
+        promise2 = listRemoteTodoItems();
+
+        promise = $.when(promise1, promise2);
         
         // show the page when the promise is returned
         // promise1 = when the datacontext is ready
@@ -75,12 +76,23 @@
 
     function synchronizeData() {
 
-        var getDirtyItemsPromise = datacontext.offlinedb
-                        .TodoItem
-                        .filter("it.InSync == false").toArray();
-         
-        getDirtyItemsPromise.done(function (dirtyItems) {
+        var dirtyTodo;
 
+        var getDirtyItemsPromise = datacontext.offlinedb
+                                              .TodoItem
+                                              .filter("it.InSync == false").toArray();
+        // 0. When the dirty items are returned
+        $.when(getDirtyItemsPromise).then(function (dirtyItems) {
+            
+            saveDirtyTodosToServer(dirtyItems)
+                .then(updateRemoteTodosToLocally(dirtyItems))
+                .then(listRemoteTodoItems())
+                .then(listLocalTodoItems());
+                
+        });
+
+        // 1. SaveDirtyTodosToServer
+        function saveDirtyTodosToServer(dirtyItems) {
             console.log("dirty");
             console.log(dirtyItems);
 
@@ -89,33 +101,19 @@
 
             // save dirty items to server
             toastr.info('saving... dirty items to server');
-            var dirtySavePromise = datacontext.onlinedb.saveChanges().then(syncRemoteChangedToLocal(dirtyItems));
+            return datacontext.onlinedb.saveChanges();
+        }
 
-            function syncRemoteChangedToLocal(dirtyItems) {
+        // 2. UpdateRemoteTodosToLocally
+        function updateRemoteTodosToLocally(dirtyItems) {
+            dirtyItems.forEach(function (todoItem) {
+                datacontext.offlinedb.attach(todoItem);
+                todoItem.InSync = true;
+            });
+            return datacontext.offlinedb.saveChanges();
+        }
 
-                toastr.info('syncRemoteChangedToLocal');
-
-                // set them as InSync on offline db
-                dirtyItems.forEach(function (todoItem) {
-                    datacontext.offlinedb.attach(todoItem);
-                    todoItem.InSync = true;
-                });
-
-                // save and reload
-                datacontext.offlinedb.saveChanges().then(function () {
-                    toastr.info('saved offline synd data');
-                
-                    // update localTodos
-                    datacontext.offlinedb.TodoItem.toArray(localTodos);
-                    //update remote Todos
-                    datacontext.onlinedb.TodoItem.toArray(remoteTodos);
-
-                });
-            }
-
-        });
-
-        
+        // 3. Update obserable in remoteTodos
 
     }
 
@@ -156,4 +154,5 @@
 //        implement edits and saves with this
 //        http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
 // 2. when sync is clicked have it update the localTodos and remoteTodos more eleganlty the ko way
-// 3. promise on save returned
+//     on first load the sync remoteObservable does not always work
+// 3. Add loader bar between views
