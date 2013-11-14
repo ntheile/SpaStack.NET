@@ -2,13 +2,14 @@
 =================
 
 
-SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from Durandal.js / JayData.js / ASP.NET Web API 2 oData. It allows you to maintain one slim
-codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows MVC patterns on the server side
-and MVVM patterns in the client side.
+> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from Durandal.js / JayData.js / ASP.NET Web API 2 oData. It allows you to maintain one slim
+> codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows MVC patterns on the server side
+> and MVVM patterns in the client side.
 
 
-Build an app in 1 line of code (maybe a few more ...)
-------------------------------------------------------
+Build an app in 1 line of code 
+-------------------------------
+> maybe a few more ;)
 
 1.Create the `server side model` (C#)
 
@@ -97,52 +98,25 @@ Build an app in 1 line of code (maybe a few more ...)
 It uses the following frameworks:
 --------------------------------
 
+Frontend
+--------
 
-**Frontend**
+> JayData.js – rich data management
+> Durandal.js – navigation, app life cycle and View composition
+> Knockout.js – data bindings
+> Require.js – Modularity with AMD and optimization
+> Toastr.js – pop-up messages
+> Twitter Bootstrap – robust CSS styling
+> Phonegap - Interacting with native mobile/tablet API's in javascript
+> jQuery - DOM
+> jQuery.mmenu - responsive side menu
 
-* JayData.js – rich data management
-* Durandal.js – navigation, app life cycle and View composition
-* Knockout.js – data bindings
-* Require.js – Modularity with AMD and optimization
-* Toastr.js – pop-up messages
-* Twitter Bootstrap – robust CSS styling
-* Phonegap - Interacting with native mobile/tablet API's in javascript
-* jQuery - DOM
-* jQuery.mmenu - responsive side menu
+Backend
+-------
 
-**Backend** 
-
-* ASP.NET Web API 2 oData Service
-
-
-![Screenshot](HotTowelMobile/Content/images/readme.png)
+> ASP.NET Web API 2 oData Service
 
 
-Features
----------
-* Responsive design
-* Adds Phonegap to Hot Towel for native deployments to Android / iPhone / Blackberry / Windows Phone / etc... so 
-you can use native features such as the Camera and deploy your application to the app stores.
-* Removes the cshtml dependency and adds a plain index.html page
-* Adds a build script in conjuction with Durandal Weyland to output files in a PhoneGap Build format
-* The PhoneGapBuild.ps1 script will output the html/css/js in a folder titled 
-`~\Desktop\PhoneGapBuildAppYYYY-MM-DD_HH-MM-SS`
-<pre>
-	src
-	www
-		|_App
-			|_main-built.js
-		|_Content
-			|_images
-			|_*
-		|_Scripts	
-			|_Durandal
-			|_*
-		|_config.xml
-		|_index.html
-</pre>
-* Shows an example of pulling in a third party plugin and how to create a custom binding in the `services\binding-handlers.js` file. 
-* Uses the `jquery.mmenu` plugin for navigation 
 
 To Create a PhoneGap Build App
 --------------------------------
