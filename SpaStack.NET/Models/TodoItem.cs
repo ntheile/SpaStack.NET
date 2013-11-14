@@ -9,8 +9,9 @@ namespace SpaStack.NET.Models
 {
     public class TodoItem
     {
-        //[Key]
+        
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid Id { get; set; }
         public String Task { get; set; }
         public Boolean Completed { get; set; }

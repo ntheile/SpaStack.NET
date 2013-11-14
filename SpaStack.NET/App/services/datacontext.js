@@ -15,6 +15,7 @@
             databaseName: 'MyDb'
         });
 
+        
         // return a promise when all the database instances are ready
         var ready = function () {
             return $.when(offlinedb.onReady(), onlinedb.onReady()).then(function () {
@@ -22,45 +23,7 @@
             });
         };
 
-        //function synchronizeData() {
-        //    offlinedb.onReady(function () {
-        //        offlinedb
-        //       .TodoItem
-        //       .filter("it.InSync === false")
-        //       .toArray(function (todoItems) {
-
-        //           todoItems.forEach(function (todo) {
-        //               onlinedb.add(todo);
-        //               onlinedb.saveChanges().done(function(data){
-                           
-        //                    offlinedb.attach(data);
-        //                    data.InSync = true;
-
-        //                    //listLocalTodoItems();
-        //                    //listRemoteTodoItems();
-  
-        //               });
-
-        //           });
-
-
-        //           //onlinedb.addMany(todoItems);
-        //           //onlinedb.saveChanges(function () {
-        //           //    todoItems.forEach(function (todoItem) {
-        //           //        offlinedb.attach(todoItem);
-        //           //        todoItem.InSync = true;
-        //           //    });
-        //           //    offlinedb.saveChanges(function () {
-        //           //        //listLocalTodoItems();
-        //           //        //listRemoteTodoItems();
-        //           //    });
-        //           //});
-        //       })
-        //    });
-        //}
-
-        //onlinedb.onReady(synchronizeData);
-        
+   
         
 
         var primeData = function () {

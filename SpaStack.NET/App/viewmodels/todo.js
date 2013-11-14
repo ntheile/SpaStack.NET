@@ -5,6 +5,7 @@
     var remoteTodos = new ko.observableArray();
     var localTodos = new ko.observableArray();
     var taskInput = new ko.observable();
+   
     
     // this code runs each time the page is visited
     function activate() {
@@ -122,6 +123,8 @@
         console.log('todo selected');
         console.log(data.Id());
     }
+
+   
 
     //#endregion
 

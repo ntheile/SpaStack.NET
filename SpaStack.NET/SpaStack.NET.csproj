@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201311121931252_FirstComment.Designer.cs">
       <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201311132137319_AddedKeyOnTodoItem.cs" />
+    <Compile Include="Migrations\201311132137319_AddedKeyOnTodoItem.Designer.cs">
+      <DependentUpon>201311132137319_AddedKeyOnTodoItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -412,6 +416,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201311121931252_FirstComment.resx">
       <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311132137319_AddedKeyOnTodoItem.resx">
+      <DependentUpon>201311132137319_AddedKeyOnTodoItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
