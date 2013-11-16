@@ -4,12 +4,15 @@
 
         composition.addBindingHandler('mmenu', {
             init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
+
+                $(element).mmenu();
+
                 $('a#open-icon-menu').click(function (e) {
                     e.stopImmediatePropagation();
                     e.preventDefault();
                     $(element).trigger('toggle.mm');
                 });
-                $(element).mmenu();
+               
 
             }
         });

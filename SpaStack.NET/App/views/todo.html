@@ -21,10 +21,7 @@
             </thead>
             <tbody data-bind="foreach: localTodos">
                 <tr>
-                    <td>
-                        <input data-bind="click: $root.editTodo, event: { focusout : function() { $root.updateTodo($data) } }, value: Task " />
-                       
-                    </td>
+                    <td data-bind ="click: $root.editTodo, text: Task "></td>
                     <td data-bind="text: InSync"></td>
                 </tr>
             </tbody>

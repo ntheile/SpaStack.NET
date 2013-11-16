@@ -15,11 +15,11 @@ require.config({
 define('jquery', function () { return jQuery; });
 define('knockout', ko);
 
-define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'plugins/router', 'services/logger'], boot);
+define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'plugins/router', 'services/logger', 'services/binding-handlers'], boot);
 
-function boot (app, viewLocator, system, router, logger) {
+function boot (app, viewLocator, system, router, logger, bindings) {
 
-    var bindings = require(['services/binding-handlers']);
+    //var bindings = require(['services/binding-handlers']);
 
     // Enable debug message to show in the console 
     system.debug(true);  
