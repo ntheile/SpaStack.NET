@@ -6,7 +6,7 @@
 > codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows MVC patterns on the server side
 > and MVVM patterns in the client side.
 
-![Screenshot](SpaStack.NET/Content/images/spastack.png)
+![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
 Build an app in 1 line of code 
 -------------------------------
