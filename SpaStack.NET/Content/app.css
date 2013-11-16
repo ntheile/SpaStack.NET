@@ -24,13 +24,13 @@
     text-decoration: none;
     color: #0081C2;
 }
-    span.title {
-        background: url(/content/images/icon.png) no-repeat left center;
-        -moz-background-size: 45px;
-        -o-background-size: 45px;
-        -webkit-background-size: 45px;
-        background-size: 45px;
-    }
+span.title {
+    background: url(/content/images/icon.png) no-repeat left center;
+    -moz-background-size: 45px;
+    -o-background-size: 45px;
+    -webkit-background-size: 45px;
+    background-size: 45px;
+}
 
 .page-splash
 {

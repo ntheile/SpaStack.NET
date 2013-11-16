@@ -15,11 +15,11 @@
             });
 
             var routes = [
-                { route: '', moduleId: 'home', title: 'Home', visible: false, icon: '' },
+                { route: '', moduleId: 'todo', title: 'Todo', visible: false, icon: '' },
+                { route: 'todo', moduleId: 'todo', title: 'Todo', visible: true, icon: 'icon icon-white icon-lock' },
                 { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'icon icon-white icon-home' },
                 { route: 'details', moduleId: 'details', title: 'Details', visible: true, icon: 'icon icon-white icon-arrow-right' },
-                { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' },
-                { route: 'todo', moduleId: 'todo', title: 'Todo', visible: true, icon: 'icon icon-white icon-lock' }
+                { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' }
             ];
 
 

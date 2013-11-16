@@ -26,8 +26,6 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
 
         promise = $.when(promise1, promise2);
         
-       
-
         // show the page when the promise is returned
         // promise1 = when the datacontext is ready
         // promise 2 = when the remote todos items are returned
@@ -87,12 +85,12 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
         var getDirtyItemsPromise = datacontext.offlinedb
                                               .TodoItem
                                               .filter("it.InSync == false").toArray();
+
         // 0. When the dirty items are returned
         $.when(getDirtyItemsPromise).then(function (dirtyItems) {
             
             saveDirtyTodosToServer(dirtyItems)
                 .then(updateRemoteTodosToLocally(dirtyItems));
-                
 
         });
 
@@ -158,8 +156,6 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
         
     }
 
-   
-
     //#endregion
 
 
@@ -188,12 +184,11 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
 
 
 
-//todo
+// TODO
 // * follow this tut more closely for jaydata and ko http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
 //        implement edits and saves with this
 //        http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs and http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
 // * when sync is clicked have it update the localTodos and remoteTodos more eleganlty the ko way
-//     on first load the sync remoteObservable does not always work
 // * Add offline js to detect when offline to online event happen to fire the sync method
 // * Add offline manifest
 // * add validation using jaydata + knockout validation

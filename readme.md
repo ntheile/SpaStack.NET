@@ -2,10 +2,11 @@
 =================
 
 
-> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from Durandal.js / JayData.js / ASP.NET Web API 2 oData. It allows you to maintain one slim
+> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` . It allows you to maintain one slim
 > codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows MVC patterns on the server side
 > and MVVM patterns in the client side.
 
+![Screenshot](SpaStack.NET/Content/images/spastack.png)
 
 Build an app in 1 line of code 
 -------------------------------
