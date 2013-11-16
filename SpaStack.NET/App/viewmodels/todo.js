@@ -1,11 +1,13 @@
-﻿define(['services/logger', 'durandal/app', 'services/datacontext'], function (logger, app, datacontext) {
+﻿
+define(['services/logger', 'durandal/app', 'services/datacontext'], function (logger, app, datacontext) {
 
     //#region Internal Methods
     var title = 'Todo List';
     var remoteTodos = new ko.observableArray();
     var localTodos = new ko.observableArray();
     var taskInput = new ko.observable();
-   
+    var selectedTodo = ko.observable(null);
+    
     
     // this code runs each time the page is visited
     function activate() {
@@ -24,6 +26,8 @@
 
         promise = $.when(promise1, promise2);
         
+       
+
         // show the page when the promise is returned
         // promise1 = when the datacontext is ready
         // promise 2 = when the remote todos items are returned
@@ -38,9 +42,9 @@
 
   
     function listLocalTodoItems() {
- 
+        
         datacontext.offlinedb.TodoItem.toArray(localTodos);
-
+        
     }
 
     function listRemoteTodoItems() {
@@ -50,6 +54,7 @@
         return promise;
     }
 
+    // add a todo item
     function submitForm(evt) {
 
         // create new Todo instance
@@ -86,10 +91,9 @@
         $.when(getDirtyItemsPromise).then(function (dirtyItems) {
             
             saveDirtyTodosToServer(dirtyItems)
-                .then(updateRemoteTodosToLocally(dirtyItems))
-                .then(listRemoteTodoItems())
-                .then(listLocalTodoItems());
+                .then(updateRemoteTodosToLocally(dirtyItems));
                 
+
         });
 
         // 1. SaveDirtyTodosToServer
@@ -97,7 +101,7 @@
             console.log("dirty");
             console.log(dirtyItems);
 
-            //add the dirty item to the online db
+            //add the dirty item to the online db observable
             datacontext.onlinedb.addMany(dirtyItems);
 
             // save dirty items to server
@@ -105,23 +109,53 @@
             return datacontext.onlinedb.saveChanges();
         }
 
-        // 2. UpdateRemoteTodosToLocally
+        // 2. UpdateRemoteTodosToLocally observables
         function updateRemoteTodosToLocally(dirtyItems) {
+
+            // update remoteTodos Observable
+            dirtyItems.forEach(function (todoItem) {
+                todoItem.InSync = true;
+                //remoteTodos.push(todoItem);
+            });
+
+            // update the localTodoes with InSync (not the boy band) set to true
             dirtyItems.forEach(function (todoItem) {
                 datacontext.offlinedb.attach(todoItem);
                 todoItem.InSync = true;
             });
-            return datacontext.offlinedb.saveChanges();
-        }
+            return datacontext.offlinedb.saveChanges()
+                                         .then(listLocalTodoItems())
+                                         .then(listRemoteTodoItems());
 
-        // 3. Update obserable in remoteTodos
+        }
 
     }
 
 
-    function selectedTodo(data, event) {
-        console.log('todo selected');
-        console.log(data.Id());
+    function updateTodo() {
+       
+        var newTodo = selectedTodo();
+
+        return promise = datacontext.offlinedb
+                   .TodoItem
+                   .filter("Id", "==", newTodo.Id).toArray()
+                   .then(function (items) {
+                       items.forEach(function (todoItem) {
+                           datacontext.offlinedb.attach(todoItem);
+                           todoItem.Task = newTodo.Task;
+                           todoItem.InSync = false;
+                       });
+                       return datacontext.offlinedb.saveChanges().then(function () {
+                           //synchronizeData();
+                       });
+                   });
+
+    }
+
+    function editTodo(oldTodo) {
+        oldTodo.InSync = false;
+        selectedTodo(oldTodo);
+        
     }
 
    
@@ -142,6 +176,8 @@
         remoteTodos: remoteTodos,
         localTodos: localTodos,
         taskInput: taskInput,
+        updateTodo: updateTodo,
+        editTodo: editTodo,
         selectedTodo: selectedTodo
     };
 
@@ -153,9 +189,11 @@
 
 
 //todo
-// 1. follow this tut more closely for jaydata and ko http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
+// * follow this tut more closely for jaydata and ko http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
 //        implement edits and saves with this
-//        http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
-// 2. when sync is clicked have it update the localTodos and remoteTodos more eleganlty the ko way
+//        http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs and http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
+// * when sync is clicked have it update the localTodos and remoteTodos more eleganlty the ko way
 //     on first load the sync remoteObservable does not always work
-// 3. Add loader bar between views
+// * Add offline js to detect when offline to online event happen to fire the sync method
+// * Add offline manifest
+// * add validation using jaydata + knockout validation

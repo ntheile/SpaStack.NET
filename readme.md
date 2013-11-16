@@ -52,7 +52,6 @@ Build an app in 1 line of code
 
 ```
 
-
 4.Wire up a `data context` instance on your client (JS)
 
 ```js
@@ -64,7 +63,7 @@ Build an app in 1 line of code
 
 ```
 
-5. Consume the data and display it using a knockout observableArray (JS)
+5.Consume the data and display it using a knockout observableArray (JS)
 
 ```js
 
@@ -91,9 +90,6 @@ Build an app in 1 line of code
 	</table>
 
 ```
-
-
-
 
 It uses the following frameworks:
 --------------------------------
