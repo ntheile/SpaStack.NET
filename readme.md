@@ -3,8 +3,16 @@
 
 
 > SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` . It allows you to maintain one slim
-> codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows MVC patterns on the server side
-> and MVVM patterns in the client side.
+> codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows `RESTful OData MVC` patterns on the server side
+> and `MVVM` patterns in the client side.
+
+> **Examples of desireable things SpaStack can do:**
+> * Paging
+> * Validation
+> * Aync Promises
+> * Offline - IndexedDB, WebSql, LocalStorage providers
+> * $expand OData REST entities
+> * MVVM data-bind to observables in your view
 
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
@@ -149,3 +157,25 @@ composition.addBindingHandler('mmenu', {
     }
 });
 </pre>
+
+
+Automated Builds with Weyland
+------------------------------
+Features
+
+* JS Linting
+* JS Minification
+* RequireJS Optimization
+
+Usage
+
+* Install NodeJS and NPM
+* On the command line execute npm install -g weyland
+* Navigate into your web project and place a weyland-config file at the root.
+* From your project directory execute weyland build
+
+
+Autogenerate appcache manifest with Fiddler
+--------------------------------------------
+
+http://blogs.msdn.com/b/fiddler/archive/2011/09/15/generate-html5-appcache-manifests-using-fiddler-export.aspx

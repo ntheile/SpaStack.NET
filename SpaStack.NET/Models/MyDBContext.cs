@@ -20,6 +20,12 @@ namespace SpaStack.NET.Models
         }
 
         public System.Data.Entity.DbSet<SpaStack.NET.Models.TodoItem> TodoItems { get; set; }
+
+        public System.Data.Entity.DbSet<SpaStack.NET.Models.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<SpaStack.NET.Models.Supplier> Suppliers { get; set; }
+
+        public System.Data.Entity.DbSet<SpaStack.NET.Models.Product> Products { get; set; }
     
     }
 }

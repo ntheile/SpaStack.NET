@@ -1,5 +1,7 @@
 ﻿<!DOCTYPE html>
-<html>
+<!--<html>-->
+<!--uncomment this for the app to work offline-->
+<html manifest="app.manifest">
 <head>
     <title>SpaStack.NET</title>
     <meta charset="utf-8">
@@ -10,12 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--In production use cdns for these libs-->
-        <link href="Content/ie10mobile.css" rel="stylesheet">
-        <link href="Content/bootstrap.css" rel="stylesheet">
-        <link href="Content/bootstrap-responsive.css" rel="stylesheet">
-        <link href="Content/durandal.css" rel="stylesheet">
-        <link href="Content/toastr.css" rel="stylesheet">
-       
+    <link href="Content/ie10mobile.css" rel="stylesheet">
+    <link href="Content/bootstrap.css" rel="stylesheet">
+    <link href="Content/bootstrap-responsive.css" rel="stylesheet">
+    <link href="Content/durandal.css" rel="stylesheet">
+    <link href="Content/toastr.css" rel="stylesheet">
+
     <!--In production use cdns for these libs-->
 
 
@@ -35,11 +37,11 @@
             document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
         }
     </script>
-    
-   
+
+
 </head>
 <body>
-   
+
     <div id="applicationHost">
         <center>
             <h2>Loading...</h2>
@@ -50,13 +52,15 @@
     </div>
 
     <!--In production use cdns for these libs-->
-        <script src="Scripts/jquery-1.9.1.js"></script>
-        <script src="Scripts/knockout-3.0.0.js"></script>
-        <script src="Scripts/toastr.js"></script>
-        <script src="Scripts/Q.js"></script>
-        <script src="Scripts/bootstrap.js"></script>
-        <script src="Scripts/moment.js"></script>
-        <script src="Scripts/jquery.mmenu.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/jquery.validate.js"></script>
+    <script src="Scripts/knockout-3.0.0.js"></script>
+    <script src="Scripts/knockout.validation.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/Q.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/moment.js"></script>
+    <script src="Scripts/jquery.mmenu.min.js"></script>
     <!--In production use cdns for these libs-->
     <script>
         var TogetherJSConfig_includeHashInUrl = true;
@@ -69,11 +73,11 @@
     <script src="Scripts/jaydata.js"></script>
     <script src="Scripts/jaydataproviders/oDataProvider.js"></script>
     <script src="Scripts/jaydataproviders/WebApiProvider.js"></script>
-    <!--<script src="Scripts/jaydatamodules/knockout.js"></script>-->
+    <script src="Scripts/jaydatamodules/knockout.js"></script>
 
     <script src="Scripts/require.js" data-main="App/main"></script>
     <!--<script type="text/javascript" src="App/main-built.js"></script>-->
-    
-    
+
+
 </body>
 </html>

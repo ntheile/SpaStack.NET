@@ -38,18 +38,16 @@ namespace SpaStack.NET
             // /odata/$metadata
             // http://blogs.msdn.com/b/webdev/archive/2013/01/29/getting-started-with-asp-net-webapi-odata-in-3-simple-steps.aspx
             // http://jaydata.org/blog/how-to-use-jaydata-with-asp.net-web-api---i
-            //ODataConventionModelBuilder modelBuilder = new ODataConventionModelBuilder();
-            //modelBuilder.EntitySet<TodoItem>("TodoItems");
-            //IEdmModel model = modelBuilder.GetEdmModel();
-            //config.Routes.MapODataRoute(
-            //    routeName: "OData", 
-            //    routePrefix: "odata", 
-            //    model: model,
-            //    batchHandler: new PathFixODataBatchHandler(GlobalConfiguration.DefaultServer)
-            //);
-
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();          
-            builder.EntitySet<TodoItem>("TodoItem");
+            builder.EntitySet<TodoItem>("TodoItems");
+            builder.EntitySet<Category>("Categories");
+            builder.EntitySet<Product>("Products");
+            builder.EntitySet<Supplier>("Suppliers"); 
+            
+            //
+            // TODO Put your create models here
+            //
+
             config.Routes.MapODataRoute(
                 "OData", 
                 "odata", 
@@ -57,7 +55,7 @@ namespace SpaStack.NET
                 batchHandler: new PathFixODataBatchHandler(GlobalConfiguration.DefaultServer)
             );
 
-            //config.EnableQuerySupport();
+            config.EnableQuerySupport();
             
 
         }

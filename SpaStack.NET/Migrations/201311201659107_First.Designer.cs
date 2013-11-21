@@ -7,13 +7,13 @@ namespace SpaStack.NET.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class FirstComment : IMigrationMetadata
+    public sealed partial class First : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FirstComment));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(First));
         
         string IMigrationMetadata.Id
         {
-            get { return "201311121931252_FirstComment"; }
+            get { return "201311201659107_First"; }
         }
         
         string IMigrationMetadata.Source

@@ -19,7 +19,7 @@ namespace SpaStack.NET.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SpaStack.NET.Models.MyDBContext context)
@@ -44,7 +44,8 @@ namespace SpaStack.NET.Migrations
               new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = true, Task = "Wash the car" },
               new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = true, Task = "Walk the dog" }
             );
-            
+
+   
 
         }
     }

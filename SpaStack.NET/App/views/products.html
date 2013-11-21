@@ -1,0 +1,37 @@
+﻿<section>
+    <h2 class="page-title" data-bind="text: title"></h2>
+
+    <ul>
+        <li>
+            Example of paging using OData
+        </li>
+        <li>
+            Example of using $expand via JayData .include("Category")
+        </li>
+    </ul>
+
+    <div class="column" >
+        <h3>Local Task List</h3>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: products">
+                <tr>
+                    <td data-bind ="text: Name "></td>
+                    <td data-bind="text: Price"></td>
+                    <td data-bind="text: Category().Name"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a data-bind="click: prevPage, visible: !isfirstpage()"><< back</a>&nbsp;&nbsp;<a data-bind="click: nextPage, visible: !islastpage()">next >></a>
+
+    </div>
+
+</section>

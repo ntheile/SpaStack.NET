@@ -5,12 +5,12 @@
     function (system, db, logger) {
        
         // Database Instances
-        var onlinedb = new MyDb({
+        var onlinedb = new Default.Container({
             name: 'oData',
             oDataServiceHost: '/odata'
         });
 
-        var offlinedb = new MyDb({
+        var offlinedb = new Default.Container({
             name: 'local',
             databaseName: 'MyDb'
         });
@@ -27,26 +27,7 @@
         
 
         var primeData = function () {
-            //var promise = Q.all([
-            //    getLookups(),
-            //    getSpeakerPartials(null, true)])
-            //    .then(applyValidators);
-
-            //return promise.then(success);
-
-            //function success() {
-            //    datacontext.lookups = {
-            //        rooms: getLocal('Rooms', 'name', true),
-            //        tracks: getLocal('Tracks', 'name', true),
-            //        timeslots: getLocal('TimeSlots', 'start', true),
-            //        speakers: getLocal('Persons', orderBy.speaker, true)
-            //    };
-            //    log('Primed data', datacontext.lookups);
-            //}
-
-            //function applyValidators() {
-            //    model.applySessionValidators(manager.metadataStore);
-            //}
+            // TODO - prime data that is shared by views
 
         };
 

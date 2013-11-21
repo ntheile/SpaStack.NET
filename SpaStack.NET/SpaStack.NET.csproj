@@ -194,18 +194,17 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SuppliersController.cs" />
+    <Compile Include="Controllers\TodoItemsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311121931252_FirstComment.cs" />
-    <Compile Include="Migrations\201311121931252_FirstComment.Designer.cs">
-      <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201311132137319_AddedKeyOnTodoItem.cs" />
-    <Compile Include="Migrations\201311132137319_AddedKeyOnTodoItem.Designer.cs">
-      <DependentUpon>201311132137319_AddedKeyOnTodoItem.cs</DependentUpon>
+    <Compile Include="Migrations\201311201659107_First.cs" />
+    <Compile Include="Migrations\201311201659107_First.Designer.cs">
+      <DependentUpon>201311201659107_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -222,14 +221,17 @@
     <Content Include="App\main.js" />
     <Content Include="App\services\binding-handlers.js" />
     <Content Include="App\services\datacontext.js" />
+    <Content Include="app.manifest" />
     <Content Include="App\services\db.js" />
     <Content Include="App\services\logger.js" />
     <Content Include="App\viewmodels\details.js" />
+    <Content Include="App\viewmodels\products.js" />
     <Content Include="App\viewmodels\todo.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\viewmodels\nav.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\views\details.html" />
+    <Content Include="App\views\products.html" />
     <Content Include="App\views\todo.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
@@ -253,6 +255,7 @@
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />
     <Content Include="Content\images\ios-startup-image-portrait.png" />
+    <Content Include="Content\images\SPAStack.PNG" />
     <Content Include="Content\mmenu\mmenu-iconbar-always.css" />
     <Content Include="Content\mmenu\mmenu-iconbar.css" />
     <Content Include="Content\mmenu\mmenu-layout.css" />
@@ -305,6 +308,9 @@
     <Content Include="Content\toastr.less" />
     <Content Include="PhoneGapBuild.ps1" />
     <None Include="CreateJayDataModels.bat" />
+    <Content Include="Scripts\jaydatamodules\validate.min.js.map">
+      <DependentUpon>validate.js</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\jaydata-vsdoc.js" />
     <Content Include="Scripts\jaydata.d.ts" />
@@ -363,6 +369,8 @@
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\knockout-bootstrap.min.js" />
+    <Content Include="Scripts\knockout.validation.debug.js" />
+    <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\q.js" />
@@ -418,11 +426,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311121931252_FirstComment.resx">
-      <DependentUpon>201311121931252_FirstComment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201311132137319_AddedKeyOnTodoItem.resx">
-      <DependentUpon>201311132137319_AddedKeyOnTodoItem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311201659107_First.resx">
+      <DependentUpon>201311201659107_First.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

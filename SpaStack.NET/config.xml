@@ -6,10 +6,10 @@
         version   = "1.0.0">
 
       
-  <name>Hot Towel Mobile</name>
+  <name>SpaStack</name>
 
   <description>
-    Hot Towel Mobile App
+    Boilerplate app
   </description>
   
   <!--
@@ -30,7 +30,7 @@
     -->
     <!--<gap:plugin name="com.phonegap.plugins.facebookconnect">
       <param name="APP_ID" value="" />
-      <param name="APP_NAME" value="Hot Towel Mobile" />
+      <param name="APP_NAME" value="SpaStack" />
     </gap:plugin>-->
 
   <!--

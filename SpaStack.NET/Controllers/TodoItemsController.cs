@@ -20,28 +20,28 @@ namespace SpaStack.NET.Controllers
     using System.Web.Http.OData.Builder;
     using SpaStack.NET.Models;
     ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<TodoItem>("TodoItem");
+    builder.EntitySet<TodoItem>("TodoItems");
     config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
     */
-    public class TodoItemController : ODataController
+    public class TodoItemsController : ODataController
     {
         private MyDBContext db = new MyDBContext();
 
-        // GET odata/TodoItem
+        // GET odata/TodoItems
         [Queryable]
-        public IQueryable<TodoItem> GetTodoItem()
+        public IQueryable<TodoItem> GetTodoItems()
         {
             return db.TodoItems;
         }
 
-        // GET odata/TodoItem(5)
+        // GET odata/TodoItems(5)
         [Queryable]
         public SingleResult<TodoItem> GetTodoItem([FromODataUri] Guid key)
         {
             return SingleResult.Create(db.TodoItems.Where(todoitem => todoitem.Id == key));
         }
 
-        // PUT odata/TodoItem(5)
+        // PUT odata/TodoItems(5)
         public IHttpActionResult Put([FromODataUri] Guid key, TodoItem todoitem)
         {
             if (!ModelState.IsValid)
@@ -53,6 +53,8 @@ namespace SpaStack.NET.Controllers
             {
                 return BadRequest();
             }
+
+            todoitem.InSync = true;
 
             db.Entry(todoitem).State = EntityState.Modified;
 
@@ -75,7 +77,7 @@ namespace SpaStack.NET.Controllers
             return Updated(todoitem);
         }
 
-        // POST odata/TodoItem
+        // POST odata/TodoItems
         public IHttpActionResult Post(TodoItem todoitem)
         {
             if (!ModelState.IsValid)
@@ -84,7 +86,6 @@ namespace SpaStack.NET.Controllers
             }
 
             todoitem.InSync = true;
-
             db.TodoItems.Add(todoitem);
 
             try
@@ -106,7 +107,7 @@ namespace SpaStack.NET.Controllers
             return Created(todoitem);
         }
 
-        // PATCH odata/TodoItem(5)
+        // PATCH odata/TodoItems(5)
         [AcceptVerbs("PATCH", "MERGE")]
         public IHttpActionResult Patch([FromODataUri] Guid key, Delta<TodoItem> patch)
         {
@@ -120,7 +121,7 @@ namespace SpaStack.NET.Controllers
             {
                 return NotFound();
             }
-
+            todoitem.InSync = true;
             patch.Patch(todoitem);
 
             try
@@ -142,7 +143,7 @@ namespace SpaStack.NET.Controllers
             return Updated(todoitem);
         }
 
-        // DELETE odata/TodoItem(5)
+        // DELETE odata/TodoItems(5)
         public IHttpActionResult Delete([FromODataUri] Guid key)
         {
             TodoItem todoitem = db.TodoItems.Find(key);

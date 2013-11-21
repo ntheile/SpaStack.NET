@@ -7,7 +7,7 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
     var localTodos = new ko.observableArray();
     var taskInput = new ko.observable();
     var selectedTodo = ko.observable(null);
-    
+
     
     // this code runs each time the page is visited
     function activate() {
@@ -40,22 +40,31 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
 
   
     function listLocalTodoItems() {
-        
-        datacontext.offlinedb.TodoItem.toArray(localTodos);
-        
+        localTodos([]);
+        return datacontext.offlinedb.TodoItems.toArray(localTodos);
     }
 
     function listRemoteTodoItems() {
 
-        var promise = datacontext.onlinedb.TodoItem.toArray(remoteTodos);
+        remoteTodos([]);
 
+        var promise = datacontext.onlinedb.TodoItems.toArray(function (todos) {
+            todos.forEach(function (todo) {
+                var koTodo = todo.asKoObservable();
+                // you can manipulate the observable koTodo here if you wish
+                // to subscribe to events of change values
+                remoteTodos.push(koTodo);
+
+            });
+        });
+            
         return promise;
     }
 
     // add a todo item
     function submitForm(evt) {
 
-        // create new Todo instance
+        // create new jaydata Todo instance
         var todoInstance = new SpaStack.NET.Models.TodoItem({
             'Id': $data.createGuid(),
             'Task': taskInput(),
@@ -63,11 +72,12 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
             'InSync': false
         });
 
+       
         // add new item to observable
         localTodos.push(todoInstance);
-        
+ 
         // add item to offline fb
-        datacontext.offlinedb.TodoItem.add(todoInstance);
+        datacontext.offlinedb.TodoItems.add(todoInstance);
 
         // save offline db
         datacontext.offlinedb.saveChanges();
@@ -76,14 +86,13 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
 
     }
 
-
-
+   
     function synchronizeData() {
 
         var dirtyTodo;
 
         var getDirtyItemsPromise = datacontext.offlinedb
-                                              .TodoItem
+                                              .TodoItems
                                               .filter("it.InSync == false").toArray();
 
         // 0. When the dirty items are returned
@@ -135,7 +144,7 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
         var newTodo = selectedTodo();
 
         return promise = datacontext.offlinedb
-                   .TodoItem
+                   .TodoItems
                    .filter("Id", "==", newTodo.Id).toArray()
                    .then(function (items) {
                        items.forEach(function (todoItem) {
@@ -155,6 +164,14 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
         selectedTodo(oldTodo);
         
     }
+
+
+    function writeValues() {
+        console.log("Writing Observables");
+        console.log(ko.toJS(remoteTodos));
+        console.log(ko.toJS(localTodos));
+    }
+
 
     //#endregion
 
@@ -184,11 +201,10 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
 
 
 
+// links
+// *  http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
+// *  http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs and http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
+
 // TODO
-// * follow this tut more closely for jaydata and ko http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
-//        implement edits and saves with this
-//        http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs and http://jaydata.org/blog/how-to-use-jaydata-with-knockoutjs
-// * when sync is clicked have it update the localTodos and remoteTodos more eleganlty the ko way
 // * Add offline js to detect when offline to online event happen to fire the sync method
-// * Add offline manifest
-// * add validation using jaydata + knockout validation
+

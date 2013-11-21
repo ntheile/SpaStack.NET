@@ -8,7 +8,7 @@
         }
 
         function boot() {
-            log('Hot Towel SPA Loaded!', null, true);
+            log('SpaStack Loaded!', null, true);
 
             router.on('router:route:not-found', function (fragment) {
                 logError('No Route Found', fragment, true);
@@ -16,10 +16,11 @@
 
             var routes = [
                 { route: '', moduleId: 'todo', title: 'Todo', visible: false, icon: '' },
-                { route: 'todo', moduleId: 'todo', title: 'Todo', visible: true, icon: 'icon icon-white icon-lock' },
+                { route: 'todo', moduleId: 'todo', title: 'Todo', visible: true, icon: 'icon icon-white icon-text-width' },
                 { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'icon icon-white icon-home' },
-                { route: 'details', moduleId: 'details', title: 'Details', visible: true, icon: 'icon icon-white icon-arrow-right' },
-                { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' }
+                { route: 'details', moduleId: 'details', title: 'Details', visible: true, icon: 'icon icon-white icon-align-justify' },
+                { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' },
+                { route: 'products', moduleId: 'products', title: 'Products', visible: true, icon: 'icon icon-white icon-shopping-cart' },
             ];
 
 

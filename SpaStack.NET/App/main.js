@@ -8,6 +8,21 @@ require.config({
     }
 });
 
+// IE console.log fixer
+(function (con) {
+    'use strict';
+    var prop, method;
+    var empty = {};
+    var dummy = function () { };
+    var properties = 'memory'.split(',');
+    var methods = ('assert,count,debug,dir,dirxml,error,exception,group,' +
+       'groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,' +
+       'time,timeEnd,trace,warn').split(',');
+    while (prop = properties.pop()) con[prop] = con[prop] || empty;
+    while (method = methods.pop()) con[method] = con[method] || dummy;
+})(window.console = window.console || {});
+
+
 // Durandal 2.x assumes no global libraries. It will ship expecting 
 // Knockout and jQuery to be defined with requirejs. .NET 
 // templates by default will set them up as standard script
@@ -23,7 +38,7 @@ function boot (app, viewLocator, system, router, logger, bindings) {
 
     // Enable debug message to show in the console 
     system.debug(true);  
-    app.title = 'Hot Towel Mobile';
+    app.title = 'SpaStack.NET';
    
     app.configurePlugins({
         router: true

@@ -1,7 +1,21 @@
 ﻿<section>
     <h2 class="page-title" data-bind="text: title"></h2>
 
-    <form class="column" id="addTaskForm" data-bind="submit: submitForm ">
+    <ul>
+        <li>
+            Example of validation using the MetaData JayData brings down, as well as the ko observable checking validation on observable change<br />
+            <i>
+                *Notice the automatic validation if you try to edit the "Is Synchronized"" column from anything other than true or false
+            </i>
+        </li>
+        <li>
+            Example of using the built-in JayData adapters for local database storage, using IndexedDB, Web Sql, or localstorage
+        </li>
+    </ul>
+        
+    
+
+    <form class="column vform" id="addTaskForm" data-bind="submit: submitForm ">
         <fieldset>
             <legend>Add Todo</legend>
             <input data-bind="value: taskInput" id="taskInput" />
@@ -20,8 +34,8 @@
             </thead>
             <tbody data-bind="foreach: localTodos">
                 <tr>
-                    <td data-bind ="click: $root.editTodo, text: Task "></td>
-                    <td data-bind="text: InSync"></td>
+                    <td><input data-bind="value:Task" /></td>
+                    <td><input data-bind="value: InSync" /></td>
                 </tr>
             </tbody>
         </table>
@@ -40,11 +54,13 @@
             </thead>
             <tbody data-bind="foreach: remoteTodos">
                 <tr>
-                    <td data-bind="text: Task"></td>
+                    <td data-bind="text:Task"></td>
                     <td data-bind="text: InSync"></td>
+
                 </tr>
             </tbody>
         </table>
+
 
     </div>
    <div style="clear:both"></div>
