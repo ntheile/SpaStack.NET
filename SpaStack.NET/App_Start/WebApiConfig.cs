@@ -27,6 +27,9 @@ namespace SpaStack.NET
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            // Use camel case for JSON data.
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
@@ -43,18 +46,15 @@ namespace SpaStack.NET
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<Product>("Products");
             builder.EntitySet<Supplier>("Suppliers"); 
-            
             //
-            // TODO Put your create models here
+            // TODO Put the models you create here
             //
-
             config.Routes.MapODataRoute(
                 "OData", 
                 "odata", 
                 builder.GetEdmModel(),
                 batchHandler: new PathFixODataBatchHandler(GlobalConfiguration.DefaultServer)
             );
-
             config.EnableQuerySupport();
             
 

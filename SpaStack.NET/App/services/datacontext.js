@@ -3,7 +3,7 @@
     'services/db',
     'services/logger'],
     function (system, db, logger) {
-       
+
         // Database Instances
         var onlinedb = new Default.Container({
             name: 'oData',
@@ -16,15 +16,14 @@
         });
 
         
-        // return a promise when all the database instances are ready
+        // return a promise when all the database instances are ready and the user is authorized
+        // you can include a datacontext.ready().then() call in each viewmodels activate function
         var ready = function () {
             return $.when(offlinedb.onReady(), onlinedb.onReady()).then(function () {
-                toastr.info('database instances ready');
+                toastr.info('database instances ready, user authorized');
             });
         };
 
-   
-        
 
         var primeData = function () {
             // TODO - prime data that is shared by views
@@ -36,8 +35,7 @@
             primeData: primeData,
             onlinedb: onlinedb,
             offlinedb: offlinedb,
-            ready: ready//,
-            //synchronizeData: synchronizeData
+            ready: ready
         };
 
         

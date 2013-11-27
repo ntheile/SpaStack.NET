@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace SpaStack.NET.Controllers
 {
-    public class HomeController : Controller
+    public class LoginController : Controller
     {
+        //
+        // GET: /Login
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
             return View();
         }
-    }
+	}
 }

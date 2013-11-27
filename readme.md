@@ -9,7 +9,7 @@
 > **Examples of desireable things SpaStack can do:**
 > * Paging
 > * Validation
-> * Aync Promises
+> * Async Promises
 > * Offline - IndexedDB, WebSql, LocalStorage providers
 > * $expand OData REST entities
 > * MVVM data-bind to observables in your view
@@ -179,3 +179,57 @@ Autogenerate appcache manifest with Fiddler
 --------------------------------------------
 
 http://blogs.msdn.com/b/fiddler/archive/2011/09/15/generate-html5-appcache-manifests-using-fiddler-export.aspx
+
+
+OAuth
+-------
+I added the Individual user account authenication built into ASP.NET. I login simple hit the `/login` route. 
+After you are authenicated you will be redirected to `index.html` from there you are passed a token that can be consumed like this 
+(the part after Bearer is your token):
+
+```
+GET http://localhost:65310/api/Account/UserInfo HTTP/1.1
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Host: localhost:65310
+Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gAStm_YdZHNp8N_gIWc8kklTrydHRVI_FjeXhD66allUjw2XO1fc
+```
+
+
+
+
+TODO
+----
+
+* Add login
+* swith to bootstrap 3.0
+* Add /v1/odata route
+* Separate admin routes from normal user routes
+	* user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)
+	<pre>
+	```csharp
+		// Validator to restrict which properties can be used in $filter expressions.
+		public class MyFilterQueryValidator : FilterQueryValidator
+		{
+			static readonly string[] allowedProperties = { "ReleaseYear", "Title" };
+
+			public override void ValidateSingleValuePropertyAccessNode(
+				SingleValuePropertyAccessNode propertyAccessNode,
+				ODataValidationSettings settings)
+			{
+				string propertyName = null;
+				if (propertyAccessNode != null)
+				{
+					propertyName = propertyAccessNode.Property.Name;
+				}
+
+				if (propertyName != null && !allowedProperties.Contains(propertyName))
+				{
+					throw new ODataException(
+						String.Format("Filter on {0} not allowed", propertyName));
+				}
+				base.ValidateSingleValuePropertyAccessNode(propertyAccessNode, settings);
+			}
+		}
+	```
+	</pre>
+	* admin route - /v1/odata/admin/TodoItem

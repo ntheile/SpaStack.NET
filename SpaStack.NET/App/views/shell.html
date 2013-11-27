@@ -1,7 +1,7 @@
 ﻿<div data-bind="compose: { view: 'nav' }">
 </div>
 <div id="page">
-    <div data-bind="compose: { view: 'topbar' }">
+    <div data-bind="compose: { view: 'views/topbar', model: 'viewmodels/topbar' }">
 
     </div>
 	<div id="content" style="padding: 50px 15px 15px 15px;" data-bind="router: { transition: 'entrance', cacheViews: true }">

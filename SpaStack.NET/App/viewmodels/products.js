@@ -43,21 +43,15 @@
                     .skip(firstrecord)
                     .take(pagesize)
                     .toArray(function (records) {
-                    totalcount(records.totalCount);
-                    if (records.length < pagesize) { islastpage(true) } else { islastpage(false); }
-                    if (firstrecord == 0) { isfirstpage(true); } else { isfirstpage(false); }
-                    console.log('records');
-                    console.log(records);
-                    console.log('isLastPage');
-                    console.log(islastpage());
-                    console.log('isfirstpage');
-                    console.log(isfirstpage());
-                    products([]);
-                    records.forEach(function (product) {
-                        var koProduct = product.asKoObservable();
-                        products.push(koProduct);
+                        totalcount(records.totalCount);
+                        if (records.length < pagesize) { islastpage(true) } else { islastpage(false); }
+                        if (firstrecord == 0) { isfirstpage(true); } else { isfirstpage(false); }
+                        products([]);
+                        records.forEach(function (product) {
+                            var koProduct = product.asKoObservable();
+                            products.push(koProduct);
+                        });
                     });
-        });
 
         return records;
     }

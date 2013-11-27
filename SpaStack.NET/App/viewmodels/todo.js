@@ -1,5 +1,5 @@
 ﻿
-define(['services/logger', 'durandal/app', 'services/datacontext'], function (logger, app, datacontext) {
+define(['services/logger', 'durandal/app', 'services/datacontext', 'viewmodels/shell'], function (logger, app, datacontext, shell) {
 
     //#region Internal Methods
     var title = 'Todo List';
@@ -181,6 +181,7 @@ define(['services/logger', 'durandal/app', 'services/datacontext'], function (lo
         activate: activate,
         deactivate: deactivate,
         title: title,
+        shell: shell,
         listLocalTodoItems: listLocalTodoItems,
         listRemoteTodoItems: listRemoteTodoItems,
         submitForm: submitForm,

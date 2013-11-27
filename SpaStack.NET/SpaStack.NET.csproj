@@ -195,7 +195,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
     <Compile Include="Controllers\TodoItemsController.cs" />
@@ -224,23 +224,35 @@
     <Content Include="app.manifest" />
     <Content Include="App\services\db.js" />
     <Content Include="App\services\logger.js" />
+    <Content Include="App\viewmodels\login.js" />
     <Content Include="App\viewmodels\details.js" />
+    <Content Include="App\viewmodels\topbar.js" />
     <Content Include="App\viewmodels\products.js" />
     <Content Include="App\viewmodels\todo.js" />
     <Content Include="App\viewmodels\home.js" />
     <Content Include="App\viewmodels\nav.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\views\details.html" />
+    <Content Include="App\views\login.html" />
     <Content Include="App\views\products.html" />
     <Content Include="App\views\todo.html" />
     <Content Include="App\views\home.html" />
     <Content Include="App\views\nav.html" />
     <Content Include="App\views\shell.html" />
     <Content Include="App\views\topbar.html" />
+    <Content Include="App_Data\aspnet-SpaStack.NET-20131109061752.mdf" />
+    <Content Include="App_Data\aspnet-SpaStack.NET-20131109061752_log.ldf">
+      <DependentUpon>aspnet-SpaStack.NET-20131109061752.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\MyDBContext-20131110143312.mdf" />
+    <Content Include="App_Data\MyDBContext-20131110143312_log.ldf">
+      <DependentUpon>MyDBContext-20131110143312.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="CommandLine.dll" />
     <Content Include="config.xml" />
     <Content Include="Content\app.css" />
+    <Content Include="Content\bootstrap-3.0.css" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -262,6 +274,7 @@
     <Content Include="Content\mmenu\mmenu-positioning.css" />
     <Content Include="Content\mmenu\mmenu-widescreen.css" />
     <Content Include="Content\mmenu\mmenu.css" />
+    <Content Include="Content\Site-MVC.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
@@ -271,6 +284,16 @@
     <Content Include="JayData_readme.txt" />
     <Content Include="JaySvcUtil.exe" />
     <Content Include="Scripts\almond-custom.js" />
+    <Content Include="Scripts\app\ajaxPrefilters.js" />
+    <Content Include="Scripts\app\app.datamodel.js" />
+    <Content Include="Scripts\app\app.viewmodel.js" />
+    <Content Include="Scripts\app\home.viewmodel.js" />
+    <Content Include="Scripts\app\login.viewmodel.js" />
+    <Content Include="Scripts\app\manage.viewmodel.js" />
+    <Content Include="Scripts\app\register.viewmodel.js" />
+    <Content Include="Scripts\app\registerExternal.viewmodel.js" />
+    <Content Include="Scripts\app\userInfo.viewmodel.js" />
+    <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\backbone.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -395,7 +418,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\text.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -405,16 +430,22 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\toastr.min.js.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\_Home.cshtml" />
+    <Content Include="Views\Login\_Login.cshtml" />
+    <Content Include="Views\Login\_Manage.cshtml" />
+    <Content Include="Views\Login\_Register.cshtml" />
+    <Content Include="Views\Login\_RegisterExternal.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Controllers\Admin\" />
     <Folder Include="Controllers\User\" />
   </ItemGroup>

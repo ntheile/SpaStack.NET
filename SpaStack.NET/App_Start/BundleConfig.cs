@@ -21,8 +21,27 @@ namespace SpaStack.NET
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/Bootstrap-3.0.css",
+                      "~/Content/Site-MVC.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+               "~/Scripts/knockout-{version}.js",
+               "~/Scripts/knockout.validation.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/app/ajaxPrefilters.js",
+                "~/Scripts/app/app.bindings.js",
+                "~/Scripts/app/app.datamodel.js",
+                "~/Scripts/app/app.viewmodel.js",
+                "~/Scripts/app/home.viewmodel.js",
+                "~/Scripts/app/login.viewmodel.js",
+                "~/Scripts/app/register.viewmodel.js",
+                "~/Scripts/app/registerExternal.viewmodel.js",
+                "~/Scripts/app/manage.viewmodel.js",
+                "~/Scripts/app/userInfo.viewmodel.js",
+                "~/Scripts/app/_run.js"));
+
         }
     }
 }

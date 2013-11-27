@@ -14,17 +14,7 @@ using SpaStack.NET.Models;
 
 namespace SpaStack.NET.Controllers
 {
-    /*
-    To add a route for this controller, merge these statements into the Register method of the WebApiConfig class. Note that OData URLs are case sensitive.
-
-    using System.Web.Http.OData.Builder;
-    using SpaStack.NET.Models;
-    ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
-    builder.EntitySet<Product>("Products");
-    builder.EntitySet<Category>("Categories"); 
-    builder.EntitySet<Supplier>("Suppliers"); 
-    config.Routes.MapODataRoute("odata", "odata", builder.GetEdmModel());
-    */
+  
     public class ProductsController : ODataController
     {
         private MyDBContext db = new MyDBContext();
