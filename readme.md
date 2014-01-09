@@ -11,11 +11,22 @@
 > * Table and Data Paging using the OData spec
 > * Validation
 > * Async Promises
-> * Login (local, facebook, twitter, etc...)
+> * Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 > * Offline - IndexedDB, WebSql, LocalStorage providers
 > * $expand OData REST entities
 > * MVVM data-bind to observables in your view
 > * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
+
+Install
+--------
+1. Download this https://github.com/ntheile/SpaStack.NET/tree/master/SpaStack.NET/SpaStack.NET.zip and copy the zip file to `C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates`
+2. Open Visual Studio 2013 goto File > New Project > C# > You should see a template for SpaStack.NET
+3. After the project opens right click on `index.html` and select 'Set as Start Page' in the menu
+4. Now build the project to restore all the nuget packages
+
+Demo
+-----
+http://spastack.azurewebsites.net
 
 `Desktop View`
 
