@@ -28,6 +28,7 @@
 
         }
 
+  
         function boot() {
             log('App Loaded!', null, true);
 

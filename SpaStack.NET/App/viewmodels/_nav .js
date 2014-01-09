@@ -3,7 +3,6 @@
     //#region Private Variables
 
     var observable = ko.observableArray([]);
-    
 
     //#endregion
 
