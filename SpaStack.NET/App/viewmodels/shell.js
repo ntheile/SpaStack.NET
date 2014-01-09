@@ -33,11 +33,11 @@
 
             //#region Router
             var routes = [
-                    { route: '', moduleId: 'blank', title: 'Blank', visible: false, icon: '' },
+                    { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'fa fa-home' },
+                    { route: '', moduleId: 'home', title: 'home', visible: false, icon: '' },
                     { route: 'blank', moduleId: 'blank', title: 'Blank', visible: true, icon: 'fa fa-file' },
                     { route: 'bootstrap-elements', moduleId: 'bootstrap-elements', title: 'Bootstrap Elements', visible: true, icon: 'fa fa-desktop' },
                     { route: 'todo', moduleId: 'todo', title: 'Offline Sync', visible: true, icon: 'fa fa-list-ol' },
-                    { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'fa fa-home' },
                     { route: 'details', moduleId: 'details', title: 'Texty', visible: true, icon: 'fa fa-search' },
                     { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' },
                     { route: 'products', moduleId: 'products', title: 'OData Paging', visible: true, icon: 'fa fa-shopping-cart' },
