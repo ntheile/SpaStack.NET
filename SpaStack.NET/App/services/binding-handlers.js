@@ -11,7 +11,9 @@
                     $(element).trigger('toggle.mm');
                 });
                
-                $(element).mmenu();
+                $(element).mmenu({
+                 
+                });
 
             }
         });

@@ -1,16 +1,24 @@
-﻿define(['services/logger'], function (logger) {
-    
+﻿define(['services/logger', 'durandal/app'], function (logger, app) {
+
     //#region Internal Methods
+    var title = 'Blank';
+   
+
     function activate() {
         logger.log(title + ' View Activated', null, title, true);
         return true;
     }
+
     //#endregion
 
 
     var vm = {
-       activate: activate
+        activate: activate,
+        title: title
+        
     };
 
     return vm;
+
+   
 });

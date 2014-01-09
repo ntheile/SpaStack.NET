@@ -1,13 +1,21 @@
 ﻿define(['durandal/system', 'plugins/router', 'services/logger', 'durandal/app', 'services/datacontext'],
     function (system, router, logger, app, datacontext) {
  
-        //#region Internal Methods
-
-        // Oauth Access Token
-        var token = new ko.observable(false);
-        var userName = new ko.observable(false);
+        
+        //#region Private Variables
+        
+        var token = ko.observable(false); // Oauth Access Token
+        var userName = ko.observable(false);
         var useAuth = true;
-        var logout = new ko.observable(false); 
+        var logout = ko.observable(false);
+        var appName = "SpaStack.NET";
+
+        //#endregion
+
+
+
+        
+        //#region Private Methods
 
         function activate() {
             
@@ -21,16 +29,23 @@
         }
 
         function boot() {
-            log('SpaStack Loaded!', null, true);
+            log('App Loaded!', null, true);
 
             //#region Router
-                var routes = [
-                    { route: '', moduleId: 'todo', title: 'Todo', visible: false, icon: '' },
-                    { route: 'todo', moduleId: 'todo', title: 'Todo', visible: true, icon: 'icon icon-white icon-text-width' },
-                    { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'icon icon-white icon-home' },
-                    { route: 'details', moduleId: 'details', title: 'Details', visible: true, icon: 'icon icon-white icon-align-justify' },
+            var routes = [
+                    { route: '', moduleId: 'blank', title: 'Blank', visible: false, icon: '' },
+                    { route: 'blank', moduleId: 'blank', title: 'Blank', visible: true, icon: 'fa fa-file' },
+                    { route: 'bootstrap-elements', moduleId: 'bootstrap-elements', title: 'Bootstrap Elements', visible: true, icon: 'fa fa-desktop' },
+                    { route: 'todo', moduleId: 'todo', title: 'Offline Sync', visible: true, icon: 'fa fa-list-ol' },
+                    { route: 'home', moduleId: 'home', title: 'Home', visible: true, icon: 'fa fa-home' },
+                    { route: 'details', moduleId: 'details', title: 'Texty', visible: true, icon: 'fa fa-search' },
                     { route: 'details/:id', moduleId: 'details', title: 'Details/id', visible: false, icon: '' },
-                    { route: 'products', moduleId: 'products', title: 'Products', visible: true, icon: 'icon icon-white icon-shopping-cart' },
+                    { route: 'products', moduleId: 'products', title: 'OData Paging', visible: true, icon: 'fa fa-shopping-cart' },
+                    { route: 'bootstrap-grid', moduleId: 'bootstrap-grid', title: 'Bootstrap Grid', visible: true, icon: 'fa fa fa-wrench' },
+                    { route: 'chart', moduleId: 'chart', title: 'Charts', visible: true, icon: 'fa fa-bar-chart-o' },
+                    { route: 'forms', moduleId: 'forms', title: 'Forms', visible: true, icon: 'fa fa-edit' },
+                    { route: 'tables', moduleId: 'tables', title: 'Tables', visible: true, icon: 'fa fa-table' },
+                    { route: 'typography', moduleId: 'typography', title: 'Typography', visible: true, icon: 'fa fa-font' }
                 ];
 
             //#endregion Router
@@ -75,14 +90,14 @@
 
             // get user name with token api/Account/UserInfo
             function getUserInfo() {
-                console.log('in auth poopoo');
+                console.log('in auth');
                 if (!userName() && token()) {
-                    
+
                     var ajaxConfig = {
                         url: 'api/Account/UserInfo',
                         type: 'GET',
                         headers: { 'Authorization': 'Bearer ' + token() }
-                    }
+                    };
                     function success(data) {
                         userName(data.userName);
                     }
@@ -94,17 +109,19 @@
                 }
             };
 
-            logout(function () {
+            logout(function() {
                 var ajaxConfig = {
                     url: 'api/Account/Logout',
                     type: 'POST',
                     headers: { 'Authorization': 'Bearer ' + token() }
-                }
+                };
+
                 function success(data) {
                     window.location.replace('/index.html');
                 }
+
                 return $.ajax(ajaxConfig).then(success);
-            })
+            });
 
             return getUserInfo();
  
@@ -119,13 +136,21 @@
         }
         //#endregion Internal Methods
 
+
+
+
+        //#region Public
+
         var shell = {
             activate: activate,
             router: router,
             token: token,
             userName: userName,
-            logout: logout
+            logout: logout,
+            appName: appName
         };
+
+        //#endregion
 
         return shell;
     });

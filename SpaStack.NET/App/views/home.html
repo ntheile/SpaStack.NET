@@ -39,6 +39,17 @@
         <li>Zip the folder up and upload it to https://build.phonegap.com . 
             An app will be built and available for download from the site.</li>
     </ul>
+    
+    <h3>To Enable Auth</h3>
+    
+    <p>
+        Authenication can be enabled or disabled in the <code>App\viewmodels\shell.js</code> by setting the following private variable:
+        <pre>
+            <code>
+                   var useAuth = true;
+            </code>
+        </pre>
+    </p>
 
     <h3 id="tocreateappicons">To Create App Icons</h3>
 
@@ -48,23 +59,7 @@
         Then configure the <code>config.xml</code> to use them in the build
     </p>
 
-    <h3 id="mmenuplugincustombindinghandler">mmenu plugin - custom binding handler</h3>
-
-    <p>To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in <br />
-    <code>services/binding-handlers.js</code>. This file is loaded at app start in main.js.</p>
-
-    <pre>
-    composition.addBindingHandler('mmenu', {
-        init: function (element, valueAccessor, 
-                    allBindingsAccessor, viewModel) {
-            $('a#open-icon-menu').click(function (e) {
-                e.stopImmediatePropagation();
-                e.preventDefault();
-                $(element).trigger('toggle.mm');
-            });
-            $(element).mmenu();
-        }
-    });
-    </pre>
+  
+   
 
 </section>

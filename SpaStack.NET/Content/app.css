@@ -9,7 +9,7 @@
     visibility: visible;
 }
 
-.brand .title {
+/*.brand .title {
     float: left;
     font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 145%;
@@ -23,14 +23,14 @@
     text-transform: initial;
     text-decoration: none;
     color: #0081C2;
-}
-span.title {
+}*/
+/*span.title {
     background: url(/content/images/icon.png) no-repeat left center;
     -moz-background-size: 45px;
     -o-background-size: 45px;
     -webkit-background-size: 45px;
     background-size: 45px;
-}
+}*/
 
 .page-splash
 {
@@ -61,9 +61,24 @@ span.title {
     text-transform: uppercase;
     text-decoration: none;
     font-family: monospace;
-    color: #F58A00;
+    color: #FF7F00;
     padding: 0;
 }
 .page-progress-bar {
     margin: 10% 30% 0 30%;
+}
+
+/*custom font*/
+@font-face {
+	font-family: Alias;
+	src: url('../fonts/Alias.ttf');
+}
+.alias-font {
+   color: #FF7F00 !important; 
+   font-family: Alias ; 
+   font-weight: 700;
+   font-size: 36px;
+}
+a.alias-font:hover {
+    color: lightgrey !important;
 }

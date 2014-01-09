@@ -34,8 +34,6 @@ define(['durandal/app', 'durandal/viewLocator', 'durandal/system', 'plugins/rout
 
 function boot (app, viewLocator, system, router, logger, bindings) {
 
-    //var bindings = require(['services/binding-handlers']);
-
     // Enable debug message to show in the console 
     system.debug(true);  
     app.title = 'SpaStack.NET';
@@ -65,14 +63,14 @@ function boot (app, viewLocator, system, router, logger, bindings) {
                 // do nothing, the last page you visited will be shown
             }
             else {
-                app.setRoot('viewmodels/shell', 'entrance');
+                app.setRoot('viewmodels/shell');
             }
 
         });
     }
 
     ///
-    /// Enable phonegap for mobile build, of set to false for web builds
+    /// Enable phonegap for mobile build, or set to false for web builds
     /// 
     app.usePhonegap = false;
     

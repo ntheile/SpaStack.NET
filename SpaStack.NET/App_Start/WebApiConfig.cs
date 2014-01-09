@@ -26,7 +26,7 @@ namespace SpaStack.NET
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            
             // Use camel case for JSON data.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
@@ -36,16 +36,19 @@ namespace SpaStack.NET
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            
 
             // JayData config for $metadata
             // /odata/$metadata
             // http://blogs.msdn.com/b/webdev/archive/2013/01/29/getting-started-with-asp-net-webapi-odata-in-3-simple-steps.aspx
             // http://jaydata.org/blog/how-to-use-jaydata-with-asp.net-web-api---i
+
+            // user routes
             ODataConventionModelBuilder builder = new ODataConventionModelBuilder();          
             builder.EntitySet<TodoItem>("TodoItems");
             builder.EntitySet<Category>("Categories");
             builder.EntitySet<Product>("Products");
-            builder.EntitySet<Supplier>("Suppliers"); 
+            builder.EntitySet<Supplier>("Suppliers");
             //
             // TODO Put the models you create here
             //
@@ -55,8 +58,8 @@ namespace SpaStack.NET
                 builder.GetEdmModel(),
                 batchHandler: new PathFixODataBatchHandler(GlobalConfiguration.DefaultServer)
             );
+
             config.EnableQuerySupport();
-            
 
         }
     }

@@ -2,19 +2,24 @@
 =================
 
 
-> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` . It allows you to maintain one slim
+> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` `Twitter Bootstrap` . It allows you to maintain one slim
 > codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows `RESTful OData MVC` patterns on the server side
 > and `MVVM` patterns in the client side.
 
 > **Examples of desireable things SpaStack can do:**
-> * Paging
+> * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
+> * Table and Data Paging using the OData spec
 > * Validation
 > * Async Promises
+> * Login (local, facebook, twitter, etc...)
 > * Offline - IndexedDB, WebSql, LocalStorage providers
 > * $expand OData REST entities
 > * MVVM data-bind to observables in your view
+> * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
 
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
+
+![Screenshot](/SpaStack.NET/Content/images/SPAStackMobile.PNG)
 
 Build an app in 1 line of code 
 -------------------------------
@@ -139,8 +144,8 @@ You can generate Android icons using this site http://android-ui-utils.googlecod
 Then configure the `config.xml` to use them in the build
 
 
-Custom binding handler - mmenu plugin 
--------------------------------------
+To create a Custom binding handler for durandal/knockout
+----------------------------------------------------
 To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in  
 `services/binding-handlers.js`. This file is loaded at app start in main.js.
 
@@ -200,9 +205,7 @@ Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gASt
 TODO
 ----
 
-* Add login
-* swith to bootstrap 3.0
-* Add /v1/odata route
+* Add /v1/odata route (http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)
 * Separate admin routes from normal user routes
 	* user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)
 	<pre>

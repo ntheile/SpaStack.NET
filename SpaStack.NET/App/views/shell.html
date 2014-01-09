@@ -1,11 +1,17 @@
-﻿<div data-bind="compose: { view: 'nav' }">
-</div>
-<div id="page">
-    <div data-bind="compose: { view: 'views/topbar', model: 'viewmodels/topbar' }">
+﻿<section>
+    <div id="wrapper">
+       
+        <div data-bind="compose: '_nav.html'">
+            
+        </div><!-- /#nav -->
+            
 
-    </div>
-	<div id="content" style="padding: 50px 15px 15px 15px;" data-bind="router: { transition: 'entrance', cacheViews: true }">
+        <div id="page-wrapper" data-bind="router: { transition: 'entrance', cacheViews: true }">
 
-	</div>
-</div>
+        </div><!-- /#page-wrapper -->
+
+    </div><!-- /#wrapper -->
+</section>
+
+
 
