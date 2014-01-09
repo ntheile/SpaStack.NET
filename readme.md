@@ -18,9 +18,11 @@
 > * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
 
 `Desktop View`
+
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
 `Mobile View`
+
 ![Screenshot](/SpaStack.NET/Content/images/SpaStackMobile.PNG)
 
 Build an app in 1 line of code 
