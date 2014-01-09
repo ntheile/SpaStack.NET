@@ -8,3 +8,5 @@ CommandLine.dll					- required by metadata generator tool
 jaydata.d.ts					- TypeScript support for JayData
 jaydatamodules					- folder of JayData modules
 jaydataproviders				- folder of JayData data providers
+
+test
