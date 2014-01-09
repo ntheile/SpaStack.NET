@@ -19,7 +19,7 @@
 
 Install
 --------
-1. Download this https://github.com/ntheile/SpaStack.NET/tree/master/SpaStack.NET/SpaStack.NET.zip and copy the zip file to `C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates`
+1. Download this https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip and copy the zip file to `C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates`
 2. Open Visual Studio 2013 goto File > New Project > C# > You should see a template for SpaStack.NET
 3. After the project opens right click on `index.html` and select 'Set as Start Page' in the menu
 4. Now build the project to restore all the nuget packages
