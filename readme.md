@@ -17,8 +17,10 @@
 > * MVVM data-bind to observables in your view
 > * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
 
+`Desktop View`
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
+`Mobile View`
 ![Screenshot](/SpaStack.NET/Content/images/SPAStackMobile.PNG)
 
 Build an app in 1 line of code 
@@ -204,7 +206,7 @@ Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gASt
 
 TODO
 ----
-
+* add testing with Jasmine
 * Add /v1/odata route (http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)
 * Separate admin routes from normal user routes
 	* user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)
