@@ -21,3 +21,6 @@
 /packages
 *.xap
 /.localhistory
+
+#azure files
+*.pubxml
