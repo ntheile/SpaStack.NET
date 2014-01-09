@@ -21,7 +21,7 @@
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
 `Mobile View`
-![Screenshot](/SpaStack.NET/Content/images/SPAStackMobile.PNG)
+![Screenshot](/SpaStack.NET/Content/images/SpaStackMobile.PNG)
 
 Build an app in 1 line of code 
 -------------------------------
