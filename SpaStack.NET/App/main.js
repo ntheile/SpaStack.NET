@@ -1,5 +1,6 @@
 ﻿// Maps the files so Durandal knows where to find these.
 require.config({
+    urlArgs: "v=" + 1,
     paths: {
         'text': '../Scripts/text',
         'durandal': '../Scripts/durandal',
