@@ -71,7 +71,9 @@
 /*custom font*/
 @font-face {
 	font-family: Alias;
-	src: url('../fonts/Alias.ttf');
+	src: url('../fonts/Alias.ttf') format('truetype'),
+         url('../fonts/Alias.woff') format('woff');
+       
 }
 .alias-font {
    color: #FF7F00 !important; 

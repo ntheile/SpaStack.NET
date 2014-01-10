@@ -394,6 +394,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\Alias.ttf" />
+    <Content Include="fonts\Alias.woff" />
     <None Include="Properties\PublishProfiles\spastack - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\spastack - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
