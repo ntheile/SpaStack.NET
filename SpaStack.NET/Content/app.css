@@ -73,7 +73,8 @@
 	font-family: Alias;
 	src: url('../fonts/Alias.ttf') format('truetype'),
          url('../fonts/Alias.woff') format('woff'),
-         url('../fonts/Alias.svg') format('svg');
+         url('../fonts/Alias.svg') format('svg'),
+         url('../fonts/Alias.eot') format('eot');
        
 }
 .alias-font {
