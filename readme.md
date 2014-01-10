@@ -223,7 +223,7 @@ TODO
 ----
 * add testing with Jasmine
 * make menu disappear when you click a menu item in mobile view
-* global config for root api url
+* work out login kinks on mobile, maybe try identity providers or azure mobile services
 * Add /v1/odata route (http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)
 * Separate admin routes from normal user routes
 	* user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)

@@ -68,7 +68,11 @@
     margin: 10% 30% 0 30%;
 }
 
-/*custom font*/
+
+
+/* 
+    Alias custom font
+*/
 @font-face {
 	font-family: Alias;
     src: url('../fonts/Alias.eot'); /* IE9 Compat Modes */
@@ -85,4 +89,63 @@
 }
 a.alias-font:hover {
     color: lightgrey !important;
+}
+/* 
+    Alias custom font
+*/
+
+
+
+
+/*
+    splash page styles
+*/
+.splash-div-top {
+    width: 100%; 
+    height: 150px; 
+    background-color: black;
+}
+
+.splash-div-bottom {
+    width: 100%; 
+    height: 150px;
+    background-color: gray;
+}
+
+.splash-logo {
+    font-size: 40px;
+}
+
+.splash-loader {
+    font-size: 40px;
+}
+
+
+
+/*
+    desktop styles
+*/
+@media (min-width: 768px) {
+    /*
+        splash page styles
+    */
+    .splash-div-top {
+        width: 100%; 
+        height: 300px; 
+        background-color: black;
+    }
+
+    .splash-div-bottom {
+        width: 100%; 
+        height: 300px;
+        background-color: gray;
+    }
+
+    .splash-logo {
+        font-size: 120px;
+    }
+
+    .splash-loader {
+        font-size: 75px;
+    }
 }

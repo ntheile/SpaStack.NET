@@ -38,7 +38,8 @@ function boot (app, viewLocator, system, router, logger, bindings) {
     // Enable debug message to show in the console 
     system.debug(true);  
     app.title = 'SpaStack.NET';
-   
+    $.support.cors = true;
+
     app.configurePlugins({
         router: true
     });
