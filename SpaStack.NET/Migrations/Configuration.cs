@@ -45,7 +45,34 @@ namespace SpaStack.NET.Migrations
               new TodoItem { Id = Guid.NewGuid(), Completed = true, InSync = true, Task = "Walk the dog" }
             );
 
-   
+            context.Suppliers.AddOrUpdate(
+                s => s.Name,
+                new Supplier { Name = "Walmart" }
+            );
+
+            context.Categories.AddOrUpdate(
+              c => c.Name,
+              new Category { Name = "Home" },
+              new Category { Name = "Garden" }
+          );
+
+            context.Products.AddOrUpdate(
+                p => p.Name,
+                new Product { Name="Rug", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Lamp", Price  = new decimal(22.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Clock", Price  = new decimal(32.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Flower", Price  = new decimal(2.99) , CategoryId = 2, SupplierId = 1 },
+                new Product { Name="Chair", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Desk", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Seeds", Price  = new decimal(12.99) , CategoryId = 2, SupplierId = 1 },
+                new Product { Name="Radio", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Keg", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Beer", Price  = new decimal(12.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Pool Table", Price  = new decimal(567.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Hot Tub", Price  = new decimal(5212.99) , CategoryId = 1, SupplierId = 1 },
+                new Product { Name="Hoe", Price  = new decimal(12.99) , CategoryId = 2, SupplierId = 1 }
+            );
+
 
         }
     }
