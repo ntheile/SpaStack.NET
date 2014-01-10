@@ -71,15 +71,15 @@
 /*custom font*/
 @font-face {
 	font-family: Alias;
-	src: url('../fonts/Alias.ttf') format('truetype'),
-         url('../fonts/Alias.woff') format('woff'),
-         url('../fonts/Alias.svg') format('svg'),
-         url('../fonts/Alias.eot') format('eot');
-       
+    src: url('../fonts/Alias.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Alias.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Alias.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Alias.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Alias.svg#svgFontName') format('svg'); /* Legacy iOS */       
 }
 .alias-font {
    color: #FF7F00 !important; 
-   font-family: Alias ; 
+   font-family: Alias, Fallback, sans-serif; 
    font-weight: 700;
    font-size: 36px;
 }
