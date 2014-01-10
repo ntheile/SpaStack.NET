@@ -1,13 +1,14 @@
 ﻿define([
     'durandal/system',
     'services/db',
-    'services/logger'],
-    function (system, db, logger) {
+    'services/logger',
+    'config'],
+    function (system, db, logger, config) {
 
         // Database Instances
         var onlinedb = new Default.Container({
             name: 'oData',
-            oDataServiceHost: '/odata'
+            oDataServiceHost: config.apiUrl + '/odata'
         });
 
         var offlinedb = new Default.Container({

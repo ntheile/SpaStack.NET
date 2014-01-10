@@ -11,6 +11,7 @@ using Microsoft.Data.Edm;
 using SpaStack.NET.App_Start;
 using System.Web.Http.OData.Builder;
 using SpaStack.NET.Models;
+using System.Web.Http.Cors;
 
 
 namespace SpaStack.NET
@@ -60,6 +61,10 @@ namespace SpaStack.NET
             );
 
             config.EnableQuerySupport();
+
+            //http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors();
 
         }
     }

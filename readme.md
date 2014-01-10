@@ -146,12 +146,14 @@ Backend
 To Create a PhoneGap Build App
 --------------------------------
 1. Review the docs here, https://build.phonegap.com/docs 
-2. To get up and running quickly...simply build the app in `test` mode so weyland will build and minify the js together
-3. Then reference `main-built.js` in your index.html. 
-4. If you use github then simply push the code up and reference your repo on the phonegap build site. If not, you can run the 
+2. Make sure you minify all your files into a file called main-built.js ...weyland can help with this http://durandaljs.com/documentation/Automating-Builds-with-Visual-Studio/
+3. To get up and running quickly...simply build the app in `test` mode so weyland will build and minify the js together
+4. Then reference `main-built.js` in your index.html (sometimes the file comes in as hidden in Visual Studio, you may have to include it in the project). 
+5. Now make sure you api points to azure, goto App\config.js and set your apiUrl to you azure api ... for me it's "http://spastack.azurewebsites.net"
+5. If you use github then simply push the code up and reference your repo on the phonegap build site.... this project is too large though and you dont want all the server code code included anyways. Therefore, you can run the 
 `PhoneGapBuild.ps1` and it will output a folder on the desktop. You can manually Zip this folder and 
 upload to https://build.phonegap.com . 
-5. An app will be built and available for download from the Phonegap Build site.
+6. An app will be built and available for download from the Phonegap Build site.
 
 To Create App Icons
 -------------------
@@ -220,6 +222,8 @@ Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gASt
 TODO
 ----
 * add testing with Jasmine
+* make menu disappear when you click a menu item in mobile view
+* global config for root api url
 * Add /v1/odata route (http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)
 * Separate admin routes from normal user routes
 	* user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)

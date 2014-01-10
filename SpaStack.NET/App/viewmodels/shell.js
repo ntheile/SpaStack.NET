@@ -1,5 +1,5 @@
-﻿define(['durandal/system', 'plugins/router', 'services/logger', 'durandal/app', 'services/datacontext'],
-    function (system, router, logger, app, datacontext) {
+﻿define(['durandal/system', 'plugins/router', 'services/logger', 'durandal/app', 'services/datacontext', 'config'],
+    function (system, router, logger, app, datacontext, config) {
  
         
         //#region Private Variables
@@ -9,7 +9,7 @@
         var useAuth = true;
         var logout = ko.observable(false);
         var appName = "SpaStack.NET";
-
+        var loginUrl = config.apiUrl + "/login";
         //#endregion
 
 
@@ -148,7 +148,9 @@
             token: token,
             userName: userName,
             logout: logout,
-            appName: appName
+            appName: appName,
+            config: config,
+            loginUrl: loginUrl
         };
 
         //#endregion
