@@ -1,0 +1,127 @@
+<div data-options="dxView : { name: 'Form', title: 'Form' } ">
+    <div class="form" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div class="content" data-bind="dxScrollView: { }">
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Login</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { placeholder: 'Login' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Password</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextBox: { mode: 'password', placeholder: 'Password' }"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Date</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxDateBox: { format: 'date' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Number</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxNumberBox: { value: 10.5 }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Multiline</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxTextArea: { placeholder: 'Comments, if any' }"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Autocomplete</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxAutocomplete: { value: autocomplete.text, dataSource: autocomplete.cities, placeholder: 'Select city ...' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Lookup</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxLookup: { title: 'Color Picker', dataSource: lookup.data, value: lookup.value, searchEnabled: true, placeholder: 'Select color ...' }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">SelectBox</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxSelectBox: { value: selectbox.value, dataSource: selectbox.data }"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Switch</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxSwitch: { value: $data.switch.value }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Checkbox</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxCheckBox: { checked: checkbox.checked }"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">RadioGroup</div>
+                    <div class="dx-field-value radio-buttons">
+                        <div data-bind="dxRadioGroup: { layout: 'horizontal', items: radioGroup.items}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dx-fieldset">
+                <div class="dx-field">
+                    <div class="dx-field-label">Slider</div>
+                    <div class="dx-field-value" data-bind="dxSlider: { value: slider.value, min: 0, max: 10 }"></div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Range Slider</div>
+                    <div class="dx-field-value" data-bind="dxRangeSlider: { start: rangeSlider.minValue, end: rangeSlider.maxValue, min: 0, max: 10 }"></div>
+                </div>
+            </div>
+
+            <div class="dx-fieldset button">
+                <div class="dx-field">
+                    <div class="dx-field-label">Icon only</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: {icon: 'image'}"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Icon and text</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: {icon: 'image', text: 'Click me'}"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Text only</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: {text: 'Click me'}"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Danger</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: {text: 'Click me', type: 'danger'}"></div>
+                    </div>
+                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label">Success</div>
+                    <div class="dx-field-value">
+                        <div data-bind="dxButton: {text: 'Click me', type: 'success'}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<div data-options="dxView : { name: 'Overlays', title: 'Overlays' } " >
+    <div class="navigation" data-options="dxContent : { targetPlaceholder: 'content' } " >
+      <div class="content" data-bind="dxScrollView: { }">
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Load Panel</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: loadPanel.startLoading }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Popup</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: popup.showPopup }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Action Sheet</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: actionsheet.showActionSheet }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Popover</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: popover.toggle }" class="toggle-popover-button"></div>
+                </div>
+            </div>
+        </div>    
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Alert</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.alert }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Notify</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.notify }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Confirm</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.confirm }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Custom dialog</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: dialogs.custom.show }"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dx-fieldset">
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Info</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: toast.showInfo }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Error</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: toast.showError }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Success</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: toast.showSuccess }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Warning</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: toast.showWarning }"></div>
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Toast Custom</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxButton: { text: 'Show', clickAction: toast.showCustom }"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    <div data-bind="dxLoadPanel: { message: 'Please wait ...', visible: loadPanel.visible }"></div>
+    <div id="popup" data-bind="dxPopup: { height: 'auto' }">
+        <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+            <h2>Login</h2>
+        </div>
+        <div data-options="dxTemplate : { name: 'content' } ">
+            <div class="login-form">
+                <div data-bind="dxTextBox: { placeholder: 'Login' }"></div>
+                <div data-bind="dxTextBox: { mode: 'password', placeholder: 'Password' }"></div>                            
+                <div data-bind="dxButton: { text: 'Sign in', clickAction: popup.hidePopup }"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="action_sheet" data-bind="dxActionSheet: { title: 'Action Sheet', items: actionsheet.items, showTitle: true }"></div>
+    
+    <div data-bind="dxPopover: { width: 200, height: 'auto', visible: popover.visible, target: '.toggle-popover-button' }">
+        <div data-bind="dxList: { items: popover.colors, itemClickAction: popover.close }"></div>
+    </div>
+        
+    <div id="toast-info" data-bind="dxToast: { message: 'Sample info message', type: 'info' }"></div>
+    <div id="toast-error" data-bind="dxToast: { message: 'Sample error message', type: 'error' }"></div>
+    <div id="toast-success" data-bind="dxToast: { message: 'Sample success message', type: 'success' }"></div>
+    <div id="toast-warning" data-bind="dxToast: { message: 'Sample warning message', type: 'warning' }"></div>
+    <div id="toast-custom" data-bind="dxToast: { type: 'custom' }">
+        <div class="dx-icon dx-icon-user"></div>
+        New user added!
+    </div>
+        
+        
+    </div>
+</div>

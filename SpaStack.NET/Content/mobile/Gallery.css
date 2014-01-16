@@ -1,0 +1,32 @@
+﻿.dx-gallery {
+    position: absolute;
+
+}
+
+.gallery-item {
+    height: 100%;
+}
+
+@media only screen 
+and (orientation : portrait) {
+    .dx-gallery-item {
+        display: table;
+    }
+    .gallery-item {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .gallery-item > img {
+        width: 100%;
+    }
+}
+
+@media only screen 
+and (orientation : landscape) {
+    .gallery-item  {
+        text-align: center;
+    }
+    .gallery-item > img {
+        height: 100%;
+    }
+}

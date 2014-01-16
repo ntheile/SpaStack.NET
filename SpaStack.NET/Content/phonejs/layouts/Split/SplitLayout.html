@@ -1,0 +1,28 @@
+﻿<div class="split-layout" data-options="dxLayout : { name: 'split' } " >
+    <div class="layout-header" data-options="dxContentPlaceholder: { name: 'header', contentCssPosition: 'static' }">
+        <div class="header-toolbar" data-bind="dxToolbar: { items: [{ text: title, align: 'center' }] }" data-options="dxCommandContainer : { id: 'win8-toolbar' }" >
+        </div>
+    </div>
+
+    <div class="left-content">
+        <div data-options="dxContentPlaceholder : { name: 'navigation', contentCssPosition: 'static' } " >
+            <div class="dx-loadindicator-container">
+                <div data-bind="dxLoadIndicator: {}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <div class="content" data-options="dxContentPlaceholder : { name: 'content', contentCssPosition: 'static' } " >
+            <div class="dx-loadindicator-container">
+                <div data-bind="dxLoadIndicator: {}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dx-app-bar">
+        <div class="footer-toolbar">
+        </div>
+    </div>
+
+</div>

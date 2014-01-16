@@ -1,0 +1,14 @@
+<div data-options="dxView : { name: 'Panorama', title: 'Panorama' } ">
+    <div class="panorama" data-options="dxContent : { targetPlaceholder: 'content' } ">    
+        <div data-bind="dxPanorama: { title: title, items: items }">
+            <div data-options="dxTemplate : { name: 'item' } " >
+                <div class="content" data-bind="dxScrollView: {}">
+                    <div data-bind="text: text"></div>
+                    <div class="images" data-bind="foreach: images">
+                        <img data-bind="attr: { src: src }"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

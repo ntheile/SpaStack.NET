@@ -6,23 +6,33 @@
 > codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows `RESTful OData MVC` patterns on the server side
 > and `MVVM` patterns in the client side.
 
-> **Examples of desireable things SpaStack can do:**
-> * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
-> * Table and Data Paging using the OData spec
-> * Validation
-> * Async Promises
-> * Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-> * Offline - IndexedDB, WebSql, LocalStorage providers
-> * $expand OData REST entities
-> * MVVM data-bind to observables in your view
-> * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
+ **Examples of desireable things SpaStack can do:**
+ * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
+ * Table and Data Paging using the OData spec
+ * Validation
+ * Async Promises
+ * Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
+ * Offline - IndexedDB, WebSql, LocalStorage providers
+ * $expand OData REST entities
+ * MVVM data-bind to observables in your view
+ * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
+ * phonejs - for native device specific themeing, android, ios, windows phone
 
-Install
---------
-1. Download this https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip and copy the zip file to `C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates`
-2. Open Visual Studio 2013 goto File > New Project > C# > You should see a template for SpaStack.NET
-3. After the project opens right click on `index.html` and select 'Set as Start Page' in the menu
-4. Now build the project to restore all the nuget packages
+Table of Contents
+------------------
+* Demo/Screenshots
+* Install
+* How to build an app in 1 line of code 
+* Frameworks Used
+* How to Create a Mobile Themed app view (Android, iPhone, Windows)
+* How to Create a PhoneGap Build App
+* How to create app icons
+* How to create a Custom binding handler for durandal/knockout
+* Automated Builds with Weyland
+* Autogenerate appcache manifest with Fiddler for offline web
+* How OAuth works in this app
+* Testing with Jasmine
+* [TODO Items][TODO Items]
 
 Demo
 -----
@@ -32,12 +42,27 @@ http://spastack.azurewebsites.net
 
 ![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
 
-`Mobile View`
+`Android View`
+
+`iPhone View`
+
+`Windows Phone View`
+
+`Mobile Web View`
 
 ![Screenshot](/SpaStack.NET/Content/images/SpaStackMobile.PNG)
 
-Build an app in 1 line of code 
--------------------------------
+Install
+--------
+1. Download [here](https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip) and copy the zip file to `C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates`
+2. Open Visual Studio 2013 goto File > New Project > C# > You should see a template for SpaStack.NET
+3. After the project opens right click on `index.html` and select 'Set as Start Page' in the menu
+4. Now build the project to restore all the nuget packages
+
+
+
+How to build an app in 1 line of code  
+-------------------------------------
 > maybe a few more ;)
 
 1.Create the `server side model` (C#)
@@ -120,8 +145,8 @@ Build an app in 1 line of code
 
 ```
 
-It uses the following frameworks:
---------------------------------
+Frameworks Used
+---------------
 
 Frontend
 --------
@@ -135,16 +160,111 @@ Frontend
 > * Phonegap - Interacting with native mobile/tablet API's in javascript
 > * jQuery - DOM
 > * jQuery.mmenu - responsive side menu
+> * phonejs - framework for native mobile themes , android, iPhone, windows phone
 
 Backend
 -------
 
 > ASP.NET Web API 2 oData Service
 
+How to Create a Mobile Themed app view (Android, iPhone, Windows)
+-----------------------------------------------------------------
+The phonejs http://phonejs.devexpress.com/ framework is used for this. I chose to make SpaStack have a more Native UI feel using this framework. 
+Although the routing and views are handled through phonejs, the same business logic and viewmodels can be reused. 
+If you don't want tp write the extra views you could also just use the responsive design that bootstrap 3 offers. The following folders go along
+with the phonejs mobile code that can be wrapped up in PhoneGap and deplyed natively.
+
+* `mobile.html` - main view container for mobile applications
+* `App\mobile\*` - main views for mobile applcations
+* `App\mobileviewmodels\*` - viewmodles that only belong to the mobile app
+* `App\viewmodels\*` - shared viewmodels between the mobile and web app
+* `App\services\*` - shared services between the mobile and web app
+* `App\main-mobile.js`- main file for the mobile app lauched using requirejs
+
+Since durandal is not being used in phonejs you need to wire a few things up to make the app work:
+
+First in the `mobile.html` page add reference to your views using phonejs's dx-templates 
+
+```html
+	<!-- Views -->
+    <!-- [Add you mobile specific views here...]-->
+    <link rel="dx-template" type="text/html" href="App/mobile/home.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/CustomEvents.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Form.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Gallery.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/IconSet.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Lists.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Maps.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Navigation.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Overlays.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Panorama.html" />
+    <link rel="dx-template" type="text/html" href="App/mobile/Pivot.html" />
+```
+
+Second modify the `App\main-mobile.js` to include a refernce to all your viewmodels. These are case sensitive
+to your file name, ie KitchenSink.Home relates to the viewmodel Home.html and  KitchenSink.home relates to the viewmodel home.html.
+If you want your item to appear in the nav menu then add it to the `//#region Slide Menu Config` code
+
+```javascript
+   // [add all the viewmodels here..]
+    require(['viewmodels/home',
+             'mobileviewmodels/Form'
+             
+    ], function (homeVm, formVm){
+        var self = {};
+        self.homeVm = homeVm;
+        self.formVm = formVm;
+ 
+        KitchenSink.home = function (params) {
+            return self.homeVm;
+        };
+        KitchenSink.Form = function (params) {
+            return self.formVm;
+        };
 
 
-To Create a PhoneGap Build App
---------------------------------
+        // now navigate to the first route
+        KitchenSink.app.navigate();
+    });
+```
+
+Next create your view using the phonejs data binding syntax like this example, `App\mobile\home.html`
+
+```javascript
+	<div data-options="dxView : { name: 'home' } " >
+		<div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        
+			<h1 data-bind="text: title"></h1>
+        
+			<div class="home-splash" data-bind="dxAction: '#Form'" >
+				<div class="home-demo-logo">
+                
+				</div>
+			</div>
+        
+		</div>
+	</div>
+```
+Lastly, to switch themes for testing modify `App\main-mobile.js`
+
+```javascript
+	// Uncomment the line below to disable platform-specific look and feel 
+	// and to use the specified theme for all devices
+    DevExpress.devices.current({
+        phone: true,
+        platform: 'android' // android, ios, win8
+    });
+```
+
+
+You can test your app in the web browser. If it works then wrap your app up into a phonegap app. 
+You can use the PhoneGapBuildPhoneJs.ps1 script to help copy out the correct files to your desktop.
+
+
+
+
+How to Create a PhoneGap Build App
+-----------------------------------
 1. Review the docs here, https://build.phonegap.com/docs 
 2. Make sure you minify all your files into a file called main-built.js ...weyland can help with this http://durandaljs.com/documentation/Automating-Builds-with-Visual-Studio/
 3. To get up and running quickly...simply build the app in `test` mode so weyland will build and minify the js together
@@ -155,14 +275,14 @@ To Create a PhoneGap Build App
 upload to https://build.phonegap.com . 
 6. An app will be built and available for download from the Phonegap Build site.
 
-To Create App Icons
--------------------
+How to create app icons
+-------------------------
 You can generate Android icons using this site http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html#foreground.type=image&foreground.space.trim=0&foreground.space.pad=0&foreColor=fff%2C0&crop=1&backgroundShape=none&backColor=fff%2C100
 Then configure the `config.xml` to use them in the build
 
 
-To create a Custom binding handler for durandal/knockout
-----------------------------------------------------
+How to create a Custom binding handler for durandal/knockout
+-------------------------------------------------------------
 To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in  
 `services/binding-handlers.js`. This file is loaded at app start in main.js.
 
@@ -197,14 +317,14 @@ Usage
 * From your project directory execute weyland build
 
 
-Autogenerate appcache manifest with Fiddler
---------------------------------------------
+Autogenerate appcache manifest with Fiddler for offline web
+------------------------------------------------------------
 
 http://blogs.msdn.com/b/fiddler/archive/2011/09/15/generate-html5-appcache-manifests-using-fiddler-export.aspx
 
 
-OAuth
--------
+How OAuth works in this app
+-----------------------------
 I added the Individual user account authenication built into ASP.NET. I login simple hit the `/login` route. 
 After you are authenicated you will be redirected to `index.html` from there you are passed a token that can be consumed like this 
 (the part after Bearer is your token):
@@ -216,11 +336,13 @@ Host: localhost:65310
 Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gAStm_YdZHNp8N_gIWc8kklTrydHRVI_FjeXhD66allUjw2XO1fc
 ```
 
-
-
-
+Testing with Jasmine
+--------------------
 TODO
-----
+
+
+TODO Items
+----------
 * add testing with Jasmine
 * make menu disappear when you click a menu item in mobile view
 * work out login kinks on mobile, maybe try identity providers or azure mobile services

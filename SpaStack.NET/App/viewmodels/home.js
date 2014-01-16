@@ -1,6 +1,7 @@
 ﻿define(['services/logger', 'durandal/app'], function (logger, app) {
 
     //#region Internal Methods
+
     var title = 'Home';
 
     function activate() {

@@ -1,0 +1,46 @@
+﻿.navigation .navbar-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: -4px;
+}
+
+.dx-theme-win8 .navbar-wrapper {
+    top: 0px;
+}
+
+.dx-theme-win8 .navbar-wrapper .dx-icon {
+    display: none;
+}
+
+.dx-theme-win8 .navigation .bottom-toolbar {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.dx-theme-win8 .navigation .bottom-toolbar .dx-toolbar {
+    background: #000;
+}
+
+.navigation .content-image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    margin-left: -125px;
+    margin-top: -125px;
+}
+
+@media screen 
+and (max-height : 361px) 
+and (orientation : landscape) {
+    .navigation .content-image {
+        top: 40%;
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+        margin-top: -75px;
+    }
+}

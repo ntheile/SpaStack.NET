@@ -1,0 +1,8 @@
+﻿.panorama .images {
+    overflow: hidden;
+}
+.panorama img {
+    display: block;
+    float: left;
+    margin: 8px 8px;
+}

@@ -1,0 +1,14 @@
+﻿<div data-options="dxView : { name: 'IconSet', title: 'Icons' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div class="iconSet-container" data-bind="dxScrollView: { }">
+            <!-- ko foreach: icons -->
+            <div class="iconSet-item">
+                <div class="iconSet-imageBox">
+                    <span data-bind="attr: { 'class': cssClass }"></span>
+                </div>
+                <div data-bind="text:name"></div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿html, 
+body, 
+#view-port {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.dx-theme-win8 .layout-content {
+    background: #1D1D1D;
+}
+.dx-theme-win8.dx-device-phone .dx-toolbar .dx-toolbar-label {
+    font-size: 20pt;
+    padding-top: 5px;
+}
+.dx-theme-win8 .dx-toolbar {
+    height: 45px;
+    opacity: 1;
+}
+.dx-theme-win8 .slideout-layout .layout-header {
+    height: 45px;
+}
+.dx-theme-win8 .slideout-layout .layout-content {
+    top: 45px;
+}
+.dx-theme-win8 .dx-toolbar .dx-toolbar-item.dx-toolbar-button {
+    padding: 0 9px;
+}
+.dx-theme-win8 .dx-toolbar .dx-button.dx-button-back .dx-button-back-arrow {
+    width: 20px;
+    height: 20px;
+}
+.dx-theme-win8 .dx-button .dx-icon {
+    width: 20px;
+    height: 20px;
+}
+.dx-theme-tizen .layout-frame {
+    border-left: 1px solid #393D3F;
+    margin-left: -1px;
+}
+
+.dx-theme-android .dx-fieldset .dx-field .dx-field-value {
+    text-align: right;
+}
+
+@media (orientation:portrait) {
+    .dx-theme-ios.dx-version-major-7 .dx-field-value.radio-buttons {
+        height: 120px;
+    }
+
+    .dx-theme-ios.dx-version-major-7 .dx-field-value.radio-buttons .dx-radio-group {
+        top: 23px;
+    }
+
+    .dx-theme-ios.dx-version-major-5 .dx-field-value.radio-buttons,
+    .dx-theme-ios.dx-version-major-6 .dx-field-value.radio-buttons {
+        height: 68px;
+    }
+
+    .dx-theme-ios.dx-version-major-5 .dx-field-value.radio-buttons .dx-radio-group,
+    .dx-theme-ios.dx-version-major-6 .dx-field-value.radio-buttons .dx-radio-group {
+        top: 26px;
+    }
+}

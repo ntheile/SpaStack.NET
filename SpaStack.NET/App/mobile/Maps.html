@@ -1,0 +1,11 @@
+<div data-options="dxView : { name: 'Maps', title: 'Maps' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " >
+        <div data-bind="dxTabs: { items: tabs, selectedIndex: selectedTab }"></div>
+        <div class="map" data-bind="visible: selectedTab() === 0">
+            <div data-bind="dxMap: mapGoogle"></div>
+        </div>
+        <div class="map" data-bind="visible: selectedTab() === 1">
+            <div data-bind="dxMap: mapBing"></div>
+        </div>
+    </div>
+</div>

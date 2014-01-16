@@ -1,0 +1,40 @@
+﻿.popup-content {
+    overflow: hidden;
+}
+
+.dx-theme-tizen .dx-fieldset:first-child {
+    margin-top: 5px;
+}
+
+.dx-toast-custom {
+    background-color: darkgray;
+    color: white;
+}
+
+#toast-custom .dx-icon {
+    float: left;
+    height: 56px;
+    width: 56px;
+    margin-right: 5px;
+}
+
+.title-button {
+    float: right;
+}
+
+.dx-viewport .dx-overlay-wrapper .login-form {
+    width: 100%;
+    text-align: center;
+}
+
+.dx-viewport .dx-overlay-wrapper .login-form .dx-textbox {
+    margin-bottom: 7px;
+}
+
+.dx-viewport .dx-overlay-wrapper .dx-clearfix h2 {
+    padding: 0;
+}
+
+.dx-theme-ios.dx-version-major-7 .dx-popup-wrapper .dx-overlay-content .dx-popup-title {
+    padding-bottom: 0;
+}

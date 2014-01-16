@@ -1,0 +1,28 @@
+<div data-options="dxView : { name: 'CustomEvents', title: 'CustomEvents' } ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="custom-events">
+        <script type="text/html" id="cell-template">
+            <div class="event">
+                <div class="table-cell">
+                    <div data-bind="dxCheckBox: { checked: enabled }"></div>
+                </div>
+                <div class="table-cell">
+                    <span data-bind="text: displayName"></span>
+                    <span class="counter-badge" data-bind="text: count, visible: badgeVisible"></span>
+                </div>
+            </div>
+        </script>
+        <div data-bind="dxScrollView: { }">
+            <div class="row">
+                <div class="cell">
+                    <div class="group-name">Pointer Events</div>
+                    <div data-bind="template: { name: 'cell-template', foreach: pointerEvents }"></div>
+                </div>
+                <div class="cell">
+                    <div class="group-name">Swipe Events</div>
+                    <div data-bind="template: { name: 'cell-template', foreach: swipeEvents }"></div>
+                </div>
+            </div>
+            <div class="events-area"></div>
+        </div>
+    </div>
+</div>

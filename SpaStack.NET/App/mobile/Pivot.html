@@ -1,0 +1,15 @@
+<div data-options="dxView : { name: 'Pivot', title: 'Pivot' } ">
+    <div class="pivot" data-options="dxContent : { targetPlaceholder: 'content' } ">    
+        <div data-bind="dxPivot: { items: items }">
+            <div data-options="dxTemplate : { name: 'item' } " >
+                <div data-bind="dxList: { dataSource: items }">
+                    <div data-options="dxTemplate : { name: 'item' } " >
+                        <div data-bind="text: name" class="name"></div>
+                        <div data-bind="text: phone" class="phone"></div>
+                        <div data-bind="text: email" class="e-mail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿div.map {
+    width: 100%;
+    height: 100%;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+ 
+.dx-theme-ios div.map {
+    padding-bottom: 44px;
+}
+
+.dx-theme-tizen div.map {
+    padding-bottom: 44px;
+}
+.dx-theme-android div.map {
+    padding-bottom: 46px;
+}
+
+.dx-theme-win8 div.map {
+    padding-bottom: 21px;
+}
+
+.dx-theme-generic div.map {
+    padding-bottom: 54px;
+}

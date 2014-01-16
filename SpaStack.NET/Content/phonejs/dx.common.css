@@ -1,0 +1,1798 @@
+/*! 
+* DevExpress PhoneJS
+* Version: 13.2.6
+* Build date: Dec 26, 2013
+*
+* Copyright (c) 2012 - 2013 Developer Express Inc. ALL RIGHTS RESERVED
+* EULA: http://phonejs.devexpress.com/EULA
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+{
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+html, body
+{
+  width: 100%;
+  height: 100%;
+}
+body
+{
+  background: #fff;
+}
+.dx-viewport, .dx-hidden-bag
+{
+  width: 100%;
+  height: 100%;
+}
+.dx-hidden-bag
+{
+  top: -9999px;
+  left: -9999px;
+  position: fixed;
+}
+blockquote, q
+{
+  quotes: none;
+}
+a
+{
+  color: #818181;
+}
+:focus
+{
+  outline: 0;
+}
+ins
+{
+  text-decoration: none;
+}
+del
+{
+  text-decoration: line-through;
+}
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+  display: block;
+}
+.dx-full-height
+{
+  height: 100%;
+}
+.dx-transition
+{
+  position: relative;
+}
+.dx-transition-absolute .dx-transition-inner-wrapper
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.dx-transition-absolute .dx-inactive-view
+{
+  left: -9999px !important;
+  height: 100%;
+  position: absolute !important;
+}
+.dx-transition-absolute .dx-active-view
+{
+  left: 0;
+  height: 100%;
+  position: absolute;
+}
+.dx-hidden, .dx-transition-static .dx-inactive-view
+{
+  display: none !important;
+}
+.dx-clearfix:before, .dx-clearfix:after
+{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.dx-clearfix:after
+{
+  clear: both;
+}
+.dx-translate-disabled
+{
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -ms-transform: none !important;
+  -o-transform: none !important;
+  transform: none !important;
+}
+.dx-hidden-input
+{
+  position: fixed;
+  left: -10px;
+  top: -10px;
+  width: 0;
+  height: 0;
+}
+.dx-user-select
+{
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+.dx-color-scheme
+{
+  font-family: "#";
+}
+.dx-widget
+{
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -ms-content-zooming: none;
+  -webkit-text-size-adjust: none;
+}
+.dx-widget.dx-state-invisible, .dx-widget .dx-state-invisible
+{
+  display: none !important;
+}
+.dx-fieldset
+{
+  margin-bottom: 20px;
+}
+.dx-fieldset .dx-field
+{
+  padding: .4em;
+  position: relative;
+}
+.dx-fieldset .dx-field:before, .dx-fieldset .dx-field:after
+{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.dx-fieldset .dx-field:after
+{
+  clear: both;
+}
+.dx-fieldset .dx-field-label
+{
+  float: left;
+  width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dx-fieldset .dx-field-value
+{
+  float: right;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+.dx-button
+{
+  display: inline-block;
+  margin: 1px 0;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  max-width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-button .dx-button-content
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+  max-height: 100%;
+}
+.dx-button.dx-state-disabled
+{
+  cursor: default;
+}
+.dx-button .dx-button-link
+{
+  text-decoration: none;
+}
+.dx-button .dx-icon
+{
+  display: inline-block;
+  vertical-align: middle;
+}
+.dx-button .dx-button-text
+{
+  display: inline;
+  vertical-align: middle;
+}
+.dx-scrollable
+{
+  height: 100%;
+}
+.dx-scrollable.dx-scrollable-native
+{
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-scroll-snap-type: proximity;
+}
+.dx-scrollable.dx-scrollable-native .dx-scrollable-scrollbar
+{
+  display: none;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-scrollbar-simulated
+{
+  position: relative;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-scrollbar-simulated .dx-scrollable-scrollbar
+{
+  display: block;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-vertical, .dx-scrollable.dx-scrollable-native.dx-scrollable-vertical .dx-scrollable-container
+{
+  overflow-y: auto;
+  -ms-touch-action: pan-y;
+  overflow-x: hidden;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-horizontal, .dx-scrollable.dx-scrollable-native.dx-scrollable-horizontal .dx-scrollable-container
+{
+  overflow-x: auto;
+  -ms-touch-action: pan-x;
+  overflow-y: hidden;
+  float: none;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-both, .dx-scrollable.dx-scrollable-native.dx-scrollable-both .dx-scrollable-container
+{
+  overflow-x: auto;
+  overflow-y: auto;
+  -ms-touch-action: pan-y pan-x;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-disabled, .dx-scrollable.dx-scrollable-native.dx-scrollable-disabled .dx-scrollable-container
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -ms-touch-action: auto auto;
+}
+.dx-scrollable.dx-scrollable-native .dx-scrollable-container
+{
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+.dx-scrollable.dx-scrollable-native .dx-scrollable-content
+{
+  -webkit-transform: translateZ(0);
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-scrollbars-hidden ::-webkit-scrollbar
+{
+  display: none;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-native-ios .dx-scrollable-content
+{
+  min-height: 101%;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-native-generic
+{
+  -ms-overflow-style: auto;
+  overflow: hidden;
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-native-generic .dx-scrollable-content
+{
+  height: auto;
+  -webkit-transform: translateZ(0);
+}
+.dx-scrollable.dx-scrollable-native.dx-scrollable-native-android
+{
+  overflow: hidden;
+}
+.dx-scrollable-container
+{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -ms-touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.dx-scrollable-content
+{
+  position: relative;
+  min-height: 100%;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+}
+.dx-scrollable-content:before, .dx-scrollable-content:after
+{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.dx-scrollable-content:after
+{
+  clear: both;
+}
+.dx-scrollable-horizontal .dx-scrollable-content
+{
+  float: left;
+  display: block;
+}
+.dx-scrollable-scrollbar
+{
+  position: absolute;
+}
+.dx-scrollable-scrollbar.dx-scrollbar-vertical
+{
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.dx-scrollable-scrollbar.dx-scrollbar-vertical .dx-scrollable-scroll
+{
+  min-height: 15px;
+  width: 5px;
+}
+.dx-scrollable-scrollbar.dx-scrollbar-horizontal
+{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.dx-scrollable-scrollbar.dx-scrollbar-horizontal .dx-scrollable-scroll
+{
+  min-width: 15px;
+  height: 5px;
+}
+.dx-scrollable-scrollbar .dx-scrollable-scroll
+{
+  opacity: .5;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: opacity 0 linear 0;
+  -moz-transition: opacity 0 linear 0;
+  -o-transition: opacity 0 linear 0;
+  transition: opacity 0 linear 0;
+}
+.dx-scrollable-scrollbar .dx-scrollable-scroll.dx-state-invisible
+{
+  display: block !important;
+  opacity: 0;
+  -webkit-transition: opacity 500ms linear 1s;
+  -moz-transition: opacity 500ms linear 1s;
+  -o-transition: opacity 500ms linear 1s;
+  transition: opacity 500ms linear 1s;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-top-pocket
+{
+  height: 3px;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down
+{
+  position: relative;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  padding: 0;
+  background: #2c9fc9;
+  margin: 0 auto -2px;
+  -webkit-transition: width 100ms linear 0;
+  -moz-transition: width 100ms linear 0;
+  -o-transition: width 100ms linear 0;
+  transition: width 100ms linear 0;
+  overflow: hidden;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down div
+{
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down.dx-scrollview-pull-down-loading
+{
+  width: 100%;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pulldown-pointer1
+{
+  -webkit-animation: dx-pulldown-animation 2s ease-in infinite 0;
+  -moz-animation: dx-pulldown-animation 2s ease-in infinite 0;
+  -o-animation: dx-pulldown-animation 2s ease-in infinite 0;
+  animation: dx-pulldown-animation 2s ease-in infinite 0;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pulldown-pointer2
+{
+  -webkit-animation: dx-pulldown-animation 2s ease-in infinite .5s;
+  -moz-animation: dx-pulldown-animation 2s ease-in infinite .5s;
+  -o-animation: dx-pulldown-animation 2s ease-in infinite .5s;
+  animation: dx-pulldown-animation 2s ease-in infinite .5s;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pulldown-pointer3
+{
+  -webkit-animation: dx-pulldown-animation 2s ease-in infinite 1s;
+  -moz-animation: dx-pulldown-animation 2s ease-in infinite 1s;
+  -o-animation: dx-pulldown-animation 2s ease-in infinite 1s;
+  animation: dx-pulldown-animation 2s ease-in infinite 1s;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-android .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pulldown-pointer4
+{
+  -webkit-animation: dx-pulldown-animation 2s ease-in infinite 1.5s;
+  -moz-animation: dx-pulldown-animation 2s ease-in infinite 1.5s;
+  -o-animation: dx-pulldown-animation 2s ease-in infinite 1.5s;
+  animation: dx-pulldown-animation 2s ease-in infinite 1.5s;
+}
+@-webkit-keyframes dx-pulldown-animation
+{
+  0%
+  {
+    left: 0;
+    opacity: .9;
+  }
+  100%
+  {
+    left: 100%;
+    opacity: .6;
+  }
+}
+@-moz-keyframes dx-pulldown-animation
+{
+  0%
+  {
+    left: 0;
+    opacity: .9;
+  }
+  100%
+  {
+    left: 100%;
+    opacity: .6;
+  }
+}
+@-ms-keyframes dx-pulldown-animation
+{
+  0%
+  {
+    left: 0;
+    opacity: .9;
+  }
+  100%
+  {
+    left: 100%;
+    opacity: .6;
+  }
+}
+@-o-keyframes dx-pulldown-animation{0%{left:0;opacity:.9;}100%{left:100%;opacity:.6;}}
+@keyframes dx-pulldown-animation
+{
+  0%
+  {
+    left: 0;
+    opacity: .9;
+  }
+  100%
+  {
+    left: 100%;
+    opacity: .6;
+  }
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-ios .dx-scrollview-top-pocket
+{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  overflow-y: auto;
+  -webkit-transition: -webkit-transform 400ms ease;
+  -moz-transition: -moz-transform 400ms ease;
+  -o-transition: -o-transform 400ms ease;
+  transition: transform 400ms ease;
+  -webkit-transform: translate3d(0,0,0) scale(1);
+  -moz-transform: translate3d(0,0,0) scale(1);
+  -ms-transform: translate3d(0,0,0) scale(1);
+  -o-transform: translate3d(0,0,0) scale(1);
+  transform: translate3d(0,0,0) scale(1);
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-ios .dx-scrollview-content
+{
+  -webkit-transition: -webkit-transform 400ms ease;
+  -moz-transition: -moz-transform 400ms ease;
+  -o-transition: -o-transform 400ms ease;
+  transition: transform 400ms ease;
+  -webkit-transform: translate3d(0,0,0) scale(1);
+  -moz-transform: translate3d(0,0,0) scale(1);
+  -ms-transform: translate3d(0,0,0) scale(1);
+  -o-transform: translate3d(0,0,0) scale(1);
+  transform: translate3d(0,0,0) scale(1);
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical.dx-scrollable-disabled
+{
+  overflow-y: auto;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical.dx-scrollable-disabled .dx-scrollable-container
+{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical.dx-scrollable-disabled .dx-scrollable-container .dx-scrollable-content
+{
+  overflow-y: hidden;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical.dx-scrollable-disabled .dx-scrollable-container .dx-scrollview-content
+{
+  overflow-y: hidden;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollable-content
+{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  -ms-scroll-snap-type: mandatory;
+  -ms-scroll-snap-points-y: snapList(0%,80px,100%);
+  -ms-scroll-chaining: none;
+  -ms-touch-action: pan-y;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollable-content:after
+{
+  display: block;
+  content: " ";
+  height: 30px;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollable-content .dx-scrollview-top-pocket
+{
+  min-height: 30px;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollview-content
+{
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-touch-action: pan-y;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-locked, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-refreshing, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-loading
+{
+  -ms-touch-action: none;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-locked .dx-scrollable-content, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-refreshing .dx-scrollable-content, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-loading .dx-scrollable-content
+{
+  -ms-touch-action: none;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-locked .dx-scrollview-content, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-refreshing .dx-scrollview-content, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-loading .dx-scrollview-content
+{
+  -ms-touch-action: none;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-refreshing .dx-scrollview-pull-down-indicator, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-loading .dx-scrollview-pull-down-indicator
+{
+  opacity: 1;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-refreshing .dx-scrollview-pull-down-image, .dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container.dx-scrollview-pull-down-loading .dx-scrollview-pull-down-image
+{
+  opacity: 0;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollview-pull-down-indicator
+{
+  transition: opacity ease 400ms;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollview-pull-down-indicator progress::-ms-fill
+{
+  animation-name: -ms-ring;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-win8.dx-scrollable-vertical .dx-scrollable-container .dx-scrollview-bottom-pocket
+{
+  width: 100%;
+  text-align: center;
+}
+.dx-scrollview.dx-scrollable-native.dx-scrollable-native-generic .dx-scrollview-top-pocket
+{
+  position: absolute;
+  display: none;
+}
+.dx-scrollview .dx-scrollview-content
+{
+  position: relative;
+}
+.dx-scrollview .dx-scrollview-content:before, .dx-scrollview .dx-scrollview-content:after
+{
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.dx-scrollview .dx-scrollview-content:after
+{
+  clear: both;
+}
+.dx-scrollview .dx-scrollview-pull-down
+{
+  width: 100%;
+  height: 50px;
+  padding-top: 30px;
+  top: -80px;
+  overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-scrollview .dx-scrollview-pull-down .dx-scrollview-pull-down-container
+{
+  display: inline-block;
+  width: 49%;
+  text-align: right;
+}
+.dx-scrollview .dx-scrollview-pull-down .dx-scrollview-pull-down-indicator
+{
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: inline-block;
+  margin: -21px 40px 0;
+  width: 20px;
+  height: 23px;
+  line-height: 30px;
+  padding-top: 7px;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-scrollview .dx-scrollview-pull-down .dx-scrollview-pull-down-image
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 40px;
+  width: 20px;
+  height: 50px;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-transform: translate3d(0,0,0) rotate(0);
+  -moz-transform: translate3d(0,0,0) rotate(0);
+  -ms-transform: translate3d(0,0,0) rotate(0);
+  -o-transform: translate3d(0,0,0) rotate(0);
+  transform: translate3d(0,0,0) rotate(0);
+  -ms-transform: rotate(0);
+  -webkit-transition: -webkit-transform .2s linear;
+  -moz-transition: -moz-transform .2s linear;
+  -o-transition: -o-transform .2s linear;
+  transition: transform .2s linear;
+}
+.dx-scrollview .dx-scrollview-pull-down .dx-scrollview-pull-down-text
+{
+  display: inline;
+  vertical-align: middle;
+  position: relative;
+  overflow: visible;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-scrollview .dx-scrollview-pull-down .dx-scrollview-pull-down-text div
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: visible;
+}
+.dx-scrollview .dx-scrollview-pull-down.dx-scrollview-pull-down-ready .dx-scrollview-pull-down-image
+{
+  -webkit-transform: translate3d(0,0,0) rotate(-180deg);
+  -moz-transform: translate3d(0,0,0) rotate(-180deg);
+  -ms-transform: translate3d(0,0,0) rotate(-180deg);
+  -o-transform: translate3d(0,0,0) rotate(-180deg);
+  transform: translate3d(0,0,0) rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+}
+.dx-scrollview .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pull-down-image
+{
+  opacity: 0;
+}
+.dx-scrollview .dx-scrollview-pull-down.dx-scrollview-pull-down-loading .dx-scrollview-pull-down-indicator
+{
+  opacity: 1;
+}
+.dx-scrollview .dx-scrollview-scrollbottom
+{
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+  text-align: center;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.dx-scrollview .dx-scrollview-scrollbottom .dx-scrollview-scrollbottom-indicator
+{
+  display: inline-block;
+  height: 23px;
+  line-height: 30px;
+  padding-top: 7px;
+  margin: 0 10px 0 0;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-scrollview .dx-scrollview-scrollbottom .dx-scrollview-scrollbottom-text
+{
+  display: inline;
+  vertical-align: middle;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-scrollview .dx-scrollview-scrollbottom.dx-scrollview-scrollbottom-end
+{
+  opacity: 0;
+}
+.dx-scrollable.dx-scrollview-hybrid
+{
+  overflow: visible;
+  height: auto;
+}
+.dx-scrollable.dx-scrollview-hybrid .dx-scrollable-container
+{
+  overflow: visible;
+  height: auto;
+}
+.dx-checkbox
+{
+  display: inline-block;
+  margin: 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-checkbox.dx-state-disabled
+{
+  cursor: default;
+}
+.dx-checkbox .dx-checkbox-icon
+{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+}
+.dx-slider
+{
+  margin: 1px;
+  line-height: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.dx-slider.dx-state-disabled .dx-slider-wrapper
+{
+  cursor: default;
+}
+.dx-slider .dx-slider-wrapper
+{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+.dx-slider .dx-slider-wrapper .dx-slider-range
+{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-slider .dx-slider-wrapper .dx-slider-handle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-switch
+{
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  margin: 1px;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.dx-switch.dx-state-disabled
+{
+  cursor: default;
+}
+.dx-switch .dx-switch-wrapper
+{
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.dx-switch .dx-switch-inner
+{
+  margin-left: -50px;
+}
+.dx-tabs
+{
+  text-align: center;
+  display: inline-block;
+  font-size: 0 !important;
+}
+.dx-tabs .dx-tab
+{
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dx-tabs .dx-tab a
+{
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  opacity: .001;
+}
+.dx-tabs .dx-tab .dx-icon
+{
+  display: block;
+  margin: 0 auto;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-tabs .dx-tab .dx-tab-text
+{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-map
+{
+  position: relative;
+}
+.dx-map .dx-map-container, .dx-map .dx-map-shield
+{
+  color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.dx-map .dx-map-shield
+{
+  opacity: .01;
+  background: rgba(0,0,0,.01);
+}
+.dx-tabs.dx-navbar
+{
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.dx-tabs.dx-navbar .dx-nav-item
+{
+  vertical-align: bottom;
+}
+.dx-tabs.dx-navbar .dx-nav-item a
+{
+  display: block;
+  height: 100%;
+  text-decoration: none;
+}
+.dx-tabs.dx-navbar .dx-nav-item-content
+{
+  position: relative;
+}
+.dx-editbox
+{
+  margin: 1px;
+}
+.dx-editbox .dx-editbox-input
+{
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-user-modify: read-write-plaintext-only;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+.dx-editbox .dx-placeholder
+{
+  position: relative;
+}
+.dx-editbox .dx-placeholder:before
+{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: attr(DATA-DX_PLACEHOLDER);
+}
+.dx-editbox .dx-placeholder.dx-hide:before
+{
+  display: none;
+}
+.dx-textarea .dx-editbox-input
+{
+  resize: none;
+  font-family: inherit;
+}
+.dx-numberbox input[type=number]::-webkit-inner-spin-button
+{
+  -webkit-appearance: none;
+}
+.dx-datepicker-wrapper .dx-datepicker-rollers
+{
+  display: table;
+}
+.dx-datepicker-wrapper .dx-datepicker-rollers .dx-datepicker-roller
+{
+  position: relative;
+  display: table-cell;
+}
+.dx-toolbar
+{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.dx-toolbar .dx-toolbar-items-container
+{
+  width: 100%;
+  height: 100%;
+}
+.dx-toolbar .dx-toolbar-item
+{
+  display: table-cell;
+  padding: 0 5px;
+  vertical-align: middle;
+}
+.dx-toolbar .dx-toolbar-item .dx-tabs
+{
+  table-layout: auto;
+}
+.dx-toolbar .dx-toolbar-item img
+{
+  display: block;
+}
+.dx-toolbar .dx-toolbar-menu-container
+{
+  display: table-cell;
+  padding: 0 5px;
+  vertical-align: middle;
+}
+.dx-toolbar .dx-toolbar-menu-container .dx-tabs
+{
+  table-layout: auto;
+}
+.dx-toolbar .dx-toolbar-menu-container img
+{
+  display: block;
+}
+.dx-toolbar .dx-toolbar-left, .dx-toolbar .dx-toolbar-right
+{
+  position: absolute;
+}
+.dx-toolbar .dx-toolbar-left
+{
+  left: 0;
+}
+.dx-toolbar .dx-toolbar-right
+{
+  right: 0;
+}
+.dx-toolbar .dx-toolbar-label
+{
+  white-space: nowrap;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-toolbar .dx-toolbar-center
+{
+  margin: 0 auto;
+  height: 100%;
+  text-align: center;
+}
+.dx-toolbar .dx-toolbar-center, .dx-toolbar .dx-toolbar-left, .dx-toolbar .dx-toolbar-right
+{
+  display: table;
+  top: 0;
+  height: 100%;
+}
+.dx-list
+{
+  min-height: 3em;
+  margin: 0;
+}
+.dx-list .dx-list-item
+{
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+}
+.dx-list .dx-list-item-response-wait
+{
+  opacity: .5;
+  -webkit-transition: opacity .2s linear 0;
+  -moz-transition: opacity .2s linear 0;
+  -o-transition: opacity .2s linear 0;
+  transition: opacity .2s linear 0;
+}
+.dx-list .dx-list-item-bag-container, .dx-list .dx-slide-item-content
+{
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.dx-list .dx-list-item-bag-container
+{
+  padding: 0 !important;
+}
+.dx-list .dx-list-item-content, .dx-list .dx-list-item-left-bag, .dx-list .dx-list-item-right-bag
+{
+  display: table-cell;
+}
+.dx-list .dx-list-item-left-bag, .dx-list .dx-list-item-right-bag
+{
+  position: relative;
+  vertical-align: middle;
+  height: 100%;
+  width: 0;
+}
+.dx-list .dx-list-item-content
+{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dx-list .dx-list-item-left-bag .dx-toggle-delete-switch
+{
+  display: block;
+  float: left;
+  opacity: 0;
+  padding: 10px 0;
+}
+.dx-list .dx-list-item-left-bag .dx-toggle-delete-switch-icon
+{
+  -webkit-transition: all .1s linear 0;
+  -moz-transition: all .1s linear 0;
+  -o-transition: all .1s linear 0;
+  transition: all .1s linear 0;
+}
+.dx-list .dx-list-item-left-bag .dx-select-checkbox
+{
+  float: left;
+  -webkit-transition: all .1s linear 0;
+  -moz-transition: all .1s linear 0;
+  -o-transition: all .1s linear 0;
+  transition: all .1s linear 0;
+}
+.dx-list .dx-switchable-delete-button-container
+{
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  -webkit-transition: right .2s linear 0;
+  -moz-transition: right .2s linear 0;
+  -o-transition: right .2s linear 0;
+  transition: right .2s linear 0;
+}
+.dx-list .dx-switchable-delete-button-wrapper
+{
+  display: table;
+  height: 100%;
+}
+.dx-list .dx-switchable-delete-button-inner-wrapper
+{
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  padding-left: 1px;
+}
+.dx-list .dx-switchable-delete-ready .dx-toggle-delete-switch-icon
+{
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.dx-list .dx-switchable-delete-ready .dx-switchable-delete-button-container
+{
+  right: 0 !important;
+}
+.dx-list .dx-slide-item-content
+{
+  z-index: 1001;
+  position: relative;
+}
+.dx-list .dx-slide-item-delete-button-container
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.dx-list .dx-slide-item-delete-button
+{
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.dx-list .dx-slide-item-delete-button-hidden .dx-slide-item-delete-button-container .dx-slide-item-delete-button
+{
+  opacity: 0;
+}
+.dx-list .dx-slide-item-delete-button-content
+{
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+.dx-list .dx-list-next-button
+{
+  padding: 5px;
+  text-align: center;
+}
+.dx-list .dx-list-next-button .dx-button
+{
+  padding: 0 3em;
+}
+.dx-list.dx-list-editing .dx-swipe-delete-button
+{
+  padding-right: 10px;
+}
+.dx-list.dx-list-editing .dx-toggle-delete-switch
+{
+  opacity: 1;
+}
+.dx-list.dx-state-disabled, .dx-list.dx-state-disabled .dx-list-item, .dx-list.dx-state-disabled.dx-list-item
+{
+  cursor: default;
+}
+.dx-holddelete-menuitem
+{
+  cursor: pointer;
+}
+.dx-tileview .dx-tile
+{
+  position: absolute !important;
+  -webkit-backface-visibility: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.dx-tileview .dx-tile.dx-state-active
+{
+  -webkit-transition: -webkit-transform 100ms linear;
+  -moz-transition: -moz-transform 100ms linear;
+  -o-transition: -o-transform 100ms linear;
+  transition: transform 100ms linear;
+  -webkit-transform: scale(.96);
+  -moz-transform: scale(.96);
+  -ms-transform: scale(.96);
+  -o-transform: scale(.96);
+  transform: scale(.96);
+}
+.dx-tileview .dx-tiles-wrapper
+{
+  position: relative;
+  height: 1px;
+}
+.dx-tileview div.dx-scrollable-container
+{
+  overflow-y: hidden;
+}
+.dx-overlay-wrapper
+{
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.dx-overlay-wrapper.dx-overlay-modal
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.dx-overlay-wrapper.dx-overlay-shader
+{
+  background-color: rgba(128,128,128,.5);
+}
+.dx-overlay-wrapper .dx-overlay-content
+{
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.dx-toast-wrapper .dx-toast-content
+{
+  display: inline-block;
+  padding: 10px;
+  vertical-align: middle;
+}
+.dx-toast-wrapper .dx-toast-content .dx-toast-icon
+{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.dx-toast-wrapper .dx-toast-content .dx-toast-message
+{
+  display: inline;
+  vertical-align: middle;
+}
+.dx-toast-wrapper .dx-toast-content.dx-toast-info
+{
+  background-color: #80b9e4;
+}
+.dx-toast-wrapper .dx-toast-content.dx-toast-warning
+{
+  background-color: #ffb277;
+}
+.dx-toast-wrapper .dx-toast-content.dx-toast-error
+{
+  background-color: #f77;
+}
+.dx-toast-wrapper .dx-toast-content.dx-toast-success
+{
+  background-color: #6ec881;
+}
+.dx-popup-wrapper .dx-overlay-content .dx-popup-title
+{
+  min-height: 19px;
+  padding: 10px;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-popup-wrapper .dx-overlay-content .dx-popup-content
+{
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+.dx-dialog-root .dx-overlay-shader
+{
+  background-color: #444;
+}
+.dx-dialog-root .dx-overlay-content .dx-dialog-content
+{
+  padding: 0;
+}
+.dx-dialog-root .dx-overlay-content .dx-dialog-message
+{
+  padding: 10px 10px 5px 10px;
+}
+.dx-dialog-root .dx-overlay-content .dx-dialog-buttons
+{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+}
+.dx-popover-wrapper .dx-popover-arrow
+{
+  width: 10px;
+  height: 10px;
+  z-index: 2000;
+  width: 21px;
+  height: 11px;
+  overflow: hidden;
+  position: relative;
+}
+.dx-popover-wrapper .dx-popover-arrow:after
+{
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  content: " ";
+  display: block;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.dx-popover-wrapper .dx-popover-arrow.dx-popover-arrow-flipped:after
+{
+  top: -14px;
+}
+.dx-gallery
+{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.dx-gallery .dx-gallery-wrapper
+{
+  position: relative;
+  height: 100%;
+}
+.dx-gallery .dx-gallery-nav-button-prev, .dx-gallery .dx-gallery-nav-button-next
+{
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.dx-gallery.dx-state-disabled .dx-gallery-nav-button-prev, .dx-gallery.dx-state-disabled .dx-gallery-nav-button-next
+{
+  cursor: default;
+}
+.dx-gallery .dx-gallery-nav-button-prev
+{
+  left: 0;
+}
+.dx-gallery .dx-gallery-nav-button-next
+{
+  right: 0;
+}
+.dx-gallery .dx-gallery-item
+{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.dx-gallery .dx-gallery-indicator
+{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  height: 10px;
+  font-size: 0;
+}
+.dx-gallery .dx-gallery-indicator-item
+{
+  display: inline-block;
+  height: 10px;
+  margin: 0 2px;
+}
+.dx-gallery .dx-gallery-item-loop
+{
+  display: none;
+}
+.dx-gallery.dx-gallery-loop .dx-gallery-item-loop
+{
+  display: block;
+}
+.dx-lookup
+{
+  height: 19px;
+}
+.dx-lookup .dx-lookup-field
+{
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dx-lookup-popup-wrapper .dx-list-item
+{
+  cursor: pointer;
+}
+.dx-lookup-popup-wrapper .dx-popup-content
+{
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.dx-lookup-popup-wrapper .dx-popup-content .dx-list
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  min-height: 0;
+}
+.dx-lookup-popup-wrapper.dx-lookup-popup-search .dx-popup-content .dx-list
+{
+  top: 45px;
+}
+.dx-action-sheet-popup-wrapper .dx-overlay-content
+{
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.dx-action-sheet-popup-wrapper .dx-overlay-content .dx-button
+{
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.dx-action-sheet-popup-wrapper .dx-overlay-content .dx-action-sheet-item, .dx-action-sheet-popup-wrapper .dx-overlay-content .dx-action-sheet-cancel
+{
+  width: 100%;
+}
+.dx-loadindicator
+{
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+}
+.dx-loadindicator.dx-loadindicator-small
+{
+  width: 20px;
+  height: 20px;
+}
+.dx-loadindicator.dx-loadindicator-medium
+{
+  width: 32px;
+  height: 32px;
+}
+.dx-loadindicator.dx-loadindicator-large
+{
+  width: 64px;
+  height: 64px;
+}
+.dx-loadindicator-container>.dx-loadindicator
+{
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -16px;
+  margin-left: -16px;
+}
+.dx-loadindicator-container>.dx-loadindicator.dx-loadindicator-small
+{
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.dx-loadindicator-container>.dx-loadindicator.dx-loadindicator-medium
+{
+  margin-top: -16px;
+  margin-left: -16px;
+}
+.dx-loadindicator-container>.dx-loadindicator.dx-loadindicator-large
+{
+  margin-top: -32px;
+  margin-left: -32px;
+}
+.dx-loadpanel-content
+{
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #fefefe;
+  filter: alpha(opacity=90);
+  -khtml-opacity: .9;
+  -moz-opacity: .9;
+  opacity: .9;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  text-align: center;
+}
+.dx-loadpanel-content .dx-loadpanel-image
+{
+  height: 30px;
+}
+.dx-loadpanel-content .dx-loadpanel-message
+{
+  margin: 25px;
+  text-align: center;
+}
+.dx-loadpanel-content .dx-loadpanel-message.dx-loadpanel-has-indicator
+{
+  margin: 10px;
+}
+.dx-overlay-wrapper.dx-loadpanel-wrapper, .dx-overlay-wrapper.dx-loadpanel-wrapper .dx-overlay-shader, .dx-overlay-wrapper.dx-loadpanel-wrapper .dx-overlay-content
+{
+  z-index: 1001;
+}
+.dx-autocomplete-popup-wrapper .dx-list
+{
+  min-height: 35px;
+}
+.dx-dropdownmenu-popup-wrapper .dx-dropdownmenu-list
+{
+  min-height: 40px;
+  min-width: 100px;
+}
+.dx-dropdownmenu-popup-wrapper .dx-dropdownmenu-list .dx-list-item:last-child
+{
+  border-bottom: none;
+}
+.dx-selectbox
+{
+  position: relative;
+}
+.dx-selectbox .dx-selectbox-value
+{
+  display: inline;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dx-radio-group .dx-radio-button
+{
+  display: table;
+  cursor: pointer;
+}
+.dx-radio-group .dx-radio-button .dx-radio-value-container
+{
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+.dx-radio-group.dx-radio-group-horizontal .dx-radio-button
+{
+  float: left;
+}
+.dx-pivottabs
+{
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.dx-pivottabs .dx-pivottabs-tab, .dx-pivottabs .dx-pivottabs-ghosttab
+{
+  position: absolute;
+}
+.dx-pivot
+{
+  position: relative;
+  height: 100%;
+}
+.dx-pivot .dx-pivot-itemcontainer
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.dx-pivot .dx-pivot-itemwrapper
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.dx-pivot .dx-pivot-item
+{
+  width: 100%;
+  height: 100%;
+}
+.dx-pivot .dx-pivot-item.dx-pivot-item-hidden
+{
+  top: -9999px;
+  left: -9999px;
+  position: absolute;
+}
+.dx-panorama
+{
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position-y: 0;
+}
+.dx-panorama .dx-panorama-title, .dx-panorama .dx-panorama-ghosttitle
+{
+  position: absolute;
+  white-space: nowrap;
+}
+.dx-panorama .dx-panorama-itemscontainer
+{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.dx-panorama .dx-panorama-item, .dx-panorama .dx-panorama-ghostitem
+{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  width: 88%;
+  height: 100%;
+}
+.dx-slideout
+{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.dx-slideout .dx-slideout-menu.dx-list
+{
+  min-width: 280px;
+  position: absolute;
+  top: 0;
+}
+.dx-slideout .dx-slideout-menu.dx-list .dx-list-item .dx-icon
+{
+  float: left;
+  margin-right: 15px;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  width: 24px;
+  height: 24px;
+}
+.dx-slideout .dx-slideout-item-container
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}

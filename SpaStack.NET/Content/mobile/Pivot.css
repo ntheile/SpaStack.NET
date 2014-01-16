@@ -1,0 +1,8 @@
+﻿.pivot .name {
+    font-weight: 600;
+}
+
+.pivot .phone,
+.pivot .e-mail {
+    font-size: .8em;
+}

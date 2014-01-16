@@ -1,0 +1,18 @@
+<div data-options="dxView : { name: 'Navigation', title: 'Navigation' } ">
+    <div data-bind="dxCommand: { title: 'Create', id: 'create', icon: 'plus', action: function() { console.log('plus click'); }}"></div>
+
+    <div data-bind="dxCommand: { title: 'Add', id: 'menu-add' }"></div>
+    <div data-bind="dxCommand: { title: 'Edit', id: 'menu-edit' }"></div>
+    <div data-bind="dxCommand: { title: 'Remove', id: 'menu-remove' }"></div>
+
+
+
+    <div class="navigation" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div>
+            <img data-bind="attr: { src: navbar.currentImage }" class="content-image" />
+        </div>
+        <div class="navbar-wrapper">
+            <div data-bind="dxNavBar: { items: navbar.items , itemClickAction: navbar.itemClickAction, selectedIndex: navbar.selectedIndex }"></div>
+        </div>
+    </div>
+</div>
