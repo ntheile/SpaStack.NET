@@ -20,7 +20,7 @@ Table of Contents
 * Automated Builds with Weyland
 * Autogenerate appcache manifest with Fiddler for offline web
 * How OAuth works in this app
-* Testing with Jasmine
+* [Testing with Jasmine](#testing-with-jasmine)
 * [TODO Items](#todo-items)
 
  Examples of desireable things SpaStack can do:
