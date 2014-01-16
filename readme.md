@@ -64,8 +64,8 @@ Install
 
 
 
-How to build an app in one line of code  
--------------------------------------
+How to build an app in one line of code 
+-----------------------------------------
 > maybe a few more ;)
 
 1.Create the `server side model` (C#)
