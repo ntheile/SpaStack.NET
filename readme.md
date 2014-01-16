@@ -2,24 +2,13 @@
 =================
 
 
-> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` `Twitter Bootstrap` . It allows you to maintain one slim
+> SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from `Durandal.js` `JayData.js` `ASP.NET Web API 2 oData` `Twitter Bootstrap` `phonejs` . It allows you to maintain one slim
 > codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows `RESTful OData MVC` patterns on the server side
 > and `MVVM` patterns in the client side.
 
- **Examples of desireable things SpaStack can do:**
- * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
- * Table and Data Paging using the OData spec
- * Validation
- * Async Promises
- * Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
- * Offline - IndexedDB, WebSql, LocalStorage providers
- * $expand OData REST entities
- * MVVM data-bind to observables in your view
- * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
- * phonejs - for native device specific themeing, android, ios, windows phone
-
 Table of Contents
 ------------------
+* Examples of desireable things SpaStack can do
 * Demo/Screenshots
 * Install
 * How to build an app in 1 line of code 
@@ -32,7 +21,21 @@ Table of Contents
 * Autogenerate appcache manifest with Fiddler for offline web
 * How OAuth works in this app
 * Testing with Jasmine
-* [TODO Items][TODO Items]
+* [TODO Items](#todo-items)
+
+ Examples of desireable things SpaStack can do:
+--------------------------------------------------
+ * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
+ * Table and Data Paging using the OData spec
+ * Validation
+ * Async Promises
+ * Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
+ * Offline - IndexedDB, WebSql, LocalStorage providers
+ * $expand OData REST entities
+ * MVVM data-bind to observables in your view
+ * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
+ * phonejs - for native device specific themeing, android, ios, windows phone
+
 
 Demo
 -----
@@ -341,8 +344,7 @@ Testing with Jasmine
 TODO
 
 
-TODO Items
-----------
+## TODO Items
 * add testing with Jasmine
 * make menu disappear when you click a menu item in mobile view
 * work out login kinks on mobile, maybe try identity providers or azure mobile services
