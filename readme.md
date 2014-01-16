@@ -11,11 +11,11 @@ Table of Contents
 * [Examples of desireable things SpaStack can do](#examples-of-desireable-things-spastack-can-do)
 * [Demo and Screenshots](#demo-and-screenshots)
 * [Install](#install)
-* [How to build an app in 1 line of code](#how-to-build-an-app-in-1-line-of-code)
+* [How to build an app in one line of code](#how-to-build-an-app-in-one-line-of-code)
 * [Frameworks Used](#frameworks-used)
-* [How to Create a Mobile Themed app view (Android, iPhone, Windows)](#How-to-Create-a-Mobile-Themed-app-view-(Android,-iPhone,-Windows))
-* [How to Create a PhoneGap Build App](#How-to-Create-a-PhoneGap-Build-App)
-* [How to create app icons](#How-to-create-app-icons)
+* [How to Create a Mobile Themed app view (Android, iPhone, Windows)](#how-to-create-a-mobile-themed-app-view-for-android-iphone-and-windows-phone))
+* [How to Create a PhoneGap Build App](#how-to-create-a-phonegap-build-app)
+* [How to create app icons](#how-to-create-app-icons)
 * [How to create a Custom binding handler for durandal and knockout](#how-to-create-a-custom-binding-handler-for-durandal-and-knockout)
 * [Automated Builds with Weyland](#automated-builds-with-weyland)
 * [Autogenerate appcache manifest with Fiddler for offline web](#autogenerate-appcache-manifest-with-fiddler-for-offline-web)
@@ -23,8 +23,8 @@ Table of Contents
 * [Testing with Jasmine](#testing-with-jasmine)
 * [TODO Items](#todo-items)
 
- Examples of desireable things SpaStack can do:
---------------------------------------------------
+Examples of desireable things SpaStack can do
+---------------------------------------------
  * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
  * Table and Data Paging using the OData spec
  * Validation
@@ -64,7 +64,7 @@ Install
 
 
 
-How to build an app in 1 line of code  
+How to build an app in one line of code  
 -------------------------------------
 > maybe a few more ;)
 
@@ -170,8 +170,8 @@ Backend
 
 > ASP.NET Web API 2 oData Service
 
-How to Create a Mobile Themed app view (Android, iPhone, Windows)
------------------------------------------------------------------
+How to Create a Mobile Themed app view for Android iPhone and Windows Phone
+----------------------------------------------------------------------------
 The phonejs http://phonejs.devexpress.com/ framework is used for this. I chose to make SpaStack have a more Native UI feel using this framework. 
 Although the routing and views are handled through phonejs, the same business logic and viewmodels can be reused. 
 If you don't want tp write the extra views you could also just use the responsive design that bootstrap 3 offers. The following folders go along
