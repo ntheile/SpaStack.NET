@@ -8,18 +8,18 @@
 
 Table of Contents
 ------------------
-* Examples of desireable things SpaStack can do
-* Demo/Screenshots
-* Install
-* How to build an app in 1 line of code 
-* Frameworks Used
-* How to Create a Mobile Themed app view (Android, iPhone, Windows)
-* How to Create a PhoneGap Build App
-* How to create app icons
-* How to create a Custom binding handler for durandal/knockout
-* Automated Builds with Weyland
-* Autogenerate appcache manifest with Fiddler for offline web
-* How OAuth works in this app
+* [Examples of desireable things SpaStack can do](#examples-of-desireable-things-spastack-can-do)
+* [Demo and Screenshots](#demo-and-screenshots)
+* [Install](#install)
+* [How to build an app in 1 line of code](#how-to-build-an-app-in-1-line-of-code)
+* [Frameworks Used](#frameworks-used)
+* [How to Create a Mobile Themed app view (Android, iPhone, Windows)](#How-to-Create-a-Mobile-Themed-app-view-(Android,-iPhone,-Windows))
+* [How to Create a PhoneGap Build App](#How-to-Create-a-PhoneGap-Build-App)
+* [How to create app icons](#How-to-create-app-icons)
+* [How to create a Custom binding handler for durandal and knockout](#how-to-create-a-custom-binding-handler-for-durandal-and-knockout)
+* [Automated Builds with Weyland](#automated-builds-with-weyland)
+* [Autogenerate appcache manifest with Fiddler for offline web](#autogenerate-appcache-manifest-with-fiddler-for-offline-web)
+* [How OAuth works in this app](#how-oauth-works-in-this-app)
 * [Testing with Jasmine](#testing-with-jasmine)
 * [TODO Items](#todo-items)
 
@@ -37,8 +37,8 @@ Table of Contents
  * phonejs - for native device specific themeing, android, ios, windows phone
 
 
-Demo
------
+Demo and Screenshots
+--------------------
 http://spastack.azurewebsites.net
 
 `Desktop View`
@@ -284,8 +284,8 @@ You can generate Android icons using this site http://android-ui-utils.googlecod
 Then configure the `config.xml` to use them in the build
 
 
-How to create a Custom binding handler for durandal/knockout
--------------------------------------------------------------
+How to create a Custom binding handler for durandal and knockout
+----------------------------------------------------------------
 To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in  
 `services/binding-handlers.js`. This file is loaded at app start in main.js.
 
@@ -344,7 +344,8 @@ Testing with Jasmine
 TODO
 
 
-## TODO Items
+TODO Items
+----------
 * add testing with Jasmine
 * make menu disappear when you click a menu item in mobile view
 * work out login kinks on mobile, maybe try identity providers or azure mobile services
