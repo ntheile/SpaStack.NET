@@ -158,8 +158,8 @@ How to build an app in one line of code
 Frameworks Used
 ---------------
 
-Frontend
---------
+### Frontend ###
+
 
 > * JayData.js – rich data management
 > * Durandal.js – navigation, app life cycle and View composition
@@ -172,8 +172,8 @@ Frontend
 > * jQuery.mmenu - responsive side menu
 > * phonejs - framework for native mobile themes , android, iPhone, windows phone
 
-Backend
--------
+### Backend ###
+
 
 > ASP.NET Web API 2 oData Service
 
