@@ -34,15 +34,15 @@ http://spastack.azurewebsites.net/mobile.html
 
 `Android View`
 
-![Screenshot](/SpaStack.NET/Content/images/SpaStackAndroid.PNG)
+![Screenshot](/SpaStack.NET/Content/images/SpaStackAndroid.png)
 
 `iPhone View`
 
-![Screenshot](/SpaStack.NET/Content/images/SpaStackiPhone.PNG)
+![Screenshot](/SpaStack.NET/Content/images/SpaStackiPhone.png)
 
 `Windows Phone View`
 
-![Screenshot](/SpaStack.NET/Content/images/SpaStackWinPhone.PNG)
+![Screenshot](/SpaStack.NET/Content/images/SpaStackWinPhone.png)
 
 `Mobile Web View`
 
