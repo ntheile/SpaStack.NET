@@ -8,8 +8,8 @@
 
 Table of Contents
 ------------------
-* [Examples of desireable things SpaStack can do](#examples-of-desireable-things-spastack-can-do)
 * [Demo and Screenshots](#demo-and-screenshots)
+* [Examples of desireable things SpaStack can do](#examples-of-desireable-things-spastack-can-do)
 * [Install](#install)
 * [How to build an app in one line of code](#how-to-build-an-app-in-one-line-of-code)
 * [Frameworks Used](#frameworks-used)
@@ -23,6 +23,32 @@ Table of Contents
 * [Testing with Jasmine](#testing-with-jasmine)
 * [TODO Items](#todo-items)
 
+Demo and Screenshots
+--------------------
+http://spastack.azurewebsites.net
+http://spastack.azurewebsites.net/mobile.html
+
+`Desktop View`
+
+![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
+
+`Android View`
+
+![Screenshot](/SpaStack.NET/Content/images/SpaStackAndroid.PNG)
+
+`iPhone View`
+
+![Screenshot](/SpaStack.NET/Content/images/SpaStackiPhone.PNG)
+
+`Windows Phone View`
+
+![Screenshot](/SpaStack.NET/Content/images/SpaStackWinPhone.PNG)
+
+`Mobile Web View`
+
+![Screenshot](/SpaStack.NET/Content/images/SpaStackMobile.PNG)
+
+
 Examples of desireable things SpaStack can do
 ---------------------------------------------
  * Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
@@ -35,32 +61,6 @@ Examples of desireable things SpaStack can do
  * MVVM data-bind to observables in your view
  * Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
  * phonejs - for native device specific themeing, android, ios, windows phone
-
-
-Demo and Screenshots
---------------------
-http://spastack.azurewebsites.net
-http://spastack.azurewebsites.net/mobile.html
-
-`Desktop View`
-
-![Screenshot](/SpaStack.NET/Content/images/SPAStack.PNG)
-
-`Android View`
-
-![Screenshot](/SpaStack.NET/Content/images/SPAStackAndroid.PNG)
-
-`iPhone View`
-
-![Screenshot](/SpaStack.NET/Content/images/SPAStackiPhone.PNG)
-
-`Windows Phone View`
-
-![Screenshot](/SpaStack.NET/Content/images/SPAStackWinPhone.PNG)
-
-`Mobile Web View`
-
-![Screenshot](/SpaStack.NET/Content/images/SpaStackMobile.PNG)
 
 Install
 --------
