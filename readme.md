@@ -40,6 +40,7 @@ Examples of desireable things SpaStack can do
 Demo and Screenshots
 --------------------
 http://spastack.azurewebsites.net
+http://spastack.azurewebsites.net/mobile.html
 
 `Desktop View`
 
@@ -47,9 +48,15 @@ http://spastack.azurewebsites.net
 
 `Android View`
 
+![Screenshot](/SpaStack.NET/Content/images/SPAStackAndroid.PNG)
+
 `iPhone View`
 
+![Screenshot](/SpaStack.NET/Content/images/SPAStackiPhone.PNG)
+
 `Windows Phone View`
+
+![Screenshot](/SpaStack.NET/Content/images/SPAStackWinPhone.PNG)
 
 `Mobile Web View`
 

@@ -1,7 +1,7 @@
 ﻿define([], function(){
 
-    var products = ["Spegesild", "Rogede sild", "Röd Kaviar", "Nord-Ost Matjeshering", "Konbu", "Jack's New England Clam Chowder", "Inlagd Sill",
-                    "Ikura", "Guaraná Fantástica", "Gravad lax", "Escargots de Bourgogne", "Carnarvon Tigers", "Boston Crab Meat", "Uncle Bob's Organic Dried Pears",
+    var products = ["Rock", "On", "SpaStack", "Android", "iPhone", "Windows Phone", "Yay",
+                    "Mobile", "SPA", "Gravad lax", "Escargots de Bourgogne", "Carnarvon Tigers", "Boston Crab Meat", "Uncle Bob's Organic Dried Pears",
                     "Tofu", "Rössle Sauerkraut", "Manjimup Dried Apples", "Longlife Tofu", "Tourtière", "Thüringer Rostbratwurst", "Perth Pasties", "Pâté chinois",
                     "Mishi Kobe Niku", "Alice Mutton", "Wimmers gute Semmelknödel", "Tunnbröd", "Singaporean Hokkien Fried Mee", "Ravioli Angelo", "Gustaf's Knäckebröd",
                     "Gnocchi di nonna Alice", "Filo Mix", "Steeleye Stout", "Sasquatch Ale", "Raclette Courdavault", "Queso Manchego La Pastora", "Mozzarella di Giovanni",
