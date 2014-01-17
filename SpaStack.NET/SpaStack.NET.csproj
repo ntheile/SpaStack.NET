@@ -349,7 +349,10 @@
     <Content Include="Content\images\products\78.jpg" />
     <Content Include="Content\images\products\79.jpg" />
     <Content Include="Content\images\products\80.jpg" />
+    <Content Include="Content\images\SpaStackAndroid.png" />
+    <Content Include="Content\images\SpaStackiPhone.png" />
     <Content Include="Content\images\SpaStackLogo.PNG" />
+    <Content Include="Content\images\SpaStackWinPhone.png" />
     <Content Include="Content\mobile.css" />
     <Content Include="Content\mobile\CustomEvents.css" />
     <Content Include="Content\mobile\Gallery.css" />
