@@ -36,6 +36,11 @@
             msViewportStyle.appendChild(document.createTextNode(mq));
             document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
         }
+        var scrollEl = function(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top - 60
+            }, 500);
+        };
     </script>
 
    

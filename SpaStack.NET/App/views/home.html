@@ -1,66 +1,71 @@
 ﻿<section>
     <h1 id="spastacknet">SpaStack.NET</h1>
-    
-    <a class="btn btn-success" href="/KitchenSink/index.html"> PhoneJs</a>
-
     <blockquote>
         <p>
-            SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from <code>Durandal.js</code> <code>JayData.js</code> <code>ASP.NET Web API 2 oData</code> <code>Twitter Bootstrap</code> . It allows you to maintain one slim
+            SpaStack.NET is a Single Page Application (SPA) web boilerplate framework built from <code>Durandal.js</code> <code>JayData.js</code> <code>ASP.NET Web API 2 oData</code> <code>Twitter Bootstrap</code> <code>phonejs</code> . It allows you to maintain one slim
             codebase . It be package with PhoneGap for native deployments to Android / iPhone / Blackberry / Windows Phone / Browsers / Windows 8 / etc... It follows <code>RESTful OData MVC</code> patterns on the server side
             and <code>MVVM</code> patterns in the client side.
         </p>
-
     </blockquote>
-
-
-    <h2>Examples of desireable things SpaStack can do:</h2>
+    <h2 id="table-of-contents">Table of Contents</h2>
     <ul>
-        <li>
-            Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern
-        </li>
-        <li>
-            Table and Data Paging using the OData spec
-        </li>
-        <li>
-            Validation
-        </li>
-        <li>
-            Async Promises
-        </li>
-        <li>
-            Login (local, facebook, twitter, etc...)
-        </li>
-        <li>
-            Offline - IndexedDB, WebSql, LocalStorage providers
-        </li>
-        <li>
-            $expand OData REST entities
-        </li>
-        <li>
-            MVVM data-bind to observables in your view
-        </li>
-        <li>
-            Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)
-        </li>
+        <li><a href="#" onclick="scrollEl('#demo-and-screenshots')">Demo and Screenshots</a></li>
+        <li><a href="#" onclick="scrollEl('#examples-of-desireable-things-spastack-can-do')">Examples of desireable things SpaStack can do</a></li>
+        <li><a href="#" onclick="scrollEl('#install')">Install</a></li>
+        <li><a href="#" onclick="scrollEl('#how-to-build-an-app-in-one-line-of-code')">How to build an app in one line of code</a></li>
+        <li><a href="#" onclick="scrollEl('#frameworks-used')">Frameworks Used</a></li>
+        <li><a href="#" onclick="scrollEl('#how-to-create-a-mobile-themed-app-view-for-android-iphone-and-windows-phone')">How to Create a Mobile Themed app view (Android, iPhone, Windows)</a>)</li>
+        <li><a href="#" onclick="scrollEl('#how-to-create-a-phonegap-build-app')">How to Create a PhoneGap Build App</a></li>
+        <li><a href="#" onclick="scrollEl('#how-to-create-app-icons')">How to create app icons</a></li>
+        <li><a href="#" onclick="scrollEl('#how-to-create-a-custom-binding-handler-for-durandal-and-knockout')">How to create a Custom binding handler for durandal and knockout</a></li>
+        <li><a href="#" onclick="scrollEl('#automated-builds-with-weyland')">Automated Builds with Weyland</a></li>
+        <li><a href="#" onclick="scrollEl('#autogenerate-appcache-manifest-with-fiddler-for-offline-web')">Autogenerate appcache manifest with Fiddler for offline web</a></li>
+        <li><a href="#" onclick="scrollEl('#how-oauth-works-in-this-app')">How OAuth works in this app</a></li>
+        <li><a href="#" onclick="scrollEl('#testing-with-jasmine')">Testing with Jasmine</a></li>
+        <li><a href="#" onclick="scrollEl('#todo-items')">TODO Items</a></li>
     </ul>
-    
+    <h2 id="demo-and-screenshots">Demo and Screenshots</h2>
+    <p>
+        http://spastack.azurewebsites.net
+        http://spastack.azurewebsites.net/mobile.html
+    </p>
     <p><code>Desktop View</code></p>
-
-    <p><img src="../../Content/images/SPAStack.PNG" alt="Screenshot" title="" /></p>
-
-    <p><code>Mobile View</code></p>
-
-    <p><img src="../../Content/images/SpaStackMobile.PNG" alt="Screenshot" title="" /></p>
-
-    <h2 id="buildanappin1lineofcode">Build an app in 1 line of code </h2>
-
+    <p><img alt="Screenshot" src="Content/images/SPAStack.PNG" /></p>
+    <p><code>Android View</code></p>
+    <p><img alt="Screenshot" src="Content/images/SpaStackAndroid.png" /></p>
+    <p><code>iPhone View</code></p>
+    <p><img alt="Screenshot" src="Content/images/SpaStackiPhone.png" /></p>
+    <p><code>Windows Phone View</code></p>
+    <p><img alt="Screenshot" src="Content/images/SpaStackWinPhone.png" /></p>
+    <p><code>Mobile Web View</code></p>
+    <p><img alt="Screenshot" src="Content/images/SpaStackMobile.PNG" /></p>
+    <h2 id="examples-of-desireable-things-spastack-can-do">Examples of desireable things SpaStack can do</h2>
+    <ul>
+        <li>Code organization and separation of concerns for large scale javascript development using AMD patterns and best practices such as the revealing module pattern</li>
+        <li>Table and Data Paging using the OData spec</li>
+        <li>Validation</li>
+        <li>Async Promises</li>
+        <li>Login (local, facebook, twitter, etc...) - http://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project</li>
+        <li>Offline - IndexedDB, WebSql, LocalStorage providers</li>
+        <li>$expand OData REST entities</li>
+        <li>MVVM data-bind to observables in your view</li>
+        <li>Dashboards - charting, graphing, grids, forms (uses startbootstrap's dashboard template http://startbootstrap.com/sb-admin)</li>
+        <li>phonejs - for native device specific themeing, android, ios, windows phone</li>
+    </ul>
+    <h2 id="install">Install</h2>
+    <ol>
+        <li>Download <a href="https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip">here</a> and copy the zip file to <code>C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates</code></li>
+        <li>Open Visual Studio 2013 goto File &gt; New Project &gt; C# &gt; You should see a template for SpaStack.NET</li>
+        <li>After the project opens right click on <code>index.html</code> and select 'Set as Start Page' in the menu</li>
+        <li>Now build the project to restore all the nuget packages</li>
+    </ol>
+    <h2 id="how-to-build-an-app-in-one-line-of-code">How to build an app in one line of code</h2>
     <blockquote>
         <p>maybe a few more ;)</p>
     </blockquote>
-
     <p>1.Create the <code>server side model</code> (C#)</p>
-
-<pre><code class="csharp">    public class TodoItem
+<pre><code class="csharp">
+    public class TodoItem
     {
         [Key]
         public Guid Id { get; set; }
@@ -69,15 +74,13 @@
         public Boolean InSync { get; set; }    
     }
 </code></pre>
-
     <p>2.Create a <code>Web Api 2 oData Rest Controller</code> and use <code>Entity Framework Code first</code> to create the database</p>
-
     <p>
         3.Run the Jay Data Service utility to auto create the client side model (JS)
         <code>JaySvcUtil.exe -m http://localhost:65310/odata/$metadata -o App\services\db.js</code>
     </p>
-
-<pre><code class="js">    /*//////////////////////////////////////////////////////////////////////////////////////
+<pre><code class="js">
+    /*//////////////////////////////////////////////////////////////////////////////////////
     ////// Autogenerated by JaySvcUtil.exe http://JayData.org for more info        /////////
     //////                             oData  V3                                     /////////
     //////////////////////////////////////////////////////////////////////////////////////*/
@@ -93,41 +96,36 @@
     $data.generatedContexts = $data.generatedContexts || [];
     $data.generatedContexts.push(MyDb);
 </code></pre>
-
     <p>4.Wire up a <code>data context</code> instance on your client (JS)</p>
-
-<pre><code class="js">    var db = new MyDb({
+<pre><code class="js">
+    var db = new MyDb({
         name: 'oData',
         oDataServiceHost: '/odata'
     });
 </code></pre>
-
     <p>5.Consume the data and display it using a knockout observableArray (JS)</p>
-
-<pre><code class="js">    var remoteTodos = new ko.observableArray();
+<pre><code class="js">
+    var remoteTodos = new ko.observableArray();
     var promise = datacontext.db.TodoItem.toArray(remoteTodos);
 </code></pre>
-
-<pre><code class="html">    &lt;table class="table table-striped"&gt;
+<pre><code class="html">
+    &lt;table class=&quot;table table-striped&quot;&gt;
         &lt;thead&gt;
             &lt;tr&gt;
                 &lt;th&gt;Task&lt;/th&gt;
                 &lt;th&gt;Is Synchronized&lt;/th&gt;
             &lt;/tr&gt;
         &lt;/thead&gt;
-        &lt;tbody data-bind="foreach: remoteTodos"&gt;
+        &lt;tbody data-bind=&quot;foreach: remoteTodos&quot;&gt;
             &lt;tr&gt;
-                &lt;td contenteditable="true" data-bind="text: Task"&gt;&lt;/td&gt;
-                &lt;td data-bind="text: InSync"&gt;&lt;/td&gt;
+                &lt;td contenteditable=&quot;true&quot; data-bind=&quot;text: Task&quot;&gt;&lt;/td&gt;
+                &lt;td data-bind=&quot;text: InSync&quot;&gt;&lt;/td&gt;
             &lt;/tr&gt;
         &lt;/tbody&gt;
     &lt;/table&gt;
 </code></pre>
-
-    <h2 id="itusesthefollowingframeworks">It uses the following frameworks:</h2>
-
-    <h2 id="frontend">Frontend</h2>
-
+    <h2 id="frameworks-used">Frameworks Used</h2>
+    <h3 id="frontend">Frontend</h3>
     <blockquote>
         <ul>
             <li>JayData.js – rich data management</li>
@@ -139,43 +137,113 @@
             <li>Phonegap - Interacting with native mobile/tablet API's in javascript</li>
             <li>jQuery - DOM</li>
             <li>jQuery.mmenu - responsive side menu</li>
+            <li>phonejs - framework for native mobile themes , android, iPhone, windows phone</li>
         </ul>
     </blockquote>
-
-    <h2 id="backend">Backend</h2>
-
+    <h3 id="backend">Backend</h3>
     <blockquote>
         <p>ASP.NET Web API 2 oData Service</p>
     </blockquote>
-
-    <h2 id="tocreateaphonegapbuildapp">To Create a PhoneGap Build App</h2>
-
+    <h2 id="how-to-create-a-mobile-themed-app-view-for-android-iphone-and-windows-phone">How to Create a Mobile Themed app view for Android iPhone and Windows Phone</h2>
+    <p>
+        The phonejs http://phonejs.devexpress.com/ framework is used for this. I chose to make SpaStack have a more Native UI feel using this framework.
+        Although the routing and views are handled through phonejs, the same business logic and viewmodels can be reused.
+        If you don't want tp write the extra views you could also just use the responsive design that bootstrap 3 offers. The following folders go along
+        with the phonejs mobile code that can be wrapped up in PhoneGap and deplyed natively.
+    </p>
+    <ul>
+        <li><code>mobile.html</code> - main view container for mobile applications</li>
+        <li><code>App\mobile\*</code> - main views for mobile applcations</li>
+        <li><code>App\mobileviewmodels\*</code> - viewmodles that only belong to the mobile app</li>
+        <li><code>App\viewmodels\*</code> - shared viewmodels between the mobile and web app</li>
+        <li><code>App\services\*</code> - shared services between the mobile and web app</li>
+        <li><code>App\main-mobile.js</code>- main file for the mobile app lauched using requirejs</li>
+    </ul>
+    <p>Since durandal is not being used in phonejs you need to wire a few things up to make the app work:</p>
+    <p>First in the <code>mobile.html</code> page add reference to your views using phonejs's dx-templates </p>
+<pre><code class="html">    &lt;!-- Views --&gt;
+    &lt;!-- [Add you mobile specific views here...]--&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/home.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/CustomEvents.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Form.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Gallery.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/IconSet.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Lists.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Maps.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Navigation.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Overlays.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Panorama.html&quot; /&gt;
+    &lt;link rel=&quot;dx-template&quot; type=&quot;text/html&quot; href=&quot;App/mobile/Pivot.html&quot; /&gt;
+</code></pre>
+    <p>
+        Second modify the <code>App\main-mobile.js</code> to include a refernce to all your viewmodels. These are case sensitive
+        to your file name, ie KitchenSink.Home relates to the viewmodel Home.html and  KitchenSink.home relates to the viewmodel home.html.
+        If you want your item to appear in the nav menu then add it to the <code>//#region Slide Menu Config</code> code
+    </p>
+<pre><code class="javascript">   // [add all the viewmodels here..]
+    require(['viewmodels/home',
+             'mobileviewmodels/Form'
+    ], function (homeVm, formVm){
+        var self = {};
+        self.homeVm = homeVm;
+        self.formVm = formVm;
+        KitchenSink.home = function (params) {
+            return self.homeVm;
+        };
+        KitchenSink.Form = function (params) {
+            return self.formVm;
+        };
+        // now navigate to the first route
+        KitchenSink.app.navigate();
+    });
+</code></pre>
+    <p>Next create your view using the phonejs data binding syntax like this example, <code>App\mobile\home.html</code></p>
+<pre><code class="javascript">    &lt;div data-options=&quot;dxView : { name: 'home' } &quot; &gt;
+        &lt;div data-options=&quot;dxContent : { targetPlaceholder: 'content' } &quot; &gt;
+            &lt;h1 data-bind=&quot;text: title&quot;&gt;&lt;/h1&gt;
+            &lt;div class=&quot;home-splash&quot; data-bind=&quot;dxAction: '#Form'&quot; &gt;
+                &lt;div class=&quot;home-demo-logo&quot;&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+    <p>Lastly, to switch themes for testing modify <code>App\main-mobile.js</code></p>
+<pre><code class="javascript">    // Uncomment the line below to disable platform-specific look and feel 
+    // and to use the specified theme for all devices
+    DevExpress.devices.current({
+        phone: true,
+        platform: 'android' // android, ios, win8
+    });
+</code></pre>
+    <p>
+        You can test your app in the web browser. If it works then wrap your app up into a phonegap app.
+        You can use the PhoneGapBuildPhoneJs.ps1 script to help copy out the correct files to your desktop.
+    </p>
+    <h2 id="how-to-create-a-phonegap-build-app">How to Create a PhoneGap Build App</h2>
     <ol>
         <li>Review the docs here, https://build.phonegap.com/docs </li>
+        <li>Make sure you minify all your files into a file called main-built.js ...weyland can help with this http://durandaljs.com/documentation/Automating-Builds-with-Visual-Studio/</li>
         <li>To get up and running quickly...simply build the app in <code>test</code> mode so weyland will build and minify the js together</li>
-        <li>Then reference <code>main-built.js</code> in your index.html. </li>
+        <li>Then reference <code>main-built.js</code> in your index.html (sometimes the file comes in as hidden in Visual Studio, you may have to include it in the project). </li>
+        <li>Now make sure you api points to azure, goto App\config.js and set your apiUrl to you azure api ... for me it's "http://spastack.azurewebsites.net"</li>
         <li>
-            If you use github then simply push the code up and reference your repo on the phonegap build site. If not, you can run the
+            If you use github then simply push the code up and reference your repo on the phonegap build site.... this project is too large though and you dont want all the server code code included anyways. Therefore, you can run the
             <code>PhoneGapBuild.ps1</code> and it will output a folder on the desktop. You can manually Zip this folder and
             upload to https://build.phonegap.com .
         </li>
         <li>An app will be built and available for download from the Phonegap Build site.</li>
     </ol>
-
-    <h2 id="tocreateappicons">To Create App Icons</h2>
-
+    <h2 id="how-to-create-app-icons">How to create app icons</h2>
     <p>
         You can generate Android icons using this site http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html#foreground.type=image&amp;foreground.space.trim=0&amp;foreground.space.pad=0&amp;foreColor=fff%2C0&amp;crop=1&amp;backgroundShape=none&amp;backColor=fff%2C100
         Then configure the <code>config.xml</code> to use them in the build
     </p>
-
-    <h2 id="tocreateacustombindinghandlerfordurandalknockout">To create a Custom binding handler for durandal/knockout</h2>
-
+    <h2 id="how-to-create-a-custom-binding-handler-for-durandal-and-knockout">How to create a Custom binding handler for durandal and knockout</h2>
     <p>
-        To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in <br />
+        To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in<br />
         <code>services/binding-handlers.js</code>. This file is loaded at app start in main.js.
     </p>
-
 <pre>
 composition.addBindingHandler('mmenu', {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel) {
@@ -188,62 +256,53 @@ composition.addBindingHandler('mmenu', {
     }
 });
 </pre>
-
-    <h2 id="automatedbuildswithweyland">Automated Builds with Weyland</h2>
-
+    <h2 id="automated-builds-with-weyland">Automated Builds with Weyland</h2>
     <p>Features</p>
-
     <ul>
         <li>JS Linting</li>
         <li>JS Minification</li>
         <li>RequireJS Optimization</li>
     </ul>
-
     <p>Usage</p>
-
     <ul>
         <li>Install NodeJS and NPM</li>
         <li>On the command line execute npm install -g weyland</li>
         <li>Navigate into your web project and place a weyland-config file at the root.</li>
         <li>From your project directory execute weyland build</li>
     </ul>
-
-    <h2 id="autogenerateappcachemanifestwithfiddler">Autogenerate appcache manifest with Fiddler</h2>
-
+    <h2 id="autogenerate-appcache-manifest-with-fiddler-for-offline-web">Autogenerate appcache manifest with Fiddler for offline web</h2>
     <p>http://blogs.msdn.com/b/fiddler/archive/2011/09/15/generate-html5-appcache-manifests-using-fiddler-export.aspx</p>
-
-    <h2 id="oauth">OAuth</h2>
-
+    <h2 id="how-oauth-works-in-this-app">How OAuth works in this app</h2>
     <p>
         I added the Individual user account authenication built into ASP.NET. I login simple hit the <code>/login</code> route.
         After you are authenicated you will be redirected to <code>index.html</code> from there you are passed a token that can be consumed like this
         (the part after Bearer is your token):
     </p>
-
 <pre><code>GET http://localhost:65310/api/Account/UserInfo HTTP/1.1
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 Host: localhost:65310
 Authorization: Bearer 9P1pkFVc5rDBikSxyCuvgr_T8L7oR0lok5SdryBF4yDU5jj21sO_d-gAStm_YdZHNp8N_gIWc8kklTrydHRVI_FjeXhD66allUjw2XO1fc
 </code></pre>
-
-    <h2 id="todo">TODO</h2>
-
+    <h2 id="testing-with-jasmine">Testing with Jasmine</h2>
+    <p>TODO</p>
+    <h2 id="todo-items">TODO Items</h2>
     <ul>
         <li>add testing with Jasmine</li>
+        <li>make menu disappear when you click a menu item in mobile view</li>
+        <li>work out login kinks on mobile, maybe try identity providers or azure mobile services</li>
         <li>Add /v1/odata route (http://www.asp.net/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)</li>
         <li>
-            <p>Separate admin routes from normal user routes</p>
-
-            <ul>
+            Separate admin routes from normal user routes<ul>
                 <li>
-                    <p>user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)</p>
-
+                    <p>
+                        user route -  /v1/odata/TodoItems (lock down filtering where uid using this http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)
 <pre>
 ```csharp
-// Validator to restrict which properties can be used in $filter expressions.
-public class MyFilterQueryValidator : FilterQueryValidator
-{
-    static readonly string[] allowedProperties = { "ReleaseYear", "Title" };
+    // Validator to restrict which properties can be used in $filter expressions.
+    public class MyFilterQueryValidator : FilterQueryValidator
+    {
+        static readonly string[] allowedProperties = { "ReleaseYear", "Title" };
+                    </p>
 <pre><code>public override void ValidateSingleValuePropertyAccessNode(
     SingleValuePropertyAccessNode propertyAccessNode,
     ODataValidationSettings settings)
@@ -253,20 +312,21 @@ public class MyFilterQueryValidator : FilterQueryValidator
     {
         propertyName = propertyAccessNode.Property.Name;
     }
-<pre><code>if (propertyName != null &amp;amp;&amp;amp; !allowedProperties.Contains(propertyName))
-{
-    throw new ODataException(
-        String.Format("Filter on {0} not allowed", propertyName));
+    if (propertyName != null &amp;&amp; !allowedProperties.Contains(propertyName))
+    {
+        throw new ODataException(
+            String.Format("Filter on {0} not allowed", propertyName));
+    }
+    base.ValidateSingleValuePropertyAccessNode(propertyAccessNode, settings);
 }
-base.ValidateSingleValuePropertyAccessNode(propertyAccessNode, settings);
 </code></pre>
-}
-</code></pre>
-}
-```
-</pre>
+                    <p>
+                        }
+                        ```
+                        </pre>
+                        * admin route - /v1/odata/admin/TodoItem
+                    </p>
                 </li>
-                <li>admin route - /v1/odata/admin/TodoItem</li>
             </ul>
         </li>
     </ul>
