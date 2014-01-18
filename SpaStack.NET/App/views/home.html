@@ -54,7 +54,7 @@
     </ul>
     <h2 id="install">Install</h2>
     <ol>
-        <li>Download <a href="https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip">here</a> and copy the zip file to <code>C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates</code></li>
+        <li>Download <a href="https://github.com/ntheile/SpaStack.NET/raw/master/SpaStack.NET/SpaStack.NET.zip">here</a> and copy the zip file to C:\Users\yourname\Documents\Visual Studio 2013\Templates\ProjectTemplates</li>
         <li>Open Visual Studio 2013 goto File &gt; New Project &gt; C# &gt; You should see a template for SpaStack.NET</li>
         <li>After the project opens right click on <code>index.html</code> and select 'Set as Start Page' in the menu</li>
         <li>Now build the project to restore all the nuget packages</li>
@@ -77,7 +77,7 @@
     <p>2.Create a <code>Web Api 2 oData Rest Controller</code> and use <code>Entity Framework Code first</code> to create the database</p>
     <p>
         3.Run the Jay Data Service utility to auto create the client side model (JS)
-        <code>JaySvcUtil.exe -m http://localhost:65310/odata/$metadata -o App\services\db.js</code>
+        JaySvcUtil.exe -m http://localhost:65310/odata/$metadata -o App\services\db.js
     </p>
 <pre><code class="js">
     /*//////////////////////////////////////////////////////////////////////////////////////
@@ -236,9 +236,8 @@
     </ol>
     <h2 id="how-to-create-app-icons">How to create app icons</h2>
     <p>
-        You can generate Android icons using this site http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html#foreground.type=image&amp;foreground.space.trim=0&amp;foreground.space.pad=0&amp;foreColor=fff%2C0&amp;crop=1&amp;backgroundShape=none&amp;backColor=fff%2C100
-        Then configure the <code>config.xml</code> to use them in the build
-    </p>
+        You can generate Android icons <a href="http://android-ui-utils.googlecode.com/hg/asset-studio/dist/icons-launcher.html#foreground.type=image&amp;foreground.space.trim=0&amp;foreground.space.pad=0&amp;foreColor=fff%2C0&amp;crop=1&amp;backgroundShape=none&amp;backColor=fff%2C100)" target="blank">here</a>
+   then configure the<code>config.xml</code>to use them in the build</p>
     <h2 id="how-to-create-a-custom-binding-handler-for-durandal-and-knockout">How to create a Custom binding handler for durandal and knockout</h2>
     <p>
         To get the jquery.mmenu plugin to work, a durandal custom binding handler was created in<br />
