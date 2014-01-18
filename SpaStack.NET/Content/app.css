@@ -68,7 +68,12 @@
     margin: 10% 30% 0 30%;
 }
 
-
+.desktop-image {
+    background-image: url("../Content/images/SpaStackM.PNG");
+    height: 240px;
+    width: 320px;
+    background-repeat: no-repeat;
+}
 
 /* 
     Alias custom font
@@ -147,5 +152,11 @@ a.alias-font:hover {
 
     .splash-loader {
         font-size: 75px;
+    }
+    .desktop-image {
+        background-image: url("../Content/images/SpaStack.PNG");
+        height: 616px;
+        width: 822px;
+        background-repeat: no-repeat;
     }
 }

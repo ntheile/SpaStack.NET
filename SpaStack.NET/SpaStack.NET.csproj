@@ -356,6 +356,7 @@
     <Content Include="Content\images\SpaStackAndroid.png" />
     <Content Include="Content\images\SpaStackiPhone.png" />
     <Content Include="Content\images\SpaStackLogo.PNG" />
+    <Content Include="Content\images\SPAStackM.PNG" />
     <Content Include="Content\images\SpaStackWinPhone.png" />
     <Content Include="Content\mobile.css" />
     <Content Include="Content\mobile\CustomEvents.css" />
