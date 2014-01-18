@@ -1,4 +1,6 @@
 ﻿<div data-options="dxView : { name: 'products', title: 'Products' } ">
+
+    <center><div data-bind="visible: isLoading">Loading...</div></center>
     <div data-bind="dxList: { dataSource: products() }">
         <div data-options="dxTemplate : { name: 'item' } " data-bind="dxAction: '#productdetails/{Id}'">
             <span data-bind="text: Name"></span>

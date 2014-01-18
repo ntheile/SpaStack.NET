@@ -9,6 +9,7 @@
     var isfirstpage = ko.observable(true);
     var islastpage = ko.observable(false);
     var records;
+    var isLoading = ko.observable(true);
 
     // this code runs each time the page is visited
     function activate() {
@@ -55,7 +56,8 @@
                             var koProduct = product.asKoObservable();
                             products.push(koProduct);
                         });
-                    });
+                        isLoading(false);
+            });
 
         return records;
     }
@@ -84,7 +86,8 @@
         prevPage: prevPage,
         isfirstpage: isfirstpage,
         islastpage: islastpage,
-        totalcount: totalcount
+        totalcount: totalcount,
+        isLoading: isLoading
      };
 
     return vm;

@@ -78,7 +78,7 @@ define([], function () {
               {
                   "title": "Products",
                   "action": "#products",
-                  "icon": "Product"
+                  "icon": "product"
               }
             ]
         }
@@ -233,6 +233,8 @@ define([], function () {
             return self.productsVm;
         };
         KitchenSink.productdetails = function (params) {
+            // pass the query string value #/productdetails/{id}
+            self.productdetailsVm.activate(params.id);
             return self.productdetailsVm;
         };
 

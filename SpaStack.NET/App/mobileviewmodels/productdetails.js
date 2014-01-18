@@ -2,25 +2,31 @@
 
     //#region Internal Methods
     var title = 'Products List';
-    var product =  ko.observable();
+    var products = new ko.observableArray([]);
     
     // for phonejs to activate view
-    function viewShown(params) {
-        getData();
+    function activate(id) {
+        products([]);
+        getData(id);
     }
 
 
-    function getData() {
-        var promise = datacontext.onlinedb.Products.include("Category").toArray(product);
+    function getData(id) {
+        var promise = datacontext.onlinedb.Products.filter("it.Id == " + id).include("Category").toArray(function(records) {
+            records.forEach(function (product) {
+                var koProduct = product.asKoObservable();
+                products.push(koProduct);
+            });
+        });
         return promise;
     }
 
     // public code that is exposed to the view model
     var vm = {
-        viewShown: viewShown,
+        activate: activate,
         title: title,
         datacontext: datacontext,
-        product: product       
+        products: products
      };
 
     return vm;
