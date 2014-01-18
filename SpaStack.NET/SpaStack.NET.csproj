@@ -237,6 +237,7 @@
     <Content Include="App\mobileviewmodels\Overlays.js" />
     <Content Include="App\mobileviewmodels\Panorama.js" />
     <Content Include="App\mobileviewmodels\Pivot.js" />
+    <Content Include="App\mobileviewmodels\productdetails.js" />
     <Content Include="App\mobile\CustomEvents.html" />
     <Content Include="App\mobile\Form.html" />
     <Content Include="App\mobile\Gallery.html" />
@@ -248,8 +249,11 @@
     <Content Include="App\mobile\Overlays.html" />
     <Content Include="App\mobile\Panorama.html" />
     <Content Include="App\mobile\Pivot.html" />
+    <Content Include="App\mobile\productdetails.html" />
+    <Content Include="App\mobile\products.html" />
     <Content Include="App\viewmodels\phonejs.js" />
     <Content Include="App\views\phonejs.html" />
+    <Content Include="Content\bootstrap-cerulean.css" />
     <Content Include="Content\images\demo-logo.png" />
     <Content Include="Content\images\dx-logo.png" />
     <Content Include="Content\images\gallery\boats.jpg" />

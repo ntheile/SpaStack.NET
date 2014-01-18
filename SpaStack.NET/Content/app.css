@@ -82,13 +82,13 @@
          url('../fonts/Alias.svg#svgFontName') format('svg'); /* Legacy iOS */       
 }
 .alias-font {
-   color: #FF7F00 !important; 
+   color: black  !important; 
    font-family: Alias, Fallback, sans-serif; 
    font-weight: 700;
    font-size: 36px;
 }
 a.alias-font:hover {
-    color: lightgrey !important;
+    color: #2C3539 !important;
 }
 /* 
     Alias custom font
@@ -103,13 +103,13 @@ a.alias-font:hover {
 .splash-div-top {
     width: 100%; 
     height: 150px; 
-    background-color: black;
+    background-color: #2fa4e7;
 }
 
 .splash-div-bottom {
     width: 100%; 
     height: 150px;
-    background-color: gray;
+    background-color:#2C3539 ;
 }
 
 .splash-logo {
@@ -132,13 +132,13 @@ a.alias-font:hover {
     .splash-div-top {
         width: 100%; 
         height: 300px; 
-        background-color: black;
+        background-color: #2fa4e7;
     }
 
     .splash-div-bottom {
         width: 100%; 
         height: 300px;
-        background-color: gray;
+        background-color: #2C3539;
     }
 
     .splash-logo {

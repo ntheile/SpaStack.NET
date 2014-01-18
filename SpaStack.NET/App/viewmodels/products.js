@@ -12,23 +12,27 @@
 
     // this code runs each time the page is visited
     function activate() {
-        logger.log(title + ' View Activated', null, title, true);
+        //logger.log(title + ' View Activated', null, title, true);
 
         var promise1,
-            promise2,
-            promise3;
+            promise2;
 
         promise1 = datacontext.ready().then(function () {
             promise2 = showPage();
         });
         
         // show the page when the promise is resolved
-        return $.when(promise2, promise3);
+        return $.when(promise2);
        
     }
 
     function deactivate() {
        
+    }
+
+    // for phonejs to activate view
+    function viewShown() {
+        activate();
     }
 
 
@@ -70,6 +74,7 @@
     // public code that is exposed to the view model
     var vm = {
         activate: activate,
+        viewShown: viewShown,
         deactivate: deactivate,
         title: title,
         datacontext: datacontext,

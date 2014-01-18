@@ -21,7 +21,7 @@
         // you can include a datacontext.ready().then() call in each viewmodels activate function
         var ready = function () {
             return $.when(offlinedb.onReady(), onlinedb.onReady()).then(function () {
-                toastr.info('database instances ready, user authorized');
+                console.log('database instances ready, user authorized');
             });
         };
 

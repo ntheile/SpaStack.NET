@@ -74,6 +74,11 @@ define([], function () {
                   "title": "Icons",
                   "action": "#IconSet",
                   "icon": "image"
+              },
+              {
+                  "title": "Products",
+                  "action": "#products",
+                  "icon": "Product"
               }
             ]
         }
@@ -157,7 +162,10 @@ define([], function () {
              'mobileviewmodels/Maps',
              'mobileviewmodels/Navigation',
              'mobileviewmodels/Panorama',
-             'mobileviewmodels/Pivot'
+             'mobileviewmodels/Pivot',
+             'viewmodels/products',
+             'mobileviewmodels/productdetails'
+
     ], function (homeVm,
                  formVm,
                  overlaysVm,
@@ -168,7 +176,9 @@ define([], function () {
                  mapsVm,
                  navigationVm,
                  panoramaVm,
-                 pivotVm
+                 pivotVm,
+                 productsVm,
+                 productdetailsVm
 
     ){
         var self = {};
@@ -183,6 +193,8 @@ define([], function () {
         self.navigationVm = navigationVm;
         self.panoramaVm = panoramaVm;
         self.pivotVm = pivotVm;
+        self.productsVm = productsVm;
+        self.productdetailsVm = productdetailsVm;
 
         KitchenSink.home = function (params) {
             return self.homeVm;
@@ -216,6 +228,12 @@ define([], function () {
         };
         KitchenSink.Pivot = function (params) {
             return self.pivotVm;
+        };
+        KitchenSink.products = function (params) {
+            return self.productsVm;
+        };
+        KitchenSink.productdetails = function (params) {
+            return self.productdetailsVm;
         };
 
         // now navigate to the first route
