@@ -103,6 +103,7 @@ as well as a great mechanism for paging and filtering data.
 It only takes a few steps to create the entire backend for HTTP GET, PUT, POST, PATCH and DELETES. 
 
 Create a `Web Api 2 oData Rest Controller` and use `Entity Framework Code first` to create the database. 
+See this great article http://www.asp.net/web-api/overview/odata-support-in-aspnet-web-api/creating-an-odata-endpoint
 
 **3. Create the Frontend Model**
 
