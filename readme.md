@@ -75,8 +75,12 @@ How to build an app in one line of code
 ---------------------------------------
 > maybe a few more ;)
 
-1.Create the `server side model` (C#)
 
+1. Create the server side model (C#)
+First I demonstrate how to create a server side plain old C# object (POCO) representing the data model, in this case a TodoItem. 
+I use a Guid as the ID for possible future implementations using a local data store and syncing to the backend database occasionally. 
+
+`model`
 ```csharp
 
 	public class TodoItem
@@ -90,11 +94,23 @@ How to build an app in one line of code
 
 ```
 
-2.Create a `Web Api 2 oData Rest Controller` and use `Entity Framework Code first` to create the database
+2. Create the Backend
+Next I use an Object Relation Mapping tool (ORM) tool to create the backend for CRUD operations. 
+I am a huge fan of the OData protocol for allowing easy access to my data, 
+as well as a great mechanism for paging and filtering data. 
+It only takes a few steps to create the entire backend for HTTP GET, PUT, POST, PATCH and DELETES. 
 
-3.Run the Jay Data Service utility to auto create the client side model (JS)
+Create a `Web Api 2 oData Rest Controller` and use `Entity Framework Code first` to create the database. 
+
+3. Create the Frontend Model 
+Next I use a rich data library called JayData to create a Front End Model representation of my TodoItem. 
+Javascript is a dynamic language and it’s not strongly typed, that’s why I turn to the JayData 
+library to help me out, it also automates the ajax calls to the backend. 
+
+Run the Jay Data Service utility to auto create the client side model (JS)
 `JaySvcUtil.exe -m http://localhost:65310/odata/$metadata -o App\services\db.js`
 
+`model`
 ```js
 
 	/*//////////////////////////////////////////////////////////////////////////////////////
@@ -116,8 +132,10 @@ How to build an app in one line of code
 
 ```
 
-4.Wire up a `data context` instance on your client (JS)
+4. Create a data context service layer
+Wire up a `data context` instance on your client (JS)
 
+`datacontext`
 ```js
 
 	var db = new MyDb({
@@ -125,17 +143,31 @@ How to build an app in one line of code
 		oDataServiceHost: '/odata'
 	});
 
+	function getTodoItems(observable){
+		var promise = db.TodoItem.toArray(observable);
+		return promise;
+	}
+	
 ```
 
-5.Consume the data and display it using a knockout observableArray (JS)
+5. Wire the model to the view
+Finally we wire the data model to the view. I use the knockout.js library to do this. 
+Knockout uses a two-way binding object called an observable that automatically 
+binds your data to the screen, if the data in the view model changes so does the view.
+This allows for good separation of concerns. It also allows for async data to return and automatically
+update on the view.
 
+Consume the data and display it using a knockout observableArray (JS)
+
+`viewmodel`
 ```js
 
 	var remoteTodos = new ko.observableArray();
-	var promise = datacontext.db.TodoItem.toArray(remoteTodos);
+	datacontext.getTodoItems(remoteTodos);
 
 ```
 
+`view`
 ```html
 
 	<table class="table table-striped">
@@ -154,6 +186,42 @@ How to build an app in one line of code
 	</table>
 
 ```
+
+6. Write a Test
+We might as well write a piece of test code here. I use Jasmine in this example to write a test to see if we get results 
+back from the web service for Todo Items. 
+
+`test`
+```javascript
+
+define(['services/datacontext'], function (datacontext) {
+
+    describe("Getting TodoItems in a web service call", function () {
+        var ajaxResult = false;
+        beforeEach(function (done) {
+            datacontext.getTodoItems().done(function() {
+                // success
+                ajaxResult = true;
+                done();
+            });
+        });
+        it("should return true", function (done) {
+            expect(ajaxResult).toBe(true);
+            done();
+        });
+    });
+
+});
+
+
+```
+
+7. That’s all, in very few lines of code and it’s simple, clean, maintainable and testable!
+
+
+
+
+
 
 Frameworks Used
 ---------------

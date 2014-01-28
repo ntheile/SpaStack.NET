@@ -203,6 +203,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\JasmineController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SuppliersController.cs" />
@@ -358,6 +359,8 @@
     <Content Include="Content\images\SpaStackLogo.PNG" />
     <Content Include="Content\images\SPAStackM.PNG" />
     <Content Include="Content\images\SpaStackWinPhone.png" />
+    <Content Include="Content\jasmine\jasmine.css" />
+    <Content Include="Content\jasmine\jasmine_favicon.png" />
     <Content Include="Content\mobile.css" />
     <Content Include="Content\mobile\CustomEvents.css" />
     <Content Include="Content\mobile\Gallery.css" />
@@ -528,7 +531,7 @@
     <Content Include="Scripts\durandal\viewEngine.js" />
     <Content Include="Scripts\durandal\viewLocator.js" />
     <Content Include="Content\toastr.less" />
-    <Content Include="PhoneGapBuild.ps1" />
+    <Content Include="PhoneGapBuildBootstrap.ps1" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
@@ -559,6 +562,13 @@
     <Content Include="Content\font-awesome\scss\_stacked.scss" />
     <Content Include="Content\font-awesome\scss\_variables.scss" />
     <Content Include="Content\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Scripts\jasmine-samples\Player.js" />
+    <Content Include="Scripts\jasmine-samples\PlayerSpec.js" />
+    <Content Include="Scripts\jasmine-samples\Song.js" />
+    <Content Include="Scripts\jasmine-samples\SpecHelper.js" />
+    <Content Include="Scripts\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\jasmine\jasmine.js" />
+    <Content Include="Scripts\prettyprint.js" />
     <None Include="CreateJayDataModels.bat" />
     <Content Include="Scripts\dx.phonejs.js" />
     <Content Include="Scripts\flot\excanvas.min.js" />
@@ -579,6 +589,7 @@
     <Content Include="PhoneGapBuildPhoneJS.ps1" />
     <None Include="Properties\PublishProfiles\spastack - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\spastack - Web Deploy.pubxml" />
+    <Content Include="Scripts\jasmine\MIT.LICENSE" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <None Include="Scripts\jaydata-vsdoc.js" />
     <Content Include="Scripts\jaydata.d.ts" />
@@ -654,6 +665,19 @@
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\underscore.js" />
     <Content Include="Scripts\underscore.min.js" />
+    <Content Include="tests\lib\jasmine-2.0.0\boot.js" />
+    <Content Include="tests\lib\jasmine-2.0.0\console.js" />
+    <Content Include="tests\lib\jasmine-2.0.0\jasmine-html.js" />
+    <Content Include="tests\lib\jasmine-2.0.0\jasmine.css" />
+    <Content Include="tests\lib\jasmine-2.0.0\jasmine.js" />
+    <Content Include="tests\lib\jasmine-2.0.0\jasmine_favicon.png" />
+    <Content Include="tests\SpecRunner.html" />
+    <Content Include="tests\specRunner.js" />
+    <Content Include="tests\spec\PlayerSpec.js" />
+    <Content Include="tests\spec\SpecHelper.js" />
+    <Content Include="tests\spec\TodoItem.js" />
+    <Content Include="tests\src\Player.js" />
+    <Content Include="tests\src\Song.js" />
     <Content Include="weyland-config.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -697,7 +721,7 @@
     <Content Include="Views\Login\_Register.cshtml" />
     <Content Include="Views\Login\_RegisterExternal.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
-    <Content Include="SpaStack.NET.zip" />
+    <Content Include="Views\Jasmine\SpecRunner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\morris\" />

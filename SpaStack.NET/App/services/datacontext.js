@@ -25,6 +25,9 @@
             });
         };
 
+        var getTodoItems = function() {
+            return datacontext.onlinedb.TodoItems.toArray();
+        };
 
         var primeData = function () {
             // TODO - prime data that is shared by views
@@ -36,7 +39,8 @@
             primeData: primeData,
             onlinedb: onlinedb,
             offlinedb: offlinedb,
-            ready: ready
+            ready: ready,
+            getTodoItems: getTodoItems
         };
 
         
