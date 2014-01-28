@@ -95,7 +95,8 @@ I use a Guid as the ID for possible future implementations using a local data st
 
 ```
 
-2. Create the Backend
+**2. Create the Backend**
+
 Next I use an Object Relation Mapping tool (ORM) tool to create the backend for CRUD operations. 
 I am a huge fan of the OData protocol for allowing easy access to my data, 
 as well as a great mechanism for paging and filtering data. 
@@ -103,7 +104,8 @@ It only takes a few steps to create the entire backend for HTTP GET, PUT, POST, 
 
 Create a `Web Api 2 oData Rest Controller` and use `Entity Framework Code first` to create the database. 
 
-3. Create the Frontend Model 
+**3. Create the Frontend Model**
+
 Next I use a rich data library called JayData to create a Front End Model representation of my TodoItem. 
 Javascript is a dynamic language and it’s not strongly typed, that’s why I turn to the JayData 
 library to help me out, it also automates the ajax calls to the backend. 
@@ -133,7 +135,8 @@ Run the Jay Data Service utility to auto create the client side model (JS)
 
 ```
 
-4. Create a data context service layer
+**4. Create a data context service layer**
+
 Wire up a `data context` instance on your client (JS)
 
 `datacontext`
@@ -151,7 +154,8 @@ Wire up a `data context` instance on your client (JS)
 	
 ```
 
-5. Wire the model to the view
+**5. Wire the model to the view**
+
 Finally we wire the data model to the view. I use the knockout.js library to do this. 
 Knockout uses a two-way binding object called an observable that automatically 
 binds your data to the screen, if the data in the view model changes so does the view.
@@ -188,7 +192,8 @@ Consume the data and display it using a knockout observableArray (JS)
 
 ```
 
-6. Write a Test
+**6. Write a Test**
+
 We might as well write a piece of test code here. I use Jasmine in this example to write a test to see if we get results 
 back from the web service for Todo Items. 
 
@@ -217,8 +222,7 @@ define(['services/datacontext'], function (datacontext) {
 
 ```
 
-
-7. That’s all, in very few lines of code and it’s simple, clean, maintainable and testable!
+**7. That’s all, in very few lines of code and it’s simple, clean, maintainable and testable!**
 
 
 
