@@ -223,7 +223,7 @@ define(['services/datacontext'], function (datacontext) {
 
 ```
 
-**7. That’s all, in very few lines of code and it’s simple, clean, maintainable and testable!**
+**7. That’s it! In very few lines of code you created an app that's simple, clean, maintainable and testable using best practice like MVC, MVVVM and AMD!**
 
 
 

@@ -722,6 +722,7 @@
     <Content Include="Views\Login\_RegisterExternal.cshtml" />
     <Content Include="Scripts\underscore.min.map" />
     <Content Include="Views\Jasmine\SpecRunner.cshtml" />
+    <Content Include="SpaStack.NET.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\morris\" />
