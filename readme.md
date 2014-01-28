@@ -76,7 +76,8 @@ How to build an app in one line of code
 > maybe a few more ;)
 
 
-*STEP 1. Create the server side model (C#)*
+**STEP 1. Create the server side model (C#)**
+
 First I demonstrate how to create a server side plain old C# object (POCO) representing the data model, in this case a TodoItem. 
 I use a Guid as the ID for possible future implementations using a local data store and syncing to the backend database occasionally. 
 
