@@ -252,7 +252,9 @@
     <Content Include="App\mobile\Pivot.html" />
     <Content Include="App\mobile\productdetails.html" />
     <Content Include="App\mobile\products.html" />
+    <Content Include="App\viewmodels\gameoflife.js" />
     <Content Include="App\viewmodels\phonejs.js" />
+    <Content Include="App\views\gameoflife.html" />
     <Content Include="App\views\phonejs.html" />
     <Content Include="Content\bootstrap-cerulean.css" />
     <Content Include="Content\images\demo-logo.png" />

@@ -1,0 +1,33 @@
+﻿<section >
+    <style>
+        .alive {
+            background-color: #2fa4e7;
+            color: #2fa4e7;
+        }
+        .dead {
+            background-color: white;
+            color: white;
+        }
+    </style>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Game of Life in JavaScript   <small><a href="#" target="_blank">Code on github</a></small></h1>
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-success" data-bind="click: play">Play</button>
+    <button type="button" class="btn btn-default" data-bind="click: pause">Pause</button>
+    <button type="button" class="btn btn-default" data-bind="click: update">Step</button>
+    <button type="button" class="btn btn-danger" data-bind="click: reset" >Reset</button>
+    <br/><br/>
+
+    <table>
+        <tbody data-bind="foreach: grid" id="lifeWrapper">
+            <tr data-bind="foreach: $data">
+                <td style="padding: 5px 5px 5px 5px  " data-bind="css: $data ? 'alive' : 'dead'"></td>
+            </tr>
+        </tbody>
+    </table>
+  
+</section>

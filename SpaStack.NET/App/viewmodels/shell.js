@@ -46,7 +46,8 @@
                     { route: 'chart', moduleId: 'chart', title: 'Charts', visible: true, icon: 'fa fa-bar-chart-o' },
                     { route: 'forms', moduleId: 'forms', title: 'Forms', visible: true, icon: 'fa fa-edit' },
                     { route: 'tables', moduleId: 'tables', title: 'Tables', visible: true, icon: 'fa fa-table' },
-                    { route: 'typography', moduleId: 'typography', title: 'Typography', visible: true, icon: 'fa fa-font' }
+                    { route: 'typography', moduleId: 'typography', title: 'Typography', visible: true, icon: 'fa fa-font' },
+                    { route: 'gameoflife', moduleId: 'gameoflife', title: 'Game of Life', visible: true, icon: 'fa fa-font' }
                 ];
 
             //#endregion Router
