@@ -6,7 +6,7 @@
         
         var token = ko.observable(false); // Oauth Access Token
         var userName = ko.observable(false);
-        var useAuth = true;
+        var useAuth = false;
         var logout = ko.observable(false);
         var appName = "SpaStack.NET";
         var loginUrl = config.apiUrl + "/login";
